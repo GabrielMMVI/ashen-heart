@@ -1,2 +1,3 @@
-# ashen-heart
-Controle de Versão do jogo Ashen Heart, projeto da disciplina de desenvolvimento de games
+# Ashen Heart
+- A game by Atom(TM)
+### Arquivos para controle de versão do projeto Ashen Heart.
