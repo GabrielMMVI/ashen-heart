@@ -4,4 +4,8 @@
 ___
 $ByAtom$
 ## Documentação | Componentes
-- Para melhor organização do projeto, colocaremos as 3 primeiras letras do componente a ser utilizado antes do nome dos arquivos, facilitando a leitura e reconhecimento
+- Para melhor organização do projeto, simplificaremos o nome do componente a ser utilizado antes do nome dos arquivos, facilitando a leitura e reconhecimento;
+- Ex.:
+-     Sprite -> spr
+-     CharacterBody2d -> chb
+-     StaticBody2d -> stb
