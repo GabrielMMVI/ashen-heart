@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c4ynmyq7dvj3q"]
+
+[ext_resource type="Script" uid="uid://duqb706tvvbuo" path="res://ent/player/scrPlayer.gd" id="1_gfv6k"]
+[ext_resource type="Texture2D" uid="uid://47uue0u8r8nf" path="res://ass/packs/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_hvc53"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8x8uh"]
+radius = 8.4
+height = 19.999998
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ccvy"]
+atlas = ExtResource("2_hvc53")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wubfv"]
+atlas = ExtResource("2_hvc53")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lq34"]
+atlas = ExtResource("2_hvc53")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3ik8"]
+atlas = ExtResource("2_hvc53")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we3cs"]
+atlas = ExtResource("2_hvc53")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo70j"]
+atlas = ExtResource("2_hvc53")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkqcd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ccvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wubfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lq34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3ik8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we3cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo70j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="chbPlayer" type="CharacterBody2D" unique_id=261209851]
+script = ExtResource("1_gfv6k")
+
+[node name="colPlayer" type="CollisionShape2D" parent="." unique_id=279131227]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_8x8uh")
+
+[node name="ansprPlayer" type="AnimatedSprite2D" parent="." unique_id=638595111]
+sprite_frames = SubResource("SpriteFrames_vkqcd")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5079354
