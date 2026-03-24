@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cftyj83a2svw0"]
+
+[ext_resource type="PackedScene" uid="uid://c4ynmyq7dvj3q" path="res://ent/player/player.tscn" id="1_wbfu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6lng"]
+size = Vector2(26.331718, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbfu4"]
+size = Vector2(2.0808594, 5.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkndl"]
+size = Vector2(2.0808594, 6.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
+size = Vector2(8.860431, 8.21875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb48q"]
+size = Vector2(10.1702175, 8.21875)
+
+[node name="Game" type="Node2D" unique_id=946468458]
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1161625895]
+
+[node name="stbFloor" type="StaticBody2D" parent="Platforms" unique_id=878186074]
+position = Vector2(200, 444)
+
+[node name="colFloor" type="CollisionShape2D" parent="Platforms/stbFloor" unique_id=1447848744]
+position = Vector2(458.70703, -1)
+scale = Vector2(50, 2)
+shape = SubResource("RectangleShape2D_t6lng")
+
+[node name="colFloor2" type="CollisionShape2D" parent="Platforms/stbFloor" unique_id=1055117089]
+position = Vector2(-27, -38)
+scale = Vector2(50, 2)
+shape = SubResource("RectangleShape2D_wbfu4")
+
+[node name="colFloor3" type="CollisionShape2D" parent="Platforms/stbFloor" unique_id=738242152]
+position = Vector2(95, -67)
+scale = Vector2(50, 2)
+shape = SubResource("RectangleShape2D_xkndl")
+
+[node name="colFloor4" type="CollisionShape2D" parent="Platforms/stbFloor" unique_id=910707150]
+position = Vector2(378.48926, -88)
+scale = Vector2(50, 2)
+shape = SubResource("RectangleShape2D_u44n3")
+
+[node name="colFloor5" type="CollisionShape2D" parent="Platforms/stbFloor" unique_id=1086200496]
+position = Vector2(854.7446, -88)
+scale = Vector2(50, 2)
+shape = SubResource("RectangleShape2D_sb48q")
+
+[node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_wbfu4")]
+position = Vector2(11, 427)
