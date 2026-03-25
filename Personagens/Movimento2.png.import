@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by4xmrpjarg4i"
-path="res://.godot/imported/Movimento2.png-14201c15d234ebaa78428fa2db10babd.ctex"
+path="res://.godot/imported/Movimento2.png-ea4f7b552cd26d205e0c1c87f7d6308f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Personagens/Movimento2.png"
-dest_files=["res://.godot/imported/Movimento2.png-14201c15d234ebaa78428fa2db10babd.ctex"]
+source_file="res://Personagens/Movimento2.png"
+dest_files=["res://.godot/imported/Movimento2.png-ea4f7b552cd26d205e0c1c87f7d6308f.ctex"]
 
 [params]
 

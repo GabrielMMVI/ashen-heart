@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1dpq8vpqpdd5"
-path="res://.godot/imported/Cavaleiro4.png-c645f945b83ffb5ef4ef7b7866db09e0.ctex"
+path="res://.godot/imported/Cavaleiro4.png-bb07e84127b046505cc1d92f4ea214c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Personagens/Cavaleiro4.png"
-dest_files=["res://.godot/imported/Cavaleiro4.png-c645f945b83ffb5ef4ef7b7866db09e0.ctex"]
+source_file="res://Personagens/Cavaleiro4.png"
+dest_files=["res://.godot/imported/Cavaleiro4.png-bb07e84127b046505cc1d92f4ea214c5.ctex"]
 
 [params]
 

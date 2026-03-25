@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djoi72qabudpg"
-path="res://.godot/imported/AtaqueBaisc5.png-4e552cf80e98840703fee86dc1992da6.ctex"
+path="res://.godot/imported/AtaqueBaisc5.png-cf5b7a5f91ecd3c2b3ab025881cb1ae3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Personagens/AtaqueBaisc5.png"
-dest_files=["res://.godot/imported/AtaqueBaisc5.png-4e552cf80e98840703fee86dc1992da6.ctex"]
+source_file="res://Personagens/AtaqueBaisc5.png"
+dest_files=["res://.godot/imported/AtaqueBaisc5.png-cf5b7a5f91ecd3c2b3ab025881cb1ae3.ctex"]
 
 [params]
 
