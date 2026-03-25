@@ -175,9 +175,11 @@ position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_8x8uh")
 
 [node name="ansprPlayer" type="AnimatedSprite2D" parent="." unique_id=638595111]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
 animation = &"walk"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
 limit_left = 0
+limit_bottom = 600
