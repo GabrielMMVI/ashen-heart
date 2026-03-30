@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cftyj83a2svw0"]
 
-[ext_resource type="PackedScene" uid="uid://c4ynmyq7dvj3q" path="res://ent/player/player.tscn" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://bv0j1mdb1i73m" path="res://ent/player/player.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dcu2scjhwxacm" path="res://ass/tiles/TilesetFloor(test).png" id="1_xkndl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u44n3"]
