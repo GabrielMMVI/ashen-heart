@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://c4ynmyq7dvj3q"]
+[gd_scene format=3 uid="uid://bv0j1mdb1i73m"]
 
 [ext_resource type="Script" uid="uid://duqb706tvvbuo" path="res://ent/player/scripts/scrPlayer.gd" id="1_gfv6k"]
+[ext_resource type="Texture2D" uid="uid://b55e08csodjp1" path="res://ass/packs/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png" id="2_8lq34"]
 [ext_resource type="Texture2D" uid="uid://47uue0u8r8nf" path="res://ass/packs/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Idle.png" id="2_hvc53"]
 [ext_resource type="Texture2D" uid="uid://wp4fwg8006ny" path="res://ass/packs/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Walk.png" id="3_4ccvy"]
 [ext_resource type="Texture2D" uid="uid://dhi5rk8hfon81" path="res://ass/packs/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Shadow_attack2.png" id="3_wubfv"]
@@ -8,6 +9,30 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8x8uh"]
 radius = 8.4
 height = 19.999998
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc2ur"]
+atlas = ExtResource("2_8lq34")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4jtk"]
+atlas = ExtResource("2_8lq34")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duvn1"]
+atlas = ExtResource("2_8lq34")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dcwt"]
+atlas = ExtResource("2_8lq34")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ve08"]
+atlas = ExtResource("2_8lq34")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp6d2"]
+atlas = ExtResource("2_8lq34")
+region = Rect2(500, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ccvy"]
 atlas = ExtResource("2_hvc53")
@@ -91,6 +116,29 @@ region = Rect2(700, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vkqcd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc2ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4jtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duvn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dcwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ve08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp6d2")
+}],
+"loop": false,
+"name": &"attack_melee",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ccvy")
@@ -177,7 +225,7 @@ shape = SubResource("CapsuleShape2D_8x8uh")
 [node name="ansprPlayer" type="AnimatedSprite2D" parent="." unique_id=638595111]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
-animation = &"walk"
+animation = &"attack_melee"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
