@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cftyj83a2svw0"]
+
+[ext_resource type="PackedScene" uid="uid://c4ynmyq7dvj3q" path="res://ent/player/player.tscn" id="1_t6lng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6lng"]
+size = Vector2(23.07, 20)
+
+[sub_resource type="ImageTexture" id="ImageTexture_t6lng"]
+
+[node name="Scene" type="Node2D" unique_id=946468458]
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1161625895]
+
+[node name="stbFloor" type="StaticBody2D" parent="Platforms" unique_id=878186074]
+position = Vector2(574, 97)
+
+[node name="colFloor" type="CollisionShape2D" parent="Platforms/stbFloor" unique_id=1447848744]
+scale = Vector2(50, 2)
+shape = SubResource("RectangleShape2D_t6lng")
+
+[node name="sprFloor" type="Sprite2D" parent="Platforms/stbFloor" unique_id=339973050]
+position = Vector2(-576, -19.000034)
+scale = Vector2(1154, 38.000034)
+texture = SubResource("ImageTexture_t6lng")
+
+[node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_t6lng")]
