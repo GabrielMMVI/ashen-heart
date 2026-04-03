@@ -356,6 +356,7 @@ collision_layer = 2
 script = ExtResource("1_gfv6k")
 
 [node name="colPlayer" type="CollisionShape2D" parent="." unique_id=279131227]
+z_index = 1
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ncg78")
 
@@ -373,6 +374,7 @@ limit_bottom = 600
 [node name="aHitbox" type="Area2D" parent="." unique_id=1877180658]
 
 [node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1137092379]
+z_index = 1
 position = Vector2(0, 2.8000019)
 scale = Vector2(0.5430311, 1.3600004)
 shape = SubResource("RectangleShape2D_vowie")
