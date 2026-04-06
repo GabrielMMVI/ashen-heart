@@ -18,7 +18,7 @@ const ATTACK_ANIMATIONS = {
 	Weapon.AXE:   "attack_axe"
 }
 
-# Mapeamento de arma → nome para exibir no HUD 
+# Mapeamento de arma → nome para exibir no HUDtgtr 
 const WEAPON_NAMES = {
 	Weapon.SWORD: "Espada",
 	Weapon.BOW:   "Arco",
