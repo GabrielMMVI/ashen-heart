@@ -1,90 +1,129 @@
 extends CharacterBody2D
-@onready var ansprPlayer: AnimatedSprite2D = $ansprPlayer
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -300.0
+# ==============================================================================
+# CONSTANTES
+# ==============================================================================
+const SPEED := 100.0
+const JUMP_VELOCITY := -300.0
 
-# --- SISTEMA DE ARMAS ---
+# ==============================================================================
+# ENUMS E MAPEAMENTOS
+# ==============================================================================
 enum Weapon { SWORD, BOW, STAFF, AXE }
-
-var current_weapon: Weapon = Weapon.SWORD
-var facing_right := true
-
-# Mapeamento de arma → animação de ataque
-const ATTACK_ANIMATIONS = {
+#tetetet
+const ATTACK_ANIMATIONS: Dictionary = {
 	Weapon.SWORD: "attack_melee",
 	Weapon.BOW:   "attack_bow",
 	Weapon.STAFF: "attack_magic",
-	Weapon.AXE:   "attack_axe"
+	Weapon.AXE:   "attack_axe",
 }
 
-# Mapeamento de arma → nome para exibir no HUDtgtr 
-const WEAPON_NAMES = {
+const WEAPON_NAMES: Dictionary = {
 	Weapon.SWORD: "Espada",
 	Weapon.BOW:   "Arco",
 	Weapon.STAFF: "Cajado",
-	Weapon.AXE:   "Machado"
+	Weapon.AXE:   "Machado",
 }
 
-func _switch_weapon(direction: int) -> void:
-	if is_attacking:
-		return  # Não troca enquanto ataca
-	var total = Weapon.size()
-	current_weapon = (current_weapon + direction + total) % total
-	print("Arma atual: ", WEAPON_NAMES[current_weapon])  # Troque por HUD depois
+# ==============================================================================
+# NÓS REFERENCIADOS
+# ==============================================================================
+@onready var _sprite: AnimatedSprite2D = $ansprPlayer
 
-# --- ATAQUE ---
-var is_attacking := false
+# ==============================================================================
+# ESTADO INTERNO
+# ==============================================================================
+var _current_weapon: Weapon = Weapon.SWORD
+var _is_attacking := false
+var _facing_right := true
 
-func _attack_melee() -> void:
-	if Input.is_action_just_pressed("attack") and not is_attacking:
-		is_attacking = true
-		ansprPlayer.flip_h = not facing_right
-		var anim = ATTACK_ANIMATIONS[current_weapon]
-		ansprPlayer.play(anim)
-		await ansprPlayer.animation_finished
-		is_attacking = false
-
-# --- LOOP PRINCIPAL ---
+# ==============================================================================
+# LOOP PRINCIPAL
+# ==============================================================================
 func _physics_process(delta: float) -> void:
-	# Troca de arma com Q ou scroll
+	_handle_weapon_switch()
+	_handle_attack()
+	_handle_gravity(delta)
+	_handle_jump()
+	_handle_movement()
+	_update_animation()
+	move_and_slide()
+
+# ==============================================================================
+# SISTEMA DE ARMAS
+# ==============================================================================
+func _handle_weapon_switch() -> void:
 	if Input.is_action_just_pressed("weapon_next"):
 		_switch_weapon(1)
-	if Input.is_action_just_pressed("weapon_prev"):
+	elif Input.is_action_just_pressed("weapon_prev"):
 		_switch_weapon(-1)
 
-	_attack_melee()
+func _switch_weapon(direction: int) -> void:
+	if _is_attacking:
+		return
 
-	# Gravidade
+	var total: int = Weapon.size()
+	_current_weapon = (_current_weapon + direction + total) % total
+	print("Arma atual: ", WEAPON_NAMES[_current_weapon]) # TODO: substituir por HUD
+
+# ==============================================================================
+# SISTEMA DE ATAQUE
+# ==============================================================================
+func _handle_attack() -> void:
+	if Input.is_action_just_pressed("attack") and not _is_attacking:
+		_perform_attack()
+
+func _perform_attack() -> void:
+	_is_attacking = true
+	_sprite.flip_h = not _facing_right
+	_sprite.play(ATTACK_ANIMATIONS[_current_weapon])
+	await _sprite.animation_finished
+	_is_attacking = false
+
+# ==============================================================================
+# FÍSICA E MOVIMENTO
+# ==============================================================================
+func _handle_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Pulo
+func _handle_jump() -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Movimento horizontal
+func _handle_movement() -> void:
 	var direction := Input.get_axis("left", "right")
-	if is_attacking:
+
+	if _is_attacking or direction == 0:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	elif direction:
-		velocity.x = direction * SPEED
-		facing_right = direction > 0
+		return
+
+	velocity.x = direction * SPEED
+	_facing_right = direction > 0
+
+# ==============================================================================
+# ANIMAÇÕES
+# ==============================================================================
+func _update_animation() -> void:
+	if _is_attacking:
+		return
+
+	_sprite.flip_h = not _facing_right
+
+	if is_on_floor():
+		_play_grounded_animation()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		_play_airborne_animation()
 
-	# Animações
-	if not is_attacking:
-		ansprPlayer.flip_h = not facing_right
-		if is_on_floor():
-			if direction != 0:
-				ansprPlayer.play("walk")
-			else:
-				ansprPlayer.play("idle")
-		else:
-			if velocity.y < 0:
-				ansprPlayer.play("jump")
-			else:
-				ansprPlayer.play("fall")
+func _play_grounded_animation() -> void:
+	var direction := Input.get_axis("left", "right")
+	if direction != 0:
+		_sprite.play("walk")
+	else:
+		_sprite.play("idle")
 
-	move_and_slide()
+func _play_airborne_animation() -> void:
+	if velocity.y < 0:
+		_sprite.play("jump")
+	else:
+		_sprite.play("fall")
