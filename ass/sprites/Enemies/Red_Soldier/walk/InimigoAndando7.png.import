@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl27bhtdaebpw"
-path="res://.godot/imported/InimigoAndando6.png-3c3145eda6932307db72363ddc46d8d4.ctex"
+uid="uid://b4ptmya6ljhnp"
+path="res://.godot/imported/InimigoAndando7.png-79d592eb512a0f589e29be11970217b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inimigos - Copia/InimigoAndando6.png"
-dest_files=["res://.godot/imported/InimigoAndando6.png-3c3145eda6932307db72363ddc46d8d4.ctex"]
+source_file="res://ass/sprites/Enemies/Red_Soldier/walk/InimigoAndando7.png"
+dest_files=["res://.godot/imported/InimigoAndando7.png-79d592eb512a0f589e29be11970217b4.ctex"]
 
 [params]
 
