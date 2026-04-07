@@ -10,7 +10,6 @@ const JUMP_VELOCITY := -300.0
 # ENUMS E MAPEAMENTOS
 # ==============================================================================
 enum Weapon { SWORD, BOW, STAFF, AXE }
-#tetetet
 const ATTACK_ANIMATIONS: Dictionary = {
 	Weapon.SWORD: "attack_melee",
 	Weapon.BOW:   "attack_bow",
@@ -35,6 +34,7 @@ const WEAPON_NAMES: Dictionary = {
 # ==============================================================================
 var _current_weapon: Weapon = Weapon.SWORD
 var _is_attacking := false
+var _is_switching := false
 var _facing_right := true
 
 # ==============================================================================
@@ -53,29 +53,33 @@ func _physics_process(delta: float) -> void:
 # SISTEMA DE ARMAS
 # ==============================================================================
 func _handle_weapon_switch() -> void:
-	if Input.is_action_just_pressed("weapon_next"):
+	if Input.is_action_just_pressed("switch"):
 		_switch_weapon(1)
-	elif Input.is_action_just_pressed("weapon_prev"):
-		_switch_weapon(-1)
 
 func _switch_weapon(direction: int) -> void:
-	if _is_attacking:
+	if _is_attacking or _is_switching:
 		return
-
+		
+	_is_switching = true
+	
 	var total: int = Weapon.size()
 	_current_weapon = (_current_weapon + direction + total) % total
 	print("Arma atual: ", WEAPON_NAMES[_current_weapon]) # TODO: substituir por HUD
+	
+	_sprite.play("switch_weapon")
+	await _sprite.animation_finished
+	
+	_is_switching = false
 
 # ==============================================================================
 # SISTEMA DE ATAQUE
 # ==============================================================================
 func _handle_attack() -> void:
-	if Input.is_action_just_pressed("attack") and not _is_attacking:
+	if Input.is_action_just_pressed("attack") and not _is_attacking and not _is_switching:
 		_perform_attack()
 
 func _perform_attack() -> void:
 	_is_attacking = true
-	_sprite.flip_h = not _facing_right
 	_sprite.play(ATTACK_ANIMATIONS[_current_weapon])
 	await _sprite.animation_finished
 	_is_attacking = false
@@ -88,27 +92,31 @@ func _handle_gravity(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 func _handle_jump() -> void:
+	# Removidas as travas de ataque e troca, permitindo pular a qualquer momento
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 func _handle_movement() -> void:
 	var direction := Input.get_axis("left", "right")
 
-	if _is_attacking or direction == 0:
+	# Removidas as travas de ataque e troca. Apenas verifica se não há input.
+	if direction == 0:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		return
-
-	velocity.x = direction * SPEED
-	_facing_right = direction > 0
+	else:
+		velocity.x = direction * SPEED
+		_facing_right = direction > 0
 
 # ==============================================================================
 # ANIMAÇÕES
 # ==============================================================================
 func _update_animation() -> void:
-	if _is_attacking:
-		return
-
+	# Atualiza a direção do sprite antes do "return" para permitir 
+	# virar o personagem de lado mesmo durante a animação de ataque/troca.
 	_sprite.flip_h = not _facing_right
+
+	# Impede que as animações de andar/pular cancelem a animação de ataque/troca em andamento.
+	if _is_attacking or _is_switching:
+		return
 
 	if is_on_floor():
 		_play_grounded_animation()
