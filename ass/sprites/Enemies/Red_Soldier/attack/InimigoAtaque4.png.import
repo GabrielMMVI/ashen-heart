@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm7pgi4shgsbw"
-path="res://.godot/imported/Inimigo1.png-4d597573e470e0c0b10af84ab485f3cb.ctex"
+uid="uid://wp3ui8h4gpvb"
+path="res://.godot/imported/InimigoAtaque4.png-5a14b9c0b0786346b503c7e1b4f91ce2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inimigos - Copia/Inimigo1.png"
-dest_files=["res://.godot/imported/Inimigo1.png-4d597573e470e0c0b10af84ab485f3cb.ctex"]
+source_file="res://ass/sprites/Enemies/Red_Soldier/attack/InimigoAtaque4.png"
+dest_files=["res://.godot/imported/InimigoAtaque4.png-5a14b9c0b0786346b503c7e1b4f91ce2.ctex"]
 
 [params]
 

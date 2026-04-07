@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csrfypq6xuc52"
-path="res://.godot/imported/InimigoAndando8.png-2233c1ed3dad248c2bd7586f066595fa.ctex"
+path="res://.godot/imported/InimigoAndando8.png-160d46ae387587898e31681a9186c89a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inimigos - Copia/InimigoAndando8.png"
-dest_files=["res://.godot/imported/InimigoAndando8.png-2233c1ed3dad248c2bd7586f066595fa.ctex"]
+source_file="res://ass/sprites/Enemies/Red_Soldier/walk/InimigoAndando8.png"
+dest_files=["res://.godot/imported/InimigoAndando8.png-160d46ae387587898e31681a9186c89a.ctex"]
 
 [params]
 

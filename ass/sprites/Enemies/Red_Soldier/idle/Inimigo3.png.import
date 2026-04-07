@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce6q8lpdsnrna"
-path="res://.godot/imported/Inimigo3.png-0ccfbeaff70f3db4dcd89d5b8173bbf4.ctex"
+path="res://.godot/imported/Inimigo3.png-707e7e6995c4f1cd0e8a07af3edbedd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inimigos - Copia/Inimigo3.png"
-dest_files=["res://.godot/imported/Inimigo3.png-0ccfbeaff70f3db4dcd89d5b8173bbf4.ctex"]
+source_file="res://ass/sprites/Enemies/Red_Soldier/idle/Inimigo3.png"
+dest_files=["res://.godot/imported/Inimigo3.png-707e7e6995c4f1cd0e8a07af3edbedd1.ctex"]
 
 [params]
 
