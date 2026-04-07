@@ -2,10 +2,73 @@
 
 [ext_resource type="PackedScene" uid="uid://bv0j1mdb1i73m" path="res://ent/player/player.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dcu2scjhwxacm" path="res://ass/tiles/TilesetFloor(test).png" id="1_xkndl"]
+[ext_resource type="Texture2D" uid="uid://cjc45cqocfdl6" path="res://ass/packs/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="3_3mrqo"]
 [ext_resource type="Texture2D" uid="uid://di4s2vxj4muam" path="res://ass/packs/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="3_t88pq"]
 [ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/enemy1/enemy.tscn" id="3_u44n3"]
 [ext_resource type="Texture2D" uid="uid://dqcbjlnunnxtk" path="res://ass/packs/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="4_r0x5m"]
 [ext_resource type="Texture2D" uid="uid://b8dea8xqcgl65" path="res://ass/packs/Seasonal Tilesets/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="5_t88pq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joorw"]
+texture = ExtResource("3_3mrqo")
+2:9/0 = 0
+3:9/0 = 0
+7:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0x5m"]
 texture = ExtResource("3_t88pq")
@@ -83,6 +146,7 @@ texture = ExtResource("4_r0x5m")
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_r0x5m")
 sources/5 = SubResource("TileSetAtlasSource_3mrqo")
+sources/0 = SubResource("TileSetAtlasSource_joorw")
 
 [sub_resource type="TileSet" id="TileSet_r0x5m"]
 
