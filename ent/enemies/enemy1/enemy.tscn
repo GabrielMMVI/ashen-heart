@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcjxfwoc5vco4"]
 
-[ext_resource type="Script" uid="uid://ba3jokxqd65v2" path="res://ent/enemies/scripts/scrEnemy1.gd" id="1_1f3qg"]
+[ext_resource type="Script" uid="uid://ba3jokxqd65v2" path="res://ent/enemies/enemy1/scripts/scrEnemy1.gd" id="1_1f3qg"]
 [ext_resource type="Texture2D" uid="uid://dh3eqpamdihht" path="res://ass/sprites/Enemies/Red_Soldier/attack/InimigoAtaque1.png" id="2_51oay"]
 [ext_resource type="Texture2D" uid="uid://krmd5qllyqjw" path="res://ass/sprites/Enemies/Red_Soldier/attack/InimigoAtaque2.png" id="3_urqr8"]
 [ext_resource type="Texture2D" uid="uid://m136yaycigbb" path="res://ass/sprites/Enemies/Red_Soldier/attack/InimigoAtaque3.png" id="4_jb5o3"]
@@ -124,7 +124,7 @@ shape = SubResource("RectangleShape2D_30554")
 
 [node name="aHitbox" type="Area2D" parent="." unique_id=1851688362]
 
-[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1551766766]
+[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1551766766 groups=["damage"]]
 position = Vector2(0, 1)
 scale = Vector2(1, 0.8000002)
 shape = SubResource("CapsuleShape2D_1f3qg")
