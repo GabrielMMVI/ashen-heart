@@ -5,6 +5,7 @@ extends CharacterBody2D
 # ==============================================================================
 const SPEED := 100.0
 const JUMP_VELOCITY := -300.0
+const MAX_HEALTH := 100
 
 # ==============================================================================
 # ENUMS E MAPEAMENTOS
@@ -33,6 +34,7 @@ const WEAPON_NAMES: Dictionary = {
 # ESTADO INTERNO
 # ==============================================================================
 var _current_weapon: Weapon = Weapon.SWORD
+var _current_health := MAX_HEALTH
 var _is_attacking := false
 var _is_switching := false
 var _facing_right := true
@@ -48,7 +50,36 @@ func _physics_process(delta: float) -> void:
 	_handle_movement()
 	_update_animation()
 	move_and_slide()
+func _ready() -> void:
+	# Garante que a vida inicie cheia, útil caso você exporte a variável de vida inicial futuramente.
+	_current_health = MAX_HEALTH
+	
+# ==============================================================================
+# SISTEMA DE VIDA
+# ==============================================================================
+func take_damage(amount: int) -> void:
+	if _current_health <= 0:
+		return # Ignora dano se já estiver morto
+		
+	_current_health -= amount
+	_current_health = max(0, _current_health) # max() impede que a vida fique negativa
+	
+	print("Dano recebido! Vida atual: ", _current_health, "/", MAX_HEALTH)
+	
+	# Emite o sinal. Quando o HUD existir, ele vai "escutar" isso para atualizar a barra.
+	#health_changed.emit(_current_health, MAX_HEALTH)
+	
+	if _current_health == 0:
+		_die()
 
+func _die() -> void:
+	print("Player Morreu!")
+	#died.emit()
+	
+	# Desativa processamento físico para o personagem parar de se mover e cair imediatamente.
+	set_physics_process(false) 
+	
+	# TODO: Tocar animação de morte, invocar menu de Game Over, etc.
 # ==============================================================================
 # SISTEMA DE ARMAS
 # ==============================================================================
