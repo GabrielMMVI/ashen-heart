@@ -115,8 +115,6 @@ script = ExtResource("1_1f3qg")
 sprite_frames = SubResource("SpriteFrames_p4x4w")
 animation = &"attack"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="colEnemy" type="CollisionShape2D" parent="." unique_id=1702610371]
 position = Vector2(0, 1.5)

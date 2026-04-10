@@ -862,8 +862,13 @@ sources/0 = SubResource("TileSetAtlasSource_sb48q")
 [node name="chbEnemy" parent="." unique_id=886209351 instance=ExtResource("3_u44n3")]
 position = Vector2(256, 488)
 
+<<<<<<< Updated upstream
 [node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_wbfu4")]
 position = Vector2(16, 488)
+=======
+[node name="chbPlayer" parent="." unique_id=261209851 groups=["player"] instance=ExtResource("1_wbfu4")]
+position = Vector2(26, 238)
+>>>>>>> Stashed changes
 
 [node name="Tiles" type="Node2D" parent="." unique_id=489731479]
 

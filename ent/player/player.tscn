@@ -4,29 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://bhrhhnbpaeyxm" path="res://ass/packs/Super Pixel Effects Gigapack (Free Version)/spritesheet/Fantasy Spells/spell_haste_001/spell_haste_001_small_green/spritesheet.png" id="2_7ve08"]
 [ext_resource type="Texture2D" uid="uid://doqlmuokwra84" path="res://ass/packs/Super Pixel Effects Gigapack (Free Version)/spritesheet/Fantasy Spells/spell_absorb_001/spell_absorb_001_small_violet/spritesheet.png" id="2_duvn1"]
 [ext_resource type="Texture2D" uid="uid://tr3pngo2tprj" path="res://ass/packs/Super Pixel Effects Gigapack (Free Version)/spritesheet/Fantasy Spells/spell_defense_up_001/spell_defense_up_001_small_blue/spritesheet.png" id="3_2dcwt"]
-[ext_resource type="Texture2D" uid="uid://2d6tt4act6pl" path="res://Personagens/Cavaleiro1.png" id="7_76xy7"]
-[ext_resource type="Texture2D" uid="uid://bou3m0ixxjgey" path="res://Personagens/AtaqueBaisc1.png" id="7_cp6d2"]
+[ext_resource type="Texture2D" uid="uid://2d6tt4act6pl" path="res://ass/sprites/Player/idle/Cavaleiro1.png" id="7_76xy7"]
+[ext_resource type="Texture2D" uid="uid://bou3m0ixxjgey" path="res://ass/sprites/Player/attack_melee/AtaqueBaisc1.png" id="7_cp6d2"]
 [ext_resource type="Texture2D" uid="uid://cqr851q43naio" path="res://ass/packs/Super Pixel Effects Gigapack (Free Version)/spritesheet/Magic Bursts/directional_coin_burst_001/directional_coin_burst_001_small_yellow/spritesheet.png" id="7_pc2ur"]
-[ext_resource type="Texture2D" uid="uid://bpequ7y2iqs6l" path="res://Personagens/Cavaleiro2.png" id="8_rgrtx"]
-[ext_resource type="Texture2D" uid="uid://bggvhb2smpwf2" path="res://Personagens/AtaqueBaisc2.png" id="8_rmye5"]
-[ext_resource type="Texture2D" uid="uid://d0wmmkghvyprv" path="res://Personagens/Cavaleiro3.png" id="9_mgaum"]
-[ext_resource type="Texture2D" uid="uid://ccux6vbyg8cue" path="res://Personagens/AtaqueBaisc3.png" id="9_vjege"]
-[ext_resource type="Texture2D" uid="uid://b1dpq8vpqpdd5" path="res://Personagens/Cavaleiro4.png" id="10_83xl5"]
-[ext_resource type="Texture2D" uid="uid://cuwfi7qha64p6" path="res://Personagens/AtaqueBaisc4.png" id="10_tujar"]
-[ext_resource type="Texture2D" uid="uid://djoi72qabudpg" path="res://Personagens/AtaqueBaisc5.png" id="11_6afxj"]
-[ext_resource type="Texture2D" uid="uid://bpm1cr4m5rvpf" path="res://Personagens/Movimento1.png" id="11_ncg78"]
-[ext_resource type="Texture2D" uid="uid://by4xmrpjarg4i" path="res://Personagens/Movimento2.png" id="12_pc2ur"]
+[ext_resource type="Texture2D" uid="uid://bpequ7y2iqs6l" path="res://ass/sprites/Player/idle/Cavaleiro2.png" id="8_rgrtx"]
+[ext_resource type="Texture2D" uid="uid://bggvhb2smpwf2" path="res://ass/sprites/Player/attack_melee/AtaqueBaisc2.png" id="8_rmye5"]
+[ext_resource type="Texture2D" uid="uid://d0wmmkghvyprv" path="res://ass/sprites/Player/idle/Cavaleiro3.png" id="9_mgaum"]
+[ext_resource type="Texture2D" uid="uid://ccux6vbyg8cue" path="res://ass/sprites/Player/attack_melee/AtaqueBaisc3.png" id="9_vjege"]
+[ext_resource type="Texture2D" uid="uid://b1dpq8vpqpdd5" path="res://ass/sprites/Player/idle/Cavaleiro4.png" id="10_83xl5"]
+[ext_resource type="Texture2D" uid="uid://cuwfi7qha64p6" path="res://ass/sprites/Player/attack_melee/AtaqueBaisc4.png" id="10_tujar"]
+[ext_resource type="Texture2D" uid="uid://djoi72qabudpg" path="res://ass/sprites/Player/attack_melee/AtaqueBaisc5.png" id="11_6afxj"]
+[ext_resource type="Texture2D" uid="uid://bpm1cr4m5rvpf" path="res://ass/sprites/Player/walk/Movimento1.png" id="11_ncg78"]
+[ext_resource type="Texture2D" uid="uid://by4xmrpjarg4i" path="res://ass/sprites/Player/walk/Movimento2.png" id="12_pc2ur"]
 [ext_resource type="Texture2D" uid="uid://dpple2j2yxjqr" path="res://ass/packs/Super Pixel Effects Gigapack (Free Version)/spritesheet/Fantasy Spells/spell_attack_up_001/spell_attack_up_001_small_red/spritesheet.png" id="12_r4jtk"]
-[ext_resource type="Texture2D" uid="uid://d1hjo03scnuee" path="res://Personagens/Movimento3.png" id="13_r4jtk"]
-[ext_resource type="Texture2D" uid="uid://xusxy8angyix" path="res://Personagens/Movimento4.png" id="14_duvn1"]
-[ext_resource type="Texture2D" uid="uid://cof55vy25rbsn" path="res://Personagens/Movimento5.png" id="15_2dcwt"]
-[ext_resource type="Texture2D" uid="uid://dej1a5u783kyq" path="res://Personagens/Movimento6.png" id="16_7ve08"]
-[ext_resource type="Texture2D" uid="uid://cwrdl0comexug" path="res://Personagens/Movimento7.png" id="17_cp6d2"]
-[ext_resource type="Texture2D" uid="uid://ws7pcp60gsdp" path="res://Personagens/Movimento8.png" id="18_rmye5"]
-[ext_resource type="Texture2D" uid="uid://c7q7cwrmgwtis" path="res://Personagens/Movimento9.png" id="19_vjege"]
-[ext_resource type="Texture2D" uid="uid://c25eo4eyjgf8k" path="res://Personagens/Movimento10.png" id="20_tujar"]
-[ext_resource type="Texture2D" uid="uid://khd3jpxvrula" path="res://Personagens/Movimento11.png" id="21_6afxj"]
-[ext_resource type="Texture2D" uid="uid://drlm6n3r30d4l" path="res://Personagens/Movimento12.png" id="22_db7t0"]
+[ext_resource type="Texture2D" uid="uid://d1hjo03scnuee" path="res://ass/sprites/Player/walk/Movimento3.png" id="13_r4jtk"]
+[ext_resource type="Texture2D" uid="uid://xusxy8angyix" path="res://ass/sprites/Player/walk/Movimento4.png" id="14_duvn1"]
+[ext_resource type="Texture2D" uid="uid://cof55vy25rbsn" path="res://ass/sprites/Player/walk/Movimento5.png" id="15_2dcwt"]
+[ext_resource type="Texture2D" uid="uid://dej1a5u783kyq" path="res://ass/sprites/Player/walk/Movimento6.png" id="16_7ve08"]
+[ext_resource type="Texture2D" uid="uid://cwrdl0comexug" path="res://ass/sprites/Player/walk/Movimento7.png" id="17_cp6d2"]
+[ext_resource type="Texture2D" uid="uid://ws7pcp60gsdp" path="res://ass/sprites/Player/walk/Movimento8.png" id="18_rmye5"]
+[ext_resource type="Texture2D" uid="uid://c7q7cwrmgwtis" path="res://ass/sprites/Player/walk/Movimento9.png" id="19_vjege"]
+[ext_resource type="Texture2D" uid="uid://c25eo4eyjgf8k" path="res://ass/sprites/Player/walk/Movimento10.png" id="20_tujar"]
+[ext_resource type="Texture2D" uid="uid://khd3jpxvrula" path="res://ass/sprites/Player/walk/Movimento11.png" id="21_6afxj"]
+[ext_resource type="Texture2D" uid="uid://drlm6n3r30d4l" path="res://ass/sprites/Player/walk/Movimento12.png" id="22_db7t0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncg78"]
 radius = 6.0
@@ -1080,10 +1080,11 @@ shape = SubResource("CapsuleShape2D_ncg78")
 z_index = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
-animation = &"attack_axe"
+animation = &"attack_melee"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
+visible = false
 limit_left = 0
 limit_bottom = 600
 
