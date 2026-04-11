@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dcjxfwoc5vco4"]
+
+[ext_resource type="Script" uid="uid://ba3jokxqd65v2" path="res://ent/enemies/scripts/scrEnemy1.gd" id="1_1f3qg"]
+[ext_resource type="Texture2D" uid="uid://btvo6sfwsak6w" path="res://ass/packs/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="1_p4qjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpbv6"]
+atlas = ExtResource("1_p4qjr")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x30pb"]
+atlas = ExtResource("1_p4qjr")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpmyy"]
+atlas = ExtResource("1_p4qjr")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qms8a"]
+atlas = ExtResource("1_p4qjr")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ltdv"]
+atlas = ExtResource("1_p4qjr")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se7i5"]
+atlas = ExtResource("1_p4qjr")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4x4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpbv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x30pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpmyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qms8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ltdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se7i5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wf2he"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1f3qg"]
+radius = 4.0
+height = 14.999996
+
+[node name="chbEnemy" type="CharacterBody2D" unique_id=886209351]
+collision_layer = 4
+script = ExtResource("1_1f3qg")
+
+[node name="ansprEnemy" type="AnimatedSprite2D" parent="." unique_id=378034152]
+sprite_frames = SubResource("SpriteFrames_p4x4w")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.76023626
+
+[node name="colEnemy" type="CollisionShape2D" parent="." unique_id=1702610371]
+shape = SubResource("CapsuleShape2D_wf2he")
+
+[node name="aHitbox" type="Area2D" parent="." unique_id=1851688362]
+
+[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1551766766]
+position = Vector2(11.000001, 3.5762793e-07)
+rotation = 1.0220444
+scale = Vector2(1, 0.8000002)
+shape = SubResource("CapsuleShape2D_1f3qg")
+debug_color = Color(0.94855636, 0.008988706, 0.5758382, 0.41960785)
