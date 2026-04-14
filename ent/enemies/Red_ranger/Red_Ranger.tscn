@@ -133,9 +133,10 @@ autoplay = "idle"
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_fthvd")
 
-[node name="aHitbox" type="Area2D" parent="colRed_Ranger" unique_id=1152915397]
+[node name="aHitbox" type="Area2D" parent="." unique_id=1152915397]
+position = Vector2(1.5, 1)
 
-[node name="colHitbox" type="CollisionShape2D" parent="colRed_Ranger/aHitbox" unique_id=1224214621]
+[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1224214621]
 position = Vector2(-1.5, 0)
 shape = SubResource("CapsuleShape2D_fwnx2")
 debug_color = Color(0.7923543, 0.14861065, 0.26612127, 0.41960785)

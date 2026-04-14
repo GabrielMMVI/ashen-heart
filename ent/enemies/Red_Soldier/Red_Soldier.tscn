@@ -122,10 +122,9 @@ frame_progress = 1.0
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_30554")
 
-[node name="aHitbox" type="Area2D" parent="colRed_Soldier" unique_id=1851688362]
-position = Vector2(0, -1.5)
+[node name="aHitbox" type="Area2D" parent="." unique_id=1851688362]
 
-[node name="colHitbox" type="CollisionShape2D" parent="colRed_Soldier/aHitbox" unique_id=1551766766 groups=["damage"]]
+[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1551766766 groups=["damage"]]
 position = Vector2(0, 1)
 scale = Vector2(1, 0.8000002)
 shape = SubResource("CapsuleShape2D_1f3qg")
