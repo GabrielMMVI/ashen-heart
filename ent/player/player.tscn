@@ -1080,10 +1080,11 @@ shape = SubResource("CapsuleShape2D_ncg78")
 z_index = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
-animation = &"attack_axe"
+animation = &"attack_melee"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
+visible = false
 limit_left = 0
 limit_bottom = 600
 
