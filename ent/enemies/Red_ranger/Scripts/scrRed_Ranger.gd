@@ -6,6 +6,7 @@ extends CharacterBody2D
 const SPEED := 50.0
 const ATTACK_DAMAGE := 10
 const ATTACK_RANGE := 60.0  # distância para iniciar o ataque
+const CHASE_RANGE := 200
 
 # ==============================================================================
 # NÓS REFERENCIADOS
@@ -25,7 +26,7 @@ var _player: Node2D = null
 # PRONTO
 # ==============================================================================
 func _ready() -> void:
-	_hitbox_col.disabled = true
+	_hitbox_col.disabled = false
 	_sprite.animation_finished.connect(_on_animation_finished)
 	_sprite.frame_changed.connect(_on_frame_changed)
 	_hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -52,9 +53,19 @@ func _handle_gravity(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 func _handle_movement() -> void:
-	if is_on_wall():
-		_direction *= -1
-	velocity.x = _direction * SPEED
+	if _player == null:
+		if is_on_wall():
+			_direction *= -1
+		velocity.x = _direction * SPEED
+		return
+	var distance := global_position.distance_to(_player.global_position)
+	if distance <= CHASE_RANGE:
+		_direction = 1 if _player.global_position.x > global_position.x else -1
+		velocity.x = _direction * SPEED
+	else:
+		if is_on_wall():
+			_direction *= -1
+		velocity.x = _direction * SPEED
 
 # ==============================================================================
 # DETECÇÃO DO PLAYER
@@ -99,7 +110,7 @@ func _on_frame_changed() -> void:
 func _on_animation_finished() -> void:
 	if _sprite.animation == "attack":
 		_is_attacking = false
-		_hitbox_col.disabled = true
+		_hitbox_col.disabled = false
 
 # ==============================================================================
 # ATAQUE
