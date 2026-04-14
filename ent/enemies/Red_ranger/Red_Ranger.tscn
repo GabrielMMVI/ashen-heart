@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cw177j5rtf675"]
+
+[ext_resource type="Script" uid="uid://ce2itdly4gbpb" path="res://ent/enemies/Red_ranger/Scripts/scrRed_Ranger.gd" id="1_q3gbp"]
+[ext_resource type="Texture2D" uid="uid://cym85bo5e30it" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando1.png" id="2_4jj1l"]
+[ext_resource type="Texture2D" uid="uid://pr0mndwk57cx" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando2.png" id="3_g0ap1"]
+[ext_resource type="Texture2D" uid="uid://dcs31u5ys2qq" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando3.png" id="4_ismgv"]
+[ext_resource type="Texture2D" uid="uid://d06byn7d7st8g" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando4.png" id="5_pbcnr"]
+[ext_resource type="Texture2D" uid="uid://bgglt3feu0jyw" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando5.png" id="6_oqrat"]
+[ext_resource type="Texture2D" uid="uid://bg0tm585epx3v" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando6.png" id="7_b0c51"]
+[ext_resource type="Texture2D" uid="uid://gf8am5xgm5n4" path="res://ass/sprites/Enemies/Red_Ranger/attack/ArqueiroAtaquando7.png" id="8_xpqes"]
+[ext_resource type="Texture2D" uid="uid://0inff886fjni" path="res://ass/sprites/Enemies/Red_Ranger/hurt/ArqueiroInimigoHit.png" id="9_yi8d2"]
+[ext_resource type="Texture2D" uid="uid://m8fmr1wel2q4" path="res://ass/sprites/Enemies/Red_Ranger/idle/arqueiroInimigo1.png" id="10_1lgb5"]
+[ext_resource type="Texture2D" uid="uid://bmyatmid4fnnq" path="res://ass/sprites/Enemies/Red_Ranger/idle/arqueiroInimigo2.png" id="11_ms2mr"]
+[ext_resource type="Texture2D" uid="uid://b28m18qvwwos2" path="res://ass/sprites/Enemies/Red_Ranger/idle/arqueiroInimigo3.png" id="12_j0nhq"]
+[ext_resource type="Texture2D" uid="uid://dlk3xnog1lxxj" path="res://ass/sprites/Enemies/Red_Ranger/idle/arqueiroInimigo4.png" id="13_k0e2b"]
+[ext_resource type="Texture2D" uid="uid://cnsk1wtcst2yv" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando1.png" id="14_gagx5"]
+[ext_resource type="Texture2D" uid="uid://b4gmp2hvhduyu" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando2.png" id="15_6hgg6"]
+[ext_resource type="Texture2D" uid="uid://cqemaewwrwuox" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando3.png" id="16_an48x"]
+[ext_resource type="Texture2D" uid="uid://dlejpsapphlma" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando4.png" id="17_wkpyk"]
+[ext_resource type="Texture2D" uid="uid://cb5ixhuekq5hn" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando5.png" id="18_2vb3w"]
+[ext_resource type="Texture2D" uid="uid://kpccmx3u6khg" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando6.png" id="19_jegl1"]
+[ext_resource type="Texture2D" uid="uid://1l0wmqkh8jbg" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando7.png" id="20_nt3hi"]
+[ext_resource type="Texture2D" uid="uid://mge1x8hg5ynw" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando8.png" id="21_l1yrr"]
+[ext_resource type="Texture2D" uid="uid://b67prm8wsmau3" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando9.png" id="22_haxuw"]
+[ext_resource type="Texture2D" uid="uid://b6y0xbyw6movl" path="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando10.png" id="23_tg20r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyldf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4jj1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g0ap1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ismgv")
+}, {
+"duration": 2.5,
+"texture": ExtResource("5_pbcnr")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_oqrat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b0c51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xpqes")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 0.33,
+"texture": ExtResource("9_yi8d2")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1lgb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ms2mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j0nhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k0e2b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gagx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6hgg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_an48x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wkpyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2vb3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jegl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nt3hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_l1yrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_haxuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tg20r")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fthvd"]
+size = Vector2(17, 24)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwnx2"]
+radius = 6.0
+height = 26.0
+
+[node name="chbRed_Ranger" type="CharacterBody2D" unique_id=765468334]
+collision_layer = 4
+script = ExtResource("1_q3gbp")
+
+[node name="ansprRed_Ranger" type="AnimatedSprite2D" parent="." unique_id=1050363619]
+sprite_frames = SubResource("SpriteFrames_yyldf")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="colRed_Ranger" type="CollisionShape2D" parent="." unique_id=1965603713]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_fthvd")
+
+[node name="aHitbox" type="Area2D" parent="colRed_Ranger" unique_id=1152915397]
+
+[node name="colHitbox" type="CollisionShape2D" parent="colRed_Ranger/aHitbox" unique_id=1224214621]
+position = Vector2(-1.5, 0)
+shape = SubResource("CapsuleShape2D_fwnx2")
+debug_color = Color(0.7923543, 0.14861065, 0.26612127, 0.41960785)
