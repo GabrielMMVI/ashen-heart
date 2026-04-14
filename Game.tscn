@@ -861,13 +861,13 @@ sources/0 = SubResource("TileSetAtlasSource_sb48q")
 [node name="Game" type="Node2D" unique_id=946468458]
 
 [node name="chbRed_Ranger" parent="." unique_id=765468334 instance=ExtResource("1_yx171")]
-position = Vector2(316, 473)
+position = Vector2(327, 398)
 
 [node name="chbRed_Soldier" parent="." unique_id=886209351 instance=ExtResource("3_u44n3")]
 position = Vector2(256, 446)
 
 [node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_wbfu4")]
-position = Vector2(16, 488)
+position = Vector2(26, 238)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=489731479]
 
@@ -880,8 +880,18 @@ z_index = -1
 tile_set = SubResource("TileSet_r0x5m")
 
 [node name="csBackground" type="Sprite2D" parent="Tiles/tmpBackground" unique_id=1686206699]
-position = Vector2(600.00006, 296)
-scale = Vector2(4.1388893, 2.6923077)
+position = Vector2(531.5, 296.625)
+scale = Vector2(3.7256942, 2.8906248)
+texture = ExtResource("5_t88pq")
+
+[node name="csBackground2" type="Sprite2D" parent="Tiles/tmpBackground" unique_id=1709834172]
+position = Vector2(1549, 297)
+scale = Vector2(3.7256942, 2.8906248)
+texture = ExtResource("5_t88pq")
+
+[node name="csBackground3" type="Sprite2D" parent="Tiles/tmpBackground" unique_id=1315830677]
+position = Vector2(2265, 296.00003)
+scale = Vector2(3.7256942, 2.8906248)
 texture = ExtResource("5_t88pq")
 
 [node name="tmpDecorationFront" type="TileMapLayer" parent="Tiles" unique_id=1953296076]

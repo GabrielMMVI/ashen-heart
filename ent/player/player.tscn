@@ -1067,7 +1067,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vowie"]
 size = Vector2(20, 15.882351)
 
-[node name="chbPlayer" type="CharacterBody2D" unique_id=261209851]
+[node name="chbPlayer" type="CharacterBody2D" unique_id=261209851 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_gfv6k")
 
@@ -1080,10 +1080,11 @@ shape = SubResource("CapsuleShape2D_ncg78")
 z_index = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
-animation = &"attack_axe"
+animation = &"attack_melee"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
+visible = false
 limit_left = 0
 limit_bottom = 600
 
