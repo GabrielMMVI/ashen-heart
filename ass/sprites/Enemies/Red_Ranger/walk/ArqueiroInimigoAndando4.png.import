@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgglt3feu0jyw"
-path="res://.godot/imported/ArqueiroAtaquando5.png-9af5fd279aaf4c051f58ba019474cdda.ctex"
+uid="uid://dlejpsapphlma"
+path="res://.godot/imported/ArqueiroInimigoAndando4.png-727469bbab439d3728934b951da9acb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ass/sprites/Enemies/Arrow_Red/ArqueiroAtaquando5.png"
-dest_files=["res://.godot/imported/ArqueiroAtaquando5.png-9af5fd279aaf4c051f58ba019474cdda.ctex"]
+source_file="res://ass/sprites/Enemies/Red_Ranger/walk/ArqueiroInimigoAndando4.png"
+dest_files=["res://.godot/imported/ArqueiroInimigoAndando4.png-727469bbab439d3728934b951da9acb0.ctex"]
 
 [params]
 

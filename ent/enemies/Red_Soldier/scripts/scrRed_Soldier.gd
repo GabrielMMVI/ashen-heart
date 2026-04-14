@@ -11,7 +11,7 @@ const SPEED := 50.0
 # ==============================================================================
 # Assumi o nome 'ansprEnemy' seguindo a convenção usada no seu Player.
 # Ajuste se o nome do nó no seu cenário for diferente.
-@onready var _sprite: AnimatedSprite2D = $ansprEnemy
+@onready var _sprite: AnimatedSprite2D = $ansprRed_Soldier
 
 # ==============================================================================
 # ESTADO INTERNO
