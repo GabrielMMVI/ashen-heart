@@ -10,7 +10,7 @@ const ATTACK_RANGE := 60.0  # distância para iniciar o ataque
 # ==============================================================================
 # NÓS REFERENCIADOS
 # ==============================================================================
-@onready var _sprite: AnimatedSprite2D = $ansprEnemy
+@onready var _sprite: AnimatedSprite2D = $ansprRed_Ranger
 @onready var _hitbox_col: CollisionShape2D = $aHitbox/colHitbox
 @onready var _hitbox: Area2D = $aHitbox
 
