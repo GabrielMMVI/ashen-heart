@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cng26dvleipi2"]
+
+[ext_resource type="Texture2D" uid="uid://bqlnxyru3uavr" path="res://ass/projectiles/basic_Arrow/basic_Arrow.png" id="1_63pov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w04ti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iaxd"]
+atlas = ExtResource("1_63pov")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3hd6"]
+atlas = ExtResource("1_63pov")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi6v6"]
+atlas = ExtResource("1_63pov")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqj6"]
+atlas = ExtResource("1_63pov")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqgg4"]
+atlas = ExtResource("1_63pov")
+region = Rect2(4096, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r2nm"]
+atlas = ExtResource("1_63pov")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n32o"]
+atlas = ExtResource("1_63pov")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xw0s"]
+atlas = ExtResource("1_63pov")
+region = Rect2(2048, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tc4f"]
+atlas = ExtResource("1_63pov")
+region = Rect2(3072, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g5ba"]
+atlas = ExtResource("1_63pov")
+region = Rect2(4096, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d8t4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iaxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3hd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi6v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqgg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r2nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n32o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xw0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tc4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g5ba")
+}],
+"loop": true,
+"name": &"arrowPlayer",
+"speed": 5.0
+}]
+
+[node name="playerArrow_scene" type="Area2D" unique_id=1137888414]
+
+[node name="colHitbox" type="CollisionShape2D" parent="." unique_id=1839851529]
+shape = SubResource("RectangleShape2D_w04ti")
+
+[node name="ansprArrowPlayer" type="AnimatedSprite2D" parent="." unique_id=1110359475]
+sprite_frames = SubResource("SpriteFrames_d8t4a")
+animation = &"arrowPlayer"
