@@ -93,7 +93,7 @@ scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_8m8gm")
 debug_color = Color(0.9337528, 0.19644475, 0.43053687, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=420473271]
+[node name="ansprArrow" type="AnimatedSprite2D" parent="." unique_id=420473271]
 scale = Vector2(0.029, 0.029)
 sprite_frames = SubResource("SpriteFrames_55a7p")
 animation = &"arrow"
