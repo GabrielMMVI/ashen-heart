@@ -40,6 +40,8 @@ func _physics_process(delta: float) -> void:
 		_handle_movement()
 	else:
 		velocity.x = 0 # Garante que ele fique cravado no chão ao atacar
+		if _player != null and global_position.distance_to(_player.global_position) <= ATTACK_RANGE:
+			_direction = 1 if _player.global_position.x > global_position.x else -1
 	
 	_update_animation()
 	move_and_slide()
