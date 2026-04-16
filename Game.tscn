@@ -1118,6 +1118,8 @@ tile_map_data = PackedByteArray("AAAAACAAAAAAAAAAAAAAACEAAAAAAAEAAAAAACIAAAAAAAI
 tile_set = SubResource("TileSet_sb48q")
 
 [node name="tmpDecorationFront" type="TileMapLayer" parent="Tiles" unique_id=1953296076]
+light_mask = 8
+visibility_layer = 8
 z_index = 1
 tile_set = SubResource("TileSet_t88pq")
 
