@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ctoitytgmpu1f" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="10_yyih5"]
 [ext_resource type="Texture2D" uid="uid://cdu8hh4k2f7ac" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="11_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://bqsj1spoiwkg3" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="12_lvtmh"]
+[ext_resource type="PackedScene" uid="uid://ck7c6be6i8len" path="res://ent/player/player_hud.tscn" id="15_qjyg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx171"]
 texture = ExtResource("4_2vekm")
@@ -1168,3 +1169,5 @@ position = Vector2(0, 224)
 scale = Vector2(2.296875, 1.2485551)
 texture = ExtResource("9_lvtmh")
 centered = false
+
+[node name="playerHUD" parent="." unique_id=856289792 instance=ExtResource("15_qjyg3")]
