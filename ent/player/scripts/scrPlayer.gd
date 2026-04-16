@@ -4,7 +4,7 @@ extends CharacterBody2D
 # CONSTANTES
 # ==============================================================================
 const SPEED := 100.0
-const JUMP_VELOCITY := -300.0
+const JUMP_VELOCITY := -250.0
 const MAX_HEALTH := 100
 
 # ==============================================================================

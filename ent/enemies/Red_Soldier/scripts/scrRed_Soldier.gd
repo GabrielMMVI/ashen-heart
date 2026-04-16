@@ -14,6 +14,8 @@ const CHASE_RANGE := 200
 @onready var _sprite: AnimatedSprite2D = $ansprRed_Soldier
 @onready var _hitbox_col: CollisionShape2D = $aHitbox/colHitbox
 @onready var _hitbox: Area2D = $aHitbox
+@onready var _hurtbox_col: CollisionShape2D = $aHurtbox/colHurtbox 
+@onready var _hurtbox: Area2D = $aHurtbox
 
 # ==============================================================================
 # ESTADO INTERNO
@@ -26,7 +28,7 @@ var _player: Node2D = null
 # PRONTO
 # ==============================================================================
 func _ready() -> void:
-	_hitbox_col.disabled = false
+	_hurtbox_col.disabled = false
 	_sprite.animation_finished.connect(_on_animation_finished)
 	_sprite.frame_changed.connect(_on_frame_changed)
 	_hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -93,12 +95,17 @@ func _try_attack() -> void:
 func _update_animation() -> void:
 	_sprite.flip_h = _direction < 0
 	
+	# Garante que a Hitbox física mude de lado junto com o visual do sprite.
+	if _hitbox.position.x != 0:
+		_hitbox.position.x = abs(_hitbox.position.x) * _direction
+	if _hitbox_col.position.x != 0:
+		_hitbox_col.position.x = abs(_hitbox_col.position.x) * _direction
+	
 	if _is_attacking:
 		return
 	
 	if is_on_floor():
 		_sprite.play("walk")
-
 # ==============================================================================
 # HITBOX - Ativa só nos frames de impacto
 # ==============================================================================
