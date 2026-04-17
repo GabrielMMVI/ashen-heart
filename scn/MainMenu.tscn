@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b6dlksu4lrxum"]
+
+[ext_resource type="Script" uid="uid://eaqjufq1dkaq" path="res://scn/scripts/scrMainMenu.gd" id="1_snugt"]
+
+[node name="MainMenu" type="Control" unique_id=1133715416]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_snugt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=633654479]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1153234278]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1506046439]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=174565953]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=171811245]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2095152915]
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
