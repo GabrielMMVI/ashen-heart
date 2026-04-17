@@ -1,6 +1,13 @@
 extends CharacterBody2D
 
 # ==============================================================================
+# SINAIS
+# ==============================================================================
+# Cria o sinal que vai avisar a HUD e enviar o nome da arma
+signal weapon_changed(weapon_name: String)
+signal health_changed(current_health: int, max_health: int)
+
+# ==============================================================================
 # CONSTANTES
 # ==============================================================================
 const SPEED := 100.0
@@ -53,30 +60,30 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	# Garante que a vida inicie cheia, útil caso você exporte a variável de vida inicial futuramente.
 	_current_health = MAX_HEALTH
+	# Emite o sinal no primeiro frame para a HUD carregar a arma inicial corretamente
+	call_deferred("emit_signal", "weapon_changed", WEAPON_NAMES[_current_weapon])
+	call_deferred("emit_signal", "health_changed", _current_health, MAX_HEALTH)
 	
 # ==============================================================================
 # SISTEMA DE VIDA
 # ==============================================================================
 func take_damage(amount: int) -> void:
 	if _current_health <= 0:
-		return # Ignora dano se já estiver morto
+		return 
 		
 	_current_health -= amount
-	_current_health = max(0, _current_health) # max() impede que a vida fique negativa
+	_current_health = max(0, _current_health) 
 	
 	print("Dano recebido! Vida atual: ", _current_health, "/", MAX_HEALTH)
 	
-	# Emite o sinal. Quando o HUD existir, ele vai "escutar" isso para atualizar a barra.
-	#health_changed.emit(_current_health, MAX_HEALTH)
+	# Dispara o sinal avisando a HUD
+	health_changed.emit(_current_health, MAX_HEALTH)
 	
 	if _current_health == 0:
 		_die()
 
 func _die() -> void:
 	print("Player Morreu!")
-	#died.emit()
-	
-	# Desativa processamento físico para o personagem parar de se mover e cair imediatamente.
 	set_physics_process(false) 
 	
 	# TODO: Tocar animação de morte, invocar menu de Game Over, etc.
@@ -95,7 +102,12 @@ func _switch_weapon(direction: int) -> void:
 	
 	var total: int = Weapon.size()
 	_current_weapon = (_current_weapon + direction + total) % total
-	print("Arma atual: ", WEAPON_NAMES[_current_weapon]) # TODO: substituir por HUD
+	
+	var weapon_name = WEAPON_NAMES[_current_weapon]
+	print("Arma atual: ", weapon_name) 
+	
+	# Emite o sinal enviando a string com o nome da arma
+	weapon_changed.emit(weapon_name)
 	
 	_sprite.play("switch_weapon")
 	await _sprite.animation_finished
@@ -111,6 +123,10 @@ func _handle_attack() -> void:
 
 func _perform_attack() -> void:
 	_is_attacking = true
+	
+	# TESTE: Tirando 1 de vida do próprio player a cada ataque
+	take_damage(1)
+	
 	_sprite.play(ATTACK_ANIMATIONS[_current_weapon])
 	await _sprite.animation_finished
 	_is_attacking = false
