@@ -28,3 +28,13 @@ $ByAtom$
     - Pasta: ent
       - Sempre salve os scripts das entidades na pasta scripts
 ___
+## Sugestão de commits
+- Se quiserem usar o padrão de commit que eu sempre faço fiquem a vontade (Não é necessário)
+    - Exemplo:
+# Título do commit (Geralmente o arquivo que você mexeu ou uma breve descrição)
+  - [+] Quando adicionar alguma coisa coloque esse sinal [+]
+      - [+] Se tiver outras coisas menores que pertencem a essa alteração faça esse sinal com uma identação
+  - [\*] Quando corrigir um bug ou alterar alguma coisa use esse símbolo
+      - [\*] Mesma regra para sub alterações (Pro texto não ficar em itálico, coloque '\' antes do '*')
+  - [-] Quando remover algum arquivo ou função
+  - [!] Quando implementar algo que necessita de atenção, revisão ou precisa ser terminada
