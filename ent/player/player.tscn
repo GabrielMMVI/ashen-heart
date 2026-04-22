@@ -978,7 +978,7 @@ frame_progress = 1.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
 visible = false
 limit_left = 0
-limit_bottom = 600
+limit_bottom = 800
 
 [node name="aHitbox" type="Area2D" parent="." unique_id=1877180658]
 
