@@ -3,15 +3,18 @@ extends CharacterBody2D
 # ==============================================================================
 # SINAIS
 # ==============================================================================
-# Cria o sinal que vai avisar a HUD e enviar o nome da arma
 signal weapon_changed(weapon_name: String)
+# Novo sinal para a vida, enviando a vida atual e a máxima
 signal health_changed(current_health: int, max_health: int)
 
 # ==============================================================================
 # CONSTANTES
 # ==============================================================================
 const SPEED := 100.0
-const JUMP_VELOCITY := -250.0
+# Velocidade inicial menor = personagem sobe mais devagar
+const JUMP_VELOCITY := -260.0 
+# Gravidade exclusiva do player (reduzida para compensar a perda de força e manter a altura)
+const PLAYER_GRAVITY := 550.0
 const MAX_HEALTH := 100
 
 # ==============================================================================
@@ -57,11 +60,11 @@ func _physics_process(delta: float) -> void:
 	_handle_movement()
 	_update_animation()
 	move_and_slide()
+
 func _ready() -> void:
-	# Garante que a vida inicie cheia, útil caso você exporte a variável de vida inicial futuramente.
 	_current_health = MAX_HEALTH
-	# Emite o sinal no primeiro frame para a HUD carregar a arma inicial corretamente
 	call_deferred("emit_signal", "weapon_changed", WEAPON_NAMES[_current_weapon])
+	# Emite a vida inicial para a HUD preencher a barra logo que o jogo abre
 	call_deferred("emit_signal", "health_changed", _current_health, MAX_HEALTH)
 	
 # ==============================================================================
@@ -85,8 +88,7 @@ func take_damage(amount: int) -> void:
 func _die() -> void:
 	print("Player Morreu!")
 	set_physics_process(false) 
-	
-	# TODO: Tocar animação de morte, invocar menu de Game Over, etc.
+
 # ==============================================================================
 # SISTEMA DE ARMAS
 # ==============================================================================
@@ -102,11 +104,8 @@ func _switch_weapon(direction: int) -> void:
 	
 	var total: int = Weapon.size()
 	_current_weapon = (_current_weapon + direction + total) % total
-	
 	var weapon_name = WEAPON_NAMES[_current_weapon]
-	print("Arma atual: ", weapon_name) 
 	
-	# Emite o sinal enviando a string com o nome da arma
 	weapon_changed.emit(weapon_name)
 	
 	_sprite.play("switch_weapon")
@@ -136,17 +135,23 @@ func _perform_attack() -> void:
 # ==============================================================================
 func _handle_gravity(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		# Substitui a gravidade global (get_gravity) pela gravidade própria
+		velocity.y += PLAYER_GRAVITY * delta
 
 func _handle_jump() -> void:
-	# Removidas as travas de ataque e troca, permitindo pular a qualquer momento
+	# Pulo inicial: aplica a força total quando o botão é pressionado no chão
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	# Pulo dinâmico: se o jogador soltar o botão ("just_released") 
+	# ENQUANTO o personagem estiver subindo (velocity.y < 0)
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		# Corta a velocidade vertical pela metade (reduz a altura)
+		velocity.y *= 0.5
 
 func _handle_movement() -> void:
 	var direction := Input.get_axis("left", "right")
 
-	# Removidas as travas de ataque e troca. Apenas verifica se não há input.
 	if direction == 0:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
@@ -157,11 +162,8 @@ func _handle_movement() -> void:
 # ANIMAÇÕES
 # ==============================================================================
 func _update_animation() -> void:
-	# Atualiza a direção do sprite antes do "return" para permitir 
-	# virar o personagem de lado mesmo durante a animação de ataque/troca.
 	_sprite.flip_h = not _facing_right
 
-	# Impede que as animações de andar/pular cancelem a animação de ataque/troca em andamento.
 	if _is_attacking or _is_switching:
 		return
 
