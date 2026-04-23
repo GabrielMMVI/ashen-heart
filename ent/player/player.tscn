@@ -980,7 +980,7 @@ visible = false
 limit_left = 0
 limit_bottom = 800
 
-[node name="aHitbox" type="Area2D" parent="." unique_id=1877180658]
+[node name="aHitbox" type="Area2D" parent="." unique_id=1877180658 groups=["hitbox_player"]]
 
 [node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1137092379]
 z_index = 1
