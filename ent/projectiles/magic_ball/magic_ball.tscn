@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bwv5xdg66o8gu"]
+
+[ext_resource type="Texture2D" uid="uid://b36cqbxlh01xy" path="res://ass/projectiles/magic_ball/magic_ball1.png" id="1_8vcn2"]
+[ext_resource type="Script" uid="uid://b6rw27wecjo8m" path="res://ent/player/projectiles/magic_ball/scrMagic_ball.gd" id="1_henb2"]
+[ext_resource type="Texture2D" uid="uid://co2qf3csy6pe2" path="res://ass/projectiles/magic_ball/magic_ball2.png" id="2_kg3qo"]
+[ext_resource type="Texture2D" uid="uid://cltucpek1hrar" path="res://ass/projectiles/magic_ball/magic_ball3.png" id="3_0687s"]
+[ext_resource type="Texture2D" uid="uid://0m0oyh4yq3vs" path="res://ass/projectiles/magic_ball/magic_ball4.png" id="4_7fppf"]
+[ext_resource type="Texture2D" uid="uid://cpqy1by32pnmk" path="res://ass/projectiles/magic_ball/magic_ball5.png" id="5_1tkl4"]
+[ext_resource type="Texture2D" uid="uid://w3c2jjaqkh8" path="res://ass/projectiles/magic_ball/magic_ball6.png" id="6_yqm8h"]
+[ext_resource type="Texture2D" uid="uid://bf36rxq3s4u1u" path="res://ass/projectiles/magic_ball/magic_ball7.png" id="7_b0r1n"]
+[ext_resource type="Texture2D" uid="uid://bexg2bfrsmj75" path="res://ass/projectiles/magic_ball/magic_ball8.png" id="8_gneap"]
+[ext_resource type="Texture2D" uid="uid://8vm2fqchv0sf" path="res://ass/projectiles/magic_ball/magic_ball9.png" id="9_w4cga"]
+[ext_resource type="Texture2D" uid="uid://dwjgw0bi1cuk7" path="res://ass/projectiles/magic_ball/magic_ball10.png" id="10_scmcq"]
+[ext_resource type="Texture2D" uid="uid://dsfs2h7cwf5sl" path="res://ass/projectiles/magic_ball/magic_ball11.png" id="11_t76lp"]
+[ext_resource type="Texture2D" uid="uid://4nd4y51aqjhu" path="res://ass/projectiles/magic_ball/magic_ball12.png" id="12_4dq26"]
+[ext_resource type="Texture2D" uid="uid://ceo1xfbpqkdrf" path="res://ass/projectiles/magic_ball/magic_ball13.png" id="13_n0yv5"]
+[ext_resource type="Texture2D" uid="uid://wuse2hd3pxv4" path="res://ass/projectiles/magic_ball/magic_ball14.png" id="14_i4jfv"]
+[ext_resource type="Texture2D" uid="uid://5im8bhxxgti8" path="res://ass/projectiles/magic_ball/magic_ball15.png" id="15_1mhts"]
+[ext_resource type="Texture2D" uid="uid://8i1iewob8305" path="res://ass/projectiles/magic_ball/magic_ball16.png" id="16_t3q1r"]
+[ext_resource type="Texture2D" uid="uid://b85fbl6ev7nlj" path="res://ass/projectiles/magic_ball/magic_ball17.png" id="17_q7h60"]
+[ext_resource type="Texture2D" uid="uid://cjo088cdlmksd" path="res://ass/projectiles/magic_ball/magic_ball18.png" id="18_8n34e"]
+[ext_resource type="Texture2D" uid="uid://8gw2rhi5guin" path="res://ass/projectiles/magic_ball/magic_ball19.png" id="19_qt5lf"]
+[ext_resource type="Texture2D" uid="uid://c24i34h2lmttw" path="res://ass/projectiles/magic_ball/magic_ball20.png" id="20_kdq4d"]
+[ext_resource type="Texture2D" uid="uid://c1pbjbf2mk4cm" path="res://ass/projectiles/magic_ball/magic_ball21.png" id="21_e5fo5"]
+[ext_resource type="Texture2D" uid="uid://dpy4dbg642y0f" path="res://ass/projectiles/magic_ball/magic_ball22.png" id="22_600ek"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xj1mr"]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ii3fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8vcn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kg3qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0687s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7fppf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1tkl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yqm8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b0r1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gneap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w4cga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_scmcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t76lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4dq26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n0yv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i4jfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1mhts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t3q1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q7h60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8n34e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qt5lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kdq4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e5fo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_600ek")
+}],
+"loop": true,
+"name": &"magic_ball",
+"speed": 30.0
+}]
+
+[node name="aMagic_Ball" type="Area2D" unique_id=719957620]
+script = ExtResource("1_henb2")
+
+[node name="colHitBox" type="CollisionShape2D" parent="." unique_id=494991309]
+shape = SubResource("CapsuleShape2D_xj1mr")
+debug_color = Color(0.9529412, 0.003921569, 0.3882353, 0.5176471)
+
+[node name="ansprMagic_Ball" type="AnimatedSprite2D" parent="." unique_id=353598908]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ii3fr")
+animation = &"magic_ball"
+frame_progress = 0.4913184
