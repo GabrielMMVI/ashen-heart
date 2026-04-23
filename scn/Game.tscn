@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cdu8hh4k2f7ac" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="11_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://bqsj1spoiwkg3" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="12_lvtmh"]
 [ext_resource type="PackedScene" uid="uid://ck7c6be6i8len" path="res://ent/player/player_hud.tscn" id="15_qjyg3"]
+[ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="16_6old6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx171"]
 texture = ExtResource("4_2vekm")
@@ -1104,7 +1105,7 @@ sources/0 = SubResource("TileSetAtlasSource_sb48q")
 [node name="Game" type="Node2D" unique_id=946468458]
 
 [node name="chbRed_Ranger" parent="." unique_id=765468334 instance=ExtResource("1_yx171")]
-position = Vector2(327, 398)
+position = Vector2(1200, 343)
 
 [node name="chbRed_Soldier" parent="." unique_id=886209351 instance=ExtResource("3_u44n3")]
 position = Vector2(256, 446)
@@ -1171,3 +1172,6 @@ texture = ExtResource("9_lvtmh")
 centered = false
 
 [node name="playerHUD" parent="." unique_id=856289792 instance=ExtResource("15_qjyg3")]
+
+[node name="chbRed_Mage" parent="." unique_id=1400295250 instance=ExtResource("16_6old6")]
+position = Vector2(277, 472)
