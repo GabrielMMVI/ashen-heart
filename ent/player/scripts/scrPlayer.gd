@@ -148,8 +148,6 @@ func _handle_attack() -> void:
 func _perform_attack() -> void:
 	_is_attacking = true
 
-	take_damage(1)
-
 	_sprite.play(ATTACK_ANIMATIONS[_current_weapon])
 	await _sprite.animation_finished
 	_is_attacking = false
