@@ -3,7 +3,8 @@ extends Area2D
 # ==============================================================================
 # CONSTANTES
 # ==============================================================================
-const DAMAGE := 15
+const DAMAGE := 15.0
+const SPEED := 60
 
 # ==============================================================================
 # VARIÁVEIS
@@ -26,11 +27,12 @@ func _ready() -> void:
 # ==============================================================================
 # FUNÇÃO CHAMADA PELO MAGO
 # ==============================================================================
-func fire(start_velocity: Vector2) -> void:
-	velocity = start_velocity
+func fire(direction: Vector2) -> void:
+	velocity = direction * SPEED
 	
 	# (Opcional) Faz o sprite rotacionar para apontar na direção do voo
 	rotation = velocity.angle()
+	print("ENEMYFIRE")
 
 # ==============================================================================
 # FÍSICA E MOVIMENTO (Sem Gravidade)
@@ -44,20 +46,19 @@ func _physics_process(delta: float) -> void:
 # DETECÇÃO DE COLISÃO
 # ==============================================================================
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
-			body.take_damage(DAMAGE)
-		queue_free()
+	if body.is_in_group("enemy"):
+		# Não colide consigo mesmo
+		return
 	else:
-		# Se bater no chão/parede (TileMap), a magia é destruída na hora
 		queue_free()
 # ==============================================================================
 # DETECÇÃO DE COLISÃO COM O PLAYER (aHitbox)
 # ==============================================================================
 func _on_area_entered(area: Area2D) -> void:
-		# Detecta o aHitbox do player pelo grupo
-	if area.is_in_group("hitbox_player"):
+		# Detecta o aHurtbox do player pelo grupo
+	if area.is_in_group("player"):
 		var player = area.get_parent()
 		if player.has_method("take_damage"):
 			player.take_damage(DAMAGE)
+			print("Tomou dano")
 		queue_free()

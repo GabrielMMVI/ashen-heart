@@ -22,13 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bhtgrny3bi3t2" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando9.png" id="19_nsaw2"]
 [ext_resource type="Texture2D" uid="uid://wmsv65edde5t" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando10.png" id="20_27tqv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojboh"]
-size = Vector2(11, 24)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrk32"]
-radius = 6.0
-height = 22.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_xn1tu"]
 animations = [{
 "frames": [{
@@ -112,20 +105,16 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="chbRed_Mage" type="CharacterBody2D" unique_id=1400295250]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojboh"]
+size = Vector2(11, 24)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrk32"]
+radius = 6.0
+height = 22.0
+
+[node name="chbRed_Mage" type="CharacterBody2D" unique_id=1400295250 groups=["enemy", "enemy_hurtbox"]]
 collision_layer = 4
 script = ExtResource("1_vxuok")
-
-[node name="colRed_Mage" type="CollisionShape2D" parent="." unique_id=1496667405]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_ojboh")
-debug_color = Color(2.2140146e-06, 0.60302186, 0.68427056, 0.41960785)
-
-[node name="aHurtBox" type="Area2D" parent="." unique_id=736438952]
-
-[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=509042156]
-shape = SubResource("CapsuleShape2D_vrk32")
-debug_color = Color(0.9433355, 0.10424618, 0.5427393, 0.41960785)
 
 [node name="ansprRed_Mage" type="AnimatedSprite2D" parent="." unique_id=1938718259]
 sprite_frames = SubResource("SpriteFrames_xn1tu")
@@ -134,5 +123,16 @@ autoplay = "idle"
 frame = 3
 frame_progress = 1.0
 
+[node name="colRed_Mage" type="CollisionShape2D" parent="." unique_id=1496667405]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ojboh")
+debug_color = Color(2.2140146e-06, 0.60302186, 0.68427056, 0.41960785)
+
+[node name="aHurtBox" type="Area2D" parent="." unique_id=736438952 groups=["enemy", "enemy_hurtbox"]]
+
+[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=509042156]
+shape = SubResource("CapsuleShape2D_vrk32")
+debug_color = Color(0.9433355, 0.10424618, 0.5427393, 0.41960785)
+
 [node name="mkShoot" type="Marker2D" parent="." unique_id=1981968312]
-position = Vector2(12, -7)
+position = Vector2(0, -7)
