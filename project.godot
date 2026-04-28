@@ -26,6 +26,8 @@ window/stretch/mode="viewport"
 
 damage=""
 player=""
+enemy=""
+platform=""
 
 [input]
 
