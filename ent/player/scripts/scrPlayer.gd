@@ -33,9 +33,10 @@ const WEAPON_NAMES: Dictionary = {
 }
 
 # ==============================================================================
-# NÓS REFERENCIADOS
+# NÓS REFERENCIADOS   
 # ==============================================================================
 @onready var _sprite: AnimatedSprite2D = $ansprPlayer
+@export var player_magic_ball: PackedScene = preload("res://ent/player/projectiles/magic_ball/player_magic_ball.tscn")
 
 # ==============================================================================
 # ESTADO INTERNO
@@ -50,7 +51,7 @@ var _start_position := Vector2.ZERO  # <- NOVO: salva posição inicial
 
 # ==============================================================================
 # PRONTO
-# ==============================================================================
+# ==============================================================================	
 func _ready() -> void:
 	add_to_group("player")
 	_start_position = global_position  # <- NOVO: guarda onde o player começa
@@ -69,6 +70,7 @@ func _physics_process(delta: float) -> void:
 	_handle_movement()
 	_update_animation()
 	move_and_slide()
+
 
 # ==============================================================================
 # SISTEMA DE VIDA
@@ -147,10 +149,33 @@ func _handle_attack() -> void:
 
 func _perform_attack() -> void:
 	_is_attacking = true
+	
+	# Se a arma atual for o cajado, instanciamos a magia
+	if _current_weapon == Weapon.STAFF:
+		_shoot_magic()
 
 	_sprite.play(ATTACK_ANIMATIONS[_current_weapon])
 	await _sprite.animation_finished
 	_is_attacking = false
+
+func _shoot_magic() -> void:
+	if not player_magic_ball:
+		push_error("Cena da bolinha mágica não associada no Player!")
+		return
+		
+	var playerball = player_magic_ball.instantiate()
+	get_tree().current_scene.add_child(playerball)
+	playerball.global_position = global_position
+	
+	# Coleta a posição exata do mouse no mundo do jogo
+	var mouse_pos = get_global_mouse_position()
+	
+	# Calcula o vetor direção normalizado do player até o mouse
+	var direction = global_position.direction_to(mouse_pos)
+	
+	# Passa apenas a direção para a bolinha
+	playerball.fire(direction)
+	print("PLAYERSHOT")
 
 # ==============================================================================
 # FÍSICA E MOVIMENTO
