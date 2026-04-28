@@ -6,6 +6,7 @@ extends CharacterBody2D
 const SPEED := 50.0
 const ARROW_SPEED_X := 350.0 # Define o quão rápido a flecha viaja horizontalmente
 const ATTACK_RANGE := 250.0 
+const MAX_HEALTH := 50
 
 # ==============================================================================
 # NÓS REFERENCIADOS & EXPORTS
@@ -20,11 +21,13 @@ const ATTACK_RANGE := 250.0
 var _direction := -1
 var _is_attacking := false
 var _player: Node2D = null
+var _current_health = MAX_HEALTH
 
 # ==============================================================================
 # PRONTO
 # ==============================================================================
 func _ready() -> void:
+	_current_health = MAX_HEALTH
 	_sprite.animation_finished.connect(_on_animation_finished)
 	_sprite.frame_changed.connect(_on_frame_changed)
 
@@ -45,6 +48,27 @@ func _physics_process(delta: float) -> void:
 	
 	_update_animation()
 	move_and_slide()
+	
+# ==============================================================================
+# SISTEMA DE VIDA
+# ==============================================================================
+func take_damage(amount: int) -> void:
+	if _current_health <= 0:
+		return
+		
+	_current_health -= amount
+	_current_health = max(0, _current_health)
+	
+	# Debug no console
+	print("Atirador Vermelho recebeu dano! Vida atual: ", _current_health, "/", MAX_HEALTH)
+	
+	if _current_health == 0:
+		_die()
+
+func _die() -> void:
+	print("Atirador Vermelho morreu!")
+	# Remove o nó do inimigo da cena com segurança, liberando a memória
+	queue_free()
 
 # ==============================================================================
 # FÍSICA E MOVIMENTO (PATRULHA SIMPLES)

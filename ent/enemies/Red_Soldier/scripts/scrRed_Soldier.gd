@@ -7,6 +7,7 @@ const SPEED := 50.0
 const ATTACK_DAMAGE := 10
 const ATTACK_RANGE := 60.0
 const CHASE_RANGE := 200
+const MAX_HEALTH := 70
 
 # ==============================================================================
 # NÓS REFERENCIADOS
@@ -23,11 +24,13 @@ const CHASE_RANGE := 200
 var _direction := -1
 var _is_attacking := false
 var _player: Node2D = null
+var _current_health = MAX_HEALTH
 
 # ==============================================================================
 # PRONTO
 # ==============================================================================
 func _ready() -> void:
+	_current_health = MAX_HEALTH
 	_hurtbox_col.disabled = false
 	_sprite.animation_finished.connect(_on_animation_finished)
 	_sprite.frame_changed.connect(_on_frame_changed)
@@ -48,6 +51,27 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 	move_and_slide()
 
+# ==============================================================================
+# SISTEMA DE VIDA
+# ==============================================================================
+func take_damage(amount: int) -> void:
+	if _current_health <= 0:
+		return
+		
+	_current_health -= amount
+	_current_health = max(0, _current_health)
+	
+	# Debug no console
+	print("Soldado Vermelho recebeu dano! Vida atual: ", _current_health, "/", MAX_HEALTH)
+	
+	if _current_health == 0:
+		_die()
+
+func _die() -> void:
+	print("Soldado Vermelho morreu!")
+	# Remove o nó do inimigo da cena com segurança, liberando a memória
+	queue_free()
+	
 # ==============================================================================
 # FÍSICA E MOVIMENTO
 # ==============================================================================
