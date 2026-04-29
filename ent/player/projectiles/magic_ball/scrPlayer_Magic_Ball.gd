@@ -12,9 +12,8 @@ const DAMAGE := 15
 # PRONTO
 # ==============================================================================
 func _ready() -> void:
+	area_entered.connect(_on_area_entered)
 	body_entered.connect(_on_body_entered)
-	
-	# Prevenção de vazamento de memória (destrói se voar para fora do mapa)
 	var timer := get_tree().create_timer(3.0)
 	timer.timeout.connect(queue_free)
 
@@ -46,13 +45,9 @@ func _on_body_entered(body: Node2D) -> void:
 # DETECÇÃO DE COLISÃO COM O INIMIGO (aHurtbox)
 # ==============================================================================
 func _on_area_entered(area: Area2D) -> void:
-		# Detecta o aHitbox do inimigo pelo grupo
-	if area.is_in_group("enemy"):
+	# Padronizado para procurar especificamente a Hurtbox do Inimigo
+	if area.is_in_group("enemy_hurtbox"):
 		var enemy = area.get_parent()
 		if enemy.has_method("take_damage"):
 			enemy.take_damage(DAMAGE)
-			print("Tomou dano")
 		queue_free()
-	elif area.is_in_group("player"):
-		return
-	

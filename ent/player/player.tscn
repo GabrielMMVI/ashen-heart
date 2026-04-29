@@ -26,10 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://dej1a5u783kyq" path="res://ass/sprites/Player/walk/Movimento6.png" id="16_7ve08"]
 [ext_resource type="Texture2D" uid="uid://cwrdl0comexug" path="res://ass/sprites/Player/walk/Movimento7.png" id="17_cp6d2"]
 [ext_resource type="Texture2D" uid="uid://ws7pcp60gsdp" path="res://ass/sprites/Player/walk/Movimento8.png" id="18_rmye5"]
+[ext_resource type="Texture2D" uid="uid://c2rkykriuyh0v" path="res://ass/sprites/Player/attack_melee/AtaqueMele1.png" id="19_5ocvo"]
 [ext_resource type="Texture2D" uid="uid://c7q7cwrmgwtis" path="res://ass/sprites/Player/walk/Movimento9.png" id="19_vjege"]
+[ext_resource type="Texture2D" uid="uid://dx15r2x5jxd2u" path="res://ass/sprites/Player/attack_melee/AtaqueMele2.png" id="20_boyxf"]
 [ext_resource type="Texture2D" uid="uid://c25eo4eyjgf8k" path="res://ass/sprites/Player/walk/Movimento10.png" id="20_tujar"]
 [ext_resource type="Texture2D" uid="uid://khd3jpxvrula" path="res://ass/sprites/Player/walk/Movimento11.png" id="21_6afxj"]
+[ext_resource type="Texture2D" uid="uid://p6h2qfdvq03a" path="res://ass/sprites/Player/attack_melee/AtaqueMele3.png" id="21_bb37y"]
 [ext_resource type="Texture2D" uid="uid://drlm6n3r30d4l" path="res://ass/sprites/Player/walk/Movimento12.png" id="22_db7t0"]
+[ext_resource type="Texture2D" uid="uid://b3u8joduf0psl" path="res://ass/sprites/Player/attack_melee/AtaqueMele4.png" id="22_w3pjm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncg78"]
 radius = 6.0
@@ -913,6 +917,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("19_5ocvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_boyxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bb37y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w3pjm")
+}],
+"loop": true,
+"name": &"sword_slash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("11_ncg78")
 }, {
 "duration": 1.0,
@@ -956,6 +977,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vowie"]
 size = Vector2(20, 15.882351)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knolm"]
+size = Vector2(18, 18)
+
 [node name="chbPlayer" type="CharacterBody2D" unique_id=261209851 groups=["player", "player_hurtbox"]]
 z_index = 3
 collision_layer = 2
@@ -970,9 +994,9 @@ shape = SubResource("CapsuleShape2D_ncg78")
 z_index = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
-animation = &"attack_magic"
+animation = &"attack_melee"
 autoplay = "idle"
-frame = 3
+frame = 4
 frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
@@ -987,3 +1011,10 @@ position = Vector2(0, 2.8000019)
 scale = Vector2(0.5430311, 1.3600004)
 shape = SubResource("RectangleShape2D_vowie")
 debug_color = Color(0.22893974, 0.63831055, 3.85046e-07, 0.41960785)
+
+[node name="aHitbox" type="Area2D" parent="." unique_id=1028782432]
+
+[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=2087569943]
+position = Vector2(15, 3)
+shape = SubResource("RectangleShape2D_knolm")
+debug_color = Color(0.7266022, 0.47470695, 0.087115504, 0.41960785)

@@ -15,8 +15,6 @@ const MAX_HEALTH := 70
 @onready var _sprite: AnimatedSprite2D = $ansprRed_Soldier
 @onready var _hitbox_col: CollisionShape2D = $aHitbox/colHitbox
 @onready var _hitbox: Area2D = $aHitbox
-@onready var _hurtbox_col: CollisionShape2D = $aHurtbox/colHurtbox
-@onready var _hurtbox: Area2D = $aHurtbox
 
 # ==============================================================================
 # ESTADO INTERNO
@@ -31,7 +29,6 @@ var _current_health = MAX_HEALTH
 # ==============================================================================
 func _ready() -> void:
 	_current_health = MAX_HEALTH
-	_hurtbox_col.disabled = false
 	_sprite.animation_finished.connect(_on_animation_finished)
 	_sprite.frame_changed.connect(_on_frame_changed)
 	# <- ATUALIZADO: detecta Area2D ao invés de body
@@ -154,7 +151,7 @@ func start_attack() -> void:
 
 # <- ATUALIZADO: detecta o aHitbox do player pelo grupo
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("hitbox_player"):
+	if area.is_in_group("player_hurtbox"):
 		var player = area.get_parent()
 		if player.has_method("take_damage"):
 			player.take_damage(ATTACK_DAMAGE)

@@ -120,7 +120,7 @@ size = Vector2(12, 24)
 radius = 6.0
 height = 26.0
 
-[node name="chbRed_Ranger" type="CharacterBody2D" unique_id=765468334]
+[node name="chbRed_Ranger" type="CharacterBody2D" unique_id=765468334 groups=["enemy"]]
 z_index = 1
 collision_layer = 4
 script = ExtResource("1_q3gbp")
@@ -136,10 +136,10 @@ frame_progress = 1.0
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_fthvd")
 
-[node name="aHurtBox" type="Area2D" parent="." unique_id=1152915397]
+[node name="aHurtBox" type="Area2D" parent="." unique_id=1152915397 groups=["enemy", "enemy_hurtbox"]]
 position = Vector2(1.5, 1)
 
-[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=1224214621]
+[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=1224214621 groups=["enemy", "enemy_hurtbox"]]
 position = Vector2(-1.5, 0)
 shape = SubResource("CapsuleShape2D_fwnx2")
 debug_color = Color(0.7923543, 0.14861065, 0.26612127, 0.41960785)
