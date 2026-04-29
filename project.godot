@@ -24,10 +24,11 @@ window/stretch/mode="viewport"
 
 [global_group]
 
-damage=""
 player=""
 enemy=""
 platform=""
+player_hurtbox=""
+enemy_hurtbox=""
 
 [input]
 
