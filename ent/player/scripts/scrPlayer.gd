@@ -13,6 +13,7 @@ const SPEED := 100.0
 const JUMP_VELOCITY := -260.0
 const PLAYER_GRAVITY := 550.0
 const MAX_HEALTH := 100
+const MELEE_DAMAGE := 20
 
 # ==============================================================================
 # ENUMS E MAPEAMENTOS
