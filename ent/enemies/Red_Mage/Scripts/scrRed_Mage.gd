@@ -3,20 +3,18 @@ extends CharacterBody2D
 # ==============================================================================
 # CONSTANTES
 # ==============================================================================
-const SPEED := 50.0
-const ATTACK_DAMAGE := 10
-const ATTACK_RANGE := 60.0
-const CHASE_RANGE := 200
-const MAX_HEALTH := 70
+const SPEED := 30.0 # Velocidade reduzida em relação ao Ranger
+const ATTACK_RANGE := 150.0 # Alcance reduzido
+const MAGIC_SPEED := 60.0 # Velocidade do projétil mágico
+const MAX_HEALTH := 50
 
 # ==============================================================================
-# NÓS REFERENCIADOS
+# EXPORTS E NÓS REFERENCIADOS
 # ==============================================================================
-@onready var _sprite: AnimatedSprite2D = $ansprRed_Soldier
-@onready var _hitbox_col: CollisionShape2D = $aHitbox/colHitbox
-@onready var _hitbox: Area2D = $aHitbox
-@onready var _hurtbox_col: CollisionShape2D = $aHurtbox/colHurtbox
-@onready var _hurtbox: Area2D = $aHurtbox
+@export var magic_ball_scene: PackedScene = preload("res://ent/projectiles/magic_ball/mage_magic_ball.tscn")
+
+@onready var _sprite: AnimatedSprite2D = $ansprRed_Mage
+@onready var _shoot_point: Marker2D = $mkShoot
 
 # ==============================================================================
 # ESTADO INTERNO
@@ -24,18 +22,15 @@ const MAX_HEALTH := 70
 var _direction := -1
 var _is_attacking := false
 var _player: Node2D = null
-var _current_health = MAX_HEALTH
+var _current_health:= MAX_HEALTH
 
 # ==============================================================================
 # PRONTO
 # ==============================================================================
 func _ready() -> void:
 	_current_health = MAX_HEALTH
-	_hurtbox_col.disabled = false
 	_sprite.animation_finished.connect(_on_animation_finished)
 	_sprite.frame_changed.connect(_on_frame_changed)
-	# <- ATUALIZADO: detecta Area2D ao invés de body
-	_hitbox.area_entered.connect(_on_hitbox_area_entered)
 
 # ==============================================================================
 # LOOP PRINCIPAL
@@ -47,10 +42,15 @@ func _physics_process(delta: float) -> void:
 	if not _is_attacking:
 		_try_attack()
 		_handle_movement()
+	else:
+		velocity.x = 0
+		# Atualiza a mira continuamente enquanto ataca
+		if _player != null and global_position.distance_to(_player.global_position) <= ATTACK_RANGE:
+			_direction = 1 if _player.global_position.x > global_position.x else -1
 	
 	_update_animation()
 	move_and_slide()
-
+	
 # ==============================================================================
 # SISTEMA DE VIDA
 # ==============================================================================
@@ -62,41 +62,30 @@ func take_damage(amount: int) -> void:
 	_current_health = max(0, _current_health)
 	
 	# Debug no console
-	print("Soldado Vermelho recebeu dano! Vida atual: ", _current_health, "/", MAX_HEALTH)
+	print("Mago Vermelho recebeu dano! Vida atual: ", _current_health, "/", MAX_HEALTH)
 	
 	if _current_health == 0:
 		_die()
 
 func _die() -> void:
-	print("Soldado Vermelho morreu!")
+	print("Mago Vermelho morreu!")
 	# Remove o nó do inimigo da cena com segurança, liberando a memória
 	queue_free()
-	
+
 # ==============================================================================
-# FÍSICA E MOVIMENTO
+# FÍSICA E MOVIMENTO (PATRULHA LENTA)
 # ==============================================================================
 func _handle_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 func _handle_movement() -> void:
-	if _player == null:
-		if is_on_wall():
-			_direction *= -1
-		velocity.x = _direction * SPEED
-		return
-
-	var distance := global_position.distance_to(_player.global_position)
-	if distance <= CHASE_RANGE:
-		_direction = 1 if _player.global_position.x > global_position.x else -1
-		velocity.x = _direction * SPEED
-	else:
-		if is_on_wall():
-			_direction *= -1
-		velocity.x = _direction * SPEED
+	if is_on_wall():
+		_direction *= -1
+	velocity.x = _direction * SPEED
 
 # ==============================================================================
-# DETECÇÃO DO PLAYER
+# DETECÇÃO DO PLAYER E LÓGICA DE ATAQUE
 # ==============================================================================
 func _find_player() -> void:
 	var players = get_tree().get_nodes_in_group("player")
@@ -106,45 +95,11 @@ func _find_player() -> void:
 func _try_attack() -> void:
 	if _player == null:
 		return
-
-	var distance := global_position.distance_to(_player.global_position)
-
-	if distance <= ATTACK_RANGE:
+	
+	if global_position.distance_to(_player.global_position) <= ATTACK_RANGE:
 		_direction = 1 if _player.global_position.x > global_position.x else -1
 		start_attack()
 
-# ==============================================================================
-# ANIMAÇÕES
-# ==============================================================================
-func _update_animation() -> void:
-	_sprite.flip_h = _direction < 0
-
-	if _hitbox.position.x != 0:
-		_hitbox.position.x = abs(_hitbox.position.x) * _direction
-	if _hitbox_col.position.x != 0:
-		_hitbox_col.position.x = abs(_hitbox_col.position.x) * _direction
-
-	if _is_attacking:
-		return
-
-	if is_on_floor():
-		_sprite.play("walk")
-
-# ==============================================================================
-# HITBOX - Ativa só nos frames de impacto
-# ==============================================================================
-func _on_frame_changed() -> void:
-	if _sprite.animation == "attack":
-		_hitbox_col.disabled = _sprite.frame not in [2, 3]
-
-func _on_animation_finished() -> void:
-	if _sprite.animation == "attack":
-		_is_attacking = false
-		_hitbox_col.disabled = true
-
-# ==============================================================================
-# ATAQUE
-# ==============================================================================
 func start_attack() -> void:
 	if _is_attacking:
 		return
@@ -152,9 +107,48 @@ func start_attack() -> void:
 	velocity.x = 0
 	_sprite.play("attack")
 
-# <- ATUALIZADO: detecta o aHitbox do player pelo grupo
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("hitbox_player"):
-		var player = area.get_parent()
-		if player.has_method("take_damage"):
-			player.take_damage(ATTACK_DAMAGE)
+# ==============================================================================
+# ANIMAÇÕES E EVENTOS
+# ==============================================================================
+func _update_animation() -> void:
+	_sprite.flip_h = _direction < 0
+	
+	if _is_attacking:
+		return
+	
+	if is_on_floor():
+		_sprite.play("walk")
+
+func _on_frame_changed() -> void:
+	# Instancia a magia no frame exato (Ajuste o "2" conforme a sua animação)
+	if _sprite.animation == "attack" and _sprite.frame == 3:
+		_enemy_shoot_magic()
+
+func _on_animation_finished() -> void:
+	if _sprite.animation == "attack":
+		if _player != null and global_position.distance_to(_player.global_position) <= ATTACK_RANGE:
+			_direction = 1 if _player.global_position.x > global_position.x else -1
+			_sprite.play("attack")
+		else:
+			_is_attacking = false
+
+# ==============================================================================
+# INSTANCIAÇÃO DO PROJÉTIL
+# ==============================================================================
+func _enemy_shoot_magic() -> void:
+	if not magic_ball_scene:
+		push_error("Magic Ball scene not assigned in Red_Mage!")
+		return
+		
+	var enemyball = magic_ball_scene.instantiate()
+	get_tree().current_scene.add_child(enemyball)
+	
+	var start_pos = _shoot_point.global_position if _shoot_point else global_position
+	enemyball.global_position = start_pos
+	
+	if _player != null and enemyball.has_method("fire"):
+		# Diferente do arco (que exige cálculo de gravidade), 
+		# a magia viaja em linha reta apontando direto para o alvo.
+		var direction_to_player = start_pos.direction_to(_player.global_position)
+		enemyball.fire(direction_to_player)
+		print("ENEMYSHOT")

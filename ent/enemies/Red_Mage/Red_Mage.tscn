@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://1ohpgwfear2w"]
+
+[ext_resource type="Script" uid="uid://dkg60wrdduj2q" path="res://ent/enemies/Red_Mage/Scripts/scrRed_Mage.gd" id="1_vxuok"]
+[ext_resource type="Texture2D" uid="uid://bli4wikqhdlgn" path="res://ass/sprites/Enemies/Red_Mago/attack/MagoInimigoAtaque1.png" id="1_ymaga"]
+[ext_resource type="Texture2D" uid="uid://nwh1mecevvtq" path="res://ass/sprites/Enemies/Red_Mago/attack/MagoInimigoAtaque2.png" id="2_vxuok"]
+[ext_resource type="Texture2D" uid="uid://ce82dj5bpwpcf" path="res://ass/sprites/Enemies/Red_Mago/attack/MagoInimigoAtaque3.png" id="3_3rsui"]
+[ext_resource type="Texture2D" uid="uid://bas067b7c4xvw" path="res://ass/sprites/Enemies/Red_Mago/attack/MagoInimigoAtaque4.png" id="4_uqtg2"]
+[ext_resource type="Texture2D" uid="uid://c6kx6dr65xxv3" path="res://ass/sprites/Enemies/Red_Mago/hurt/MagoInimigoHit.png" id="5_7jt5s"]
+[ext_resource type="Texture2D" uid="uid://dn5d6spth8r70" path="res://ass/sprites/Enemies/Red_Mago/idle/MagoInimigo1.png" id="6_s7uvk"]
+[ext_resource type="Texture2D" uid="uid://btr5w36cdoma" path="res://ass/sprites/Enemies/Red_Mago/idle/MagoInimigo2.png" id="7_nmwsj"]
+[ext_resource type="Texture2D" uid="uid://c17f6ccu5h28w" path="res://ass/sprites/Enemies/Red_Mago/idle/MagoInimigo3.png" id="8_uhgq3"]
+[ext_resource type="Texture2D" uid="uid://cqflnko3u7kmh" path="res://ass/sprites/Enemies/Red_Mago/idle/MagoInimigo4.png" id="9_j680y"]
+[ext_resource type="Texture2D" uid="uid://djga7wpxlwop8" path="res://ass/sprites/Enemies/Red_Mago/idle/MagoInimigo5.png" id="10_6ncot"]
+[ext_resource type="Texture2D" uid="uid://ckymhygwf5sts" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando1.png" id="11_3hess"]
+[ext_resource type="Texture2D" uid="uid://dfp0jcwkd1hg1" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando2.png" id="12_wgihf"]
+[ext_resource type="Texture2D" uid="uid://nejp0ofabpx6" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando3.png" id="13_mbgal"]
+[ext_resource type="Texture2D" uid="uid://dqoaob3s7eyk0" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando4.png" id="14_d4mv2"]
+[ext_resource type="Texture2D" uid="uid://bc4jx88mt8phu" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando5.png" id="15_t0346"]
+[ext_resource type="Texture2D" uid="uid://bx25y2m3rnlb7" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando6.png" id="16_unlqf"]
+[ext_resource type="Texture2D" uid="uid://csoaarnsfqsx7" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando7.png" id="17_pyenw"]
+[ext_resource type="Texture2D" uid="uid://357p4h2rdgfc" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando8.png" id="18_pgdbh"]
+[ext_resource type="Texture2D" uid="uid://bhtgrny3bi3t2" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando9.png" id="19_nsaw2"]
+[ext_resource type="Texture2D" uid="uid://wmsv65edde5t" path="res://ass/sprites/Enemies/Red_Mago/walk/MagoInimigoAndando10.png" id="20_27tqv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xn1tu"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_ymaga")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_vxuok")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_3rsui")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_uqtg2")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7jt5s")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s7uvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nmwsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uhgq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j680y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6ncot")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3hess")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wgihf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mbgal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d4mv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_t0346")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_unlqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pyenw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pgdbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nsaw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_27tqv")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojboh"]
+size = Vector2(11, 24)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrk32"]
+radius = 6.0
+height = 22.0
+
+[node name="chbRed_Mage" type="CharacterBody2D" unique_id=1400295250 groups=["enemy", "enemy_hurtbox"]]
+collision_layer = 4
+script = ExtResource("1_vxuok")
+
+[node name="ansprRed_Mage" type="AnimatedSprite2D" parent="." unique_id=1938718259]
+sprite_frames = SubResource("SpriteFrames_xn1tu")
+animation = &"attack"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="colRed_Mage" type="CollisionShape2D" parent="." unique_id=1496667405]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ojboh")
+debug_color = Color(2.2140146e-06, 0.60302186, 0.68427056, 0.41960785)
+
+[node name="aHurtBox" type="Area2D" parent="." unique_id=736438952 groups=["enemy", "enemy_hurtbox"]]
+
+[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=509042156]
+shape = SubResource("CapsuleShape2D_vrk32")
+debug_color = Color(0.9433355, 0.10424618, 0.5427393, 0.41960785)
+
+[node name="mkShoot" type="Marker2D" parent="." unique_id=1981968312]
+position = Vector2(0, -7)
