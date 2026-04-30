@@ -130,7 +130,7 @@ debug_color = Color(2.2140146e-06, 0.60302186, 0.68427056, 0.41960785)
 
 [node name="aHurtBox" type="Area2D" parent="." unique_id=736438952 groups=["enemy", "enemy_hurtbox"]]
 
-[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=509042156]
+[node name="colHurtBox" type="CollisionShape2D" parent="aHurtBox" unique_id=509042156 groups=["enemy", "enemy_hurtbox"]]
 shape = SubResource("CapsuleShape2D_vrk32")
 debug_color = Color(0.9433355, 0.10424618, 0.5427393, 0.41960785)
 
