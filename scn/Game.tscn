@@ -3807,6 +3807,12 @@ scale = Vector2(2.296875, 1.5028902)
 texture = ExtResource("11_qjyg3")
 centered = false
 
+[node name="Sprite2D2" type="Sprite2D" parent="Tiles/ParallaxBackground/3-Floresta" unique_id=154046410]
+position = Vector2(1781, 51)
+scale = Vector2(2.296875, 1.5028902)
+texture = ExtResource("11_qjyg3")
+centered = false
+
 [node name="2-Floresta2" type="ParallaxLayer" parent="Tiles/ParallaxBackground" unique_id=617337461]
 motion_scale = Vector2(0.6, 0.6)
 
