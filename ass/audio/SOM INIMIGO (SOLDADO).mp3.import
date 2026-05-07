@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gqo74xuudjjk"
+path="res://.godot/imported/SOM INIMIGO (SOLDADO).mp3-448ef17356e1e3f33a5e72b3b0e71d94.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/SOM INIMIGO (SOLDADO).mp3"
+dest_files=["res://.godot/imported/SOM INIMIGO (SOLDADO).mp3-448ef17356e1e3f33a5e72b3b0e71d94.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

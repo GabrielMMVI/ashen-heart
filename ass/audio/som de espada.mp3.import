@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdlf3k0dnluoi"
+path="res://.godot/imported/som de espada.mp3-d7e64bfdbe966a6c2dc73ea78fe094e1.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/som de espada.mp3"
+dest_files=["res://.godot/imported/som de espada.mp3-d7e64bfdbe966a6c2dc73ea78fe094e1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
