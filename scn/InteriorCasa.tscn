@@ -1,16 +1,17 @@
 [gd_scene format=4 uid="uid://yujmgrog8w62"]
 
-[ext_resource type="PackedScene" uid="uid://bv0j1mdb1i73m" path="res://ent/player/player.tscn" id="2_geayx"]
-[ext_resource type="Texture2D" uid="uid://4gjbrdoqtnxd" path="res://ass/packs/Free-Castle-Interior-Pixel-Game-Backgrounds/PNG/background 4/Plan 2.png" id="2_nyw22"]
-[ext_resource type="Texture2D" uid="uid://bsql4lah7i7d3" path="res://ass/packs/dungeon_sidescroller-Raou/Tilesetv3.png" id="3_axqpe"]
-[ext_resource type="Texture2D" uid="uid://dcu2scjhwxacm" path="res://ass/tiles/TilesetFloor(test).png" id="3_nyw22"]
-[ext_resource type="Texture2D" uid="uid://dojp580fjscq4" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Decor.png" id="4_icy42"]
-[ext_resource type="Texture2D" uid="uid://vio7pvg6gfbp" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Garden Decorations.png" id="6_xspx8"]
-[ext_resource type="Texture2D" uid="uid://co7fq66kd1cd8" path="res://ass/packs/dungeon_sidescroller-Raou/spr_torch.png" id="7_qjqrk"]
-[ext_resource type="Texture2D" uid="uid://c0xx88op1jpgo" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="8_xspx8"]
+[ext_resource type="PackedScene" uid="uid://bv0j1mdb1i73m" path="res://ent/player/player.tscn" id="1_508xc"]
+[ext_resource type="Texture2D" uid="uid://4gjbrdoqtnxd" path="res://ass/packs/Free-Castle-Interior-Pixel-Game-Backgrounds/PNG/background 4/Plan 2.png" id="2_1ucrf"]
+[ext_resource type="Texture2D" uid="uid://bsql4lah7i7d3" path="res://ass/packs/dungeon_sidescroller-Raou/Tilesetv3.png" id="3_m5wof"]
+[ext_resource type="Texture2D" uid="uid://dcu2scjhwxacm" path="res://ass/tiles/TilesetFloor(test).png" id="4_blja1"]
+[ext_resource type="Texture2D" uid="uid://dojp580fjscq4" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Decor.png" id="5_t5nbv"]
+[ext_resource type="Texture2D" uid="uid://vio7pvg6gfbp" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Garden Decorations.png" id="6_ja7rw"]
+[ext_resource type="Texture2D" uid="uid://co7fq66kd1cd8" path="res://ass/packs/dungeon_sidescroller-Raou/spr_torch.png" id="7_i1tv3"]
+[ext_resource type="Texture2D" uid="uid://c0xx88op1jpgo" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="8_g6aum"]
+[ext_resource type="Script" uid="uid://ngxytsv1ap1" path="res://scn/Saida.gd" id="9_rn4wc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icy42"]
-texture = ExtResource("2_nyw22")
+texture = ExtResource("2_1ucrf")
 0:17/0 = 0
 1:17/0 = 0
 2:17/0 = 0
@@ -157,7 +158,7 @@ texture = ExtResource("2_nyw22")
 35:19/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov2ic"]
-texture = ExtResource("3_axqpe")
+texture = ExtResource("3_m5wof")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -854,7 +855,7 @@ texture = ExtResource("3_axqpe")
 2:27/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or8uk"]
-texture = ExtResource("3_nyw22")
+texture = ExtResource("4_blja1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -915,7 +916,7 @@ texture = ExtResource("3_nyw22")
 2:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_axqpe"]
-texture = ExtResource("4_icy42")
+texture = ExtResource("5_t5nbv")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -1336,7 +1337,7 @@ texture = ExtResource("4_icy42")
 7:31/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ay2td"]
-texture = ExtResource("6_xspx8")
+texture = ExtResource("6_ja7rw")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1421,7 +1422,7 @@ texture = ExtResource("6_xspx8")
 12:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xspx8"]
-texture = ExtResource("7_qjqrk")
+texture = ExtResource("7_i1tv3")
 separation = Vector2i(1, 0)
 texture_region_size = Vector2i(20, 25)
 0:0/animation_columns = 4
@@ -1434,7 +1435,7 @@ texture_region_size = Vector2i(20, 25)
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjqrk"]
-texture = ExtResource("8_xspx8")
+texture = ExtResource("8_g6aum")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2011,7 +2012,7 @@ sources/7 = SubResource("TileSetAtlasSource_xspx8")
 sources/8 = SubResource("TileSetAtlasSource_qjqrk")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qdd1s"]
-texture = ExtResource("3_nyw22")
+texture = ExtResource("4_blja1")
 0:0/0 = 0
 0:0/0/z_index = -2
 1:0/0 = 0
@@ -2107,7 +2108,7 @@ texture = ExtResource("3_nyw22")
 0:4/1/z_index = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x11qb"]
-texture = ExtResource("3_axqpe")
+texture = ExtResource("3_m5wof")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2805,9 +2806,13 @@ texture = ExtResource("3_axqpe")
 sources/0 = SubResource("TileSetAtlasSource_qdd1s")
 sources/1 = SubResource("TileSetAtlasSource_x11qb")
 
-[node name="Fase2" type="Node2D" unique_id=1032814525]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tefgr"]
+radius = 9.0
+height = 52.0
 
-[node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("2_geayx")]
+[node name="InteriorCasa" type="Node2D" unique_id=1032814525]
+
+[node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_508xc")]
 position = Vector2(196, 332)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=950129447]
@@ -2819,3 +2824,11 @@ tile_set = SubResource("TileSet_or8uk")
 [node name="tmpBackgrund" type="TileMapLayer" parent="Tiles" unique_id=1692060552]
 tile_map_data = PackedByteArray("AAAKAA8AAAAGAAIAAAAKABAAAAAGAAIAAAAKABEAAAAGAAIAAAAKABIAAAAGAAIAAAAKABMAAAAGAAIAAAAKABQAAAAGAAIAAAAKABUAAAAGAAIAAAALAA8AAAAGAAIAAAALABAAAAAGAAIAAAALABEAAAAGAAIAAAALABIAAAAGAAIAAAALABMAAAAGAAIAAAALABQAAAAGAAIAAAALABUAAAAGAAIAAAAMAA8AAAAGAAIAAAAMABAAAAAGAAIAAAAMABEAAAAGAAIAAAAMABIAAAAHAAIAAAAMABMAAAAHAAIAAAAMABQAAAAHAAIAAAAMABUAAAAGAAIAAAANAA8AAAAGAAIAAAANABAAAAAGAAIAAAANABEAAAAGAAIAAAANABIAAAAGAAIAAAANABMAAAAGAAIAAAANABQAAAAGAAIAAAANABUAAAAGAAIAAAAOAA8AAAAGAAIAAAAOABAAAAAGAAIAAAAOABEAAAAGAAIAAAAOABIAAAAGAAIAAAAOABMAAAAAAAQAAQAOABQAAAAGAAIAAAAOABUAAAAGAAIAAAAPAA8AAAAGAAIAAAAPABAAAAAGAAIAAAAPABEAAAAGAAIAAAAPABIAAAAGAAIAAAAPABMAAAAGAAIAAAAPABQAAAAGAAIAAAAPABUAAAAGAAIAAAAQAA8AAAAGAAIAAAAQABAAAAAGAAIAAAAQABEAAAAGAAIAAAAQABIAAAAFAAIAAAAQABMAAAAFAAIAAAAQABQAAAAFAAIAAAAQABUAAAAGAAIAAAARAA8AAAAGAAIAAAARABAAAAAGAAIAAAARABEAAAAGAAIAAAARABIAAAAGAAIAAAARABMAAAAGAAIAAAARABQAAAAGAAIAAAARABUAAAAGAAIAAAASAA8AAAAGAAIAAAASABAAAAAGAAIAAAASABEAAAAGAAIAAAASABIAAAAHAAIAAAASABMAAAAHAAIAAAASABQAAAAHAAIAAAASABUAAAAGAAIAAAATAA8AAAAGAAIAAAATABAAAAAGAAIAAAATABEAAAAGAAIAAAATABIAAAAGAAIAAAATABMAAAAGAAIAAAATABQAAAAGAAIAAAATABUAAAAGAAIAAAAUAA8AAAAGAAIAAAAUABAAAAAGAAIAAAAUABEAAAAGAAIAAAAUABIAAAAGAAIAAAAUABMAAAAAAAQAAQAUABQAAAAGAAIAAAAUABUAAAAGAAIAAAAVAA8AAAAGAAIAAAAVABAAAAAGAAIAAAAVABEAAAAGAAIAAAAVABIAAAAGAAIAAAAVABMAAAAGAAIAAAAVABQAAAAGAAIAAAAVABUAAAAGAAIAAAAWAA8AAAAGAAIAAAAWABAAAAAGAAIAAAAWABEAAAAGAAIAAAAWABIAAAAFAAIAAAAWABMAAAAFAAIAAAAWABQAAAAFAAIAAAAWABUAAAAGAAIAAAAXAA8AAAAGAAIAAAAXABAAAAAGAAIAAAAXABEAAAAGAAIAAAAXABIAAAAGAAIAAAAXABMAAAAGAAIAAAAXABQAAAAGAAIAAAAXABUAAAAGAAIAAAAYAA8AAAAHAAIAAAAYABAAAAAGAAIAAAAYABEAAAAGAAIAAAAYABIAAAAGAAIAAAAYABMAAAAGAAIAAAAYABQAAAAGAAIAAAAYABUAAAAGAAIAAAA=")
 tile_set = SubResource("TileSet_axqpe")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=585852714]
+collision_mask = 2
+script = ExtResource("9_rn4wc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1618378199]
+position = Vector2(376, 336)
+shape = SubResource("CapsuleShape2D_tefgr")
