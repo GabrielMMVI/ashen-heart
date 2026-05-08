@@ -4,9 +4,9 @@ extends Area2D
 # VARIÁVEIS E CONSTANTES
 # ==============================================================================
 var velocity := Vector2.ZERO
-const SPEED := 100
-const DAMAGE := 15
-
+var is_stuck := false
+var custom_gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+const DAMAGE := 30
 
 # ==============================================================================
 # PRONTO
@@ -20,17 +20,19 @@ func _ready() -> void:
 # ==============================================================================
 # INICIALIZAÇÃO DO MOVIMENTO
 # ==============================================================================
-func fire(direction: Vector2) -> void:
-	# A bolinha tem a própria velocidade
-	velocity = direction * SPEED
-	rotation = velocity.angle()
-	print("PLAYERFIRE")
+func fire(start_velocity: Vector2) -> void:
+	velocity = start_velocity
 
 # ==============================================================================
-# FÍSICA E MOVIMENTO (Sem Gravidade)
+# FÍSICA E MOVIMENTO DA FLECHA
 # ==============================================================================
 func _physics_process(delta: float) -> void:
+	if is_stuck:
+		return
+
+	velocity.y += custom_gravity * delta
 	global_position += velocity * delta
+	rotation = velocity.angle()
 
 # ==============================================================================
 # DETECÇÃO DE COLISÃO

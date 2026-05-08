@@ -14,6 +14,7 @@ const JUMP_VELOCITY := -260.0
 const PLAYER_GRAVITY := 550.0
 const MAX_HEALTH := 100
 const MELEE_DAMAGE := 20
+const ARROW_SPEED_X := 450
 
 # ==============================================================================
 # ENUMS E MAPEAMENTOS
@@ -23,7 +24,7 @@ const ATTACK_ANIMATIONS: Dictionary = {
 	Weapon.SWORD: "attack_melee",
 	Weapon.BOW:   "attack_bow",
 	Weapon.STAFF: "attack_magic",
-	Weapon.AXE:   "attack_axe",
+	Weapon.AXE:   "attack_melee",
 }
 
 const WEAPON_NAMES: Dictionary = {
@@ -38,6 +39,9 @@ const WEAPON_NAMES: Dictionary = {
 # ==============================================================================
 @onready var _sprite: AnimatedSprite2D = $ansprPlayer
 @export var player_magic_ball: PackedScene = preload("res://ent/player/projectiles/magic_ball/player_magic_ball.tscn")
+@export var player_arrow: PackedScene = preload("res://ent/player/projectiles/basic_arrow/player_arrow_scene.tscn")
+@export var player_sword_slash: PackedScene = preload("res://ent/player/projectiles/Sword_Attack/Sword_Attack.tscn")
+@export var player_axe_slash: PackedScene = preload("res://ent/player/projectiles/Axe_Attack/Axe_Slash.tscn")
 
 # ==============================================================================
 # ESTADO INTERNO
@@ -154,10 +158,43 @@ func _perform_attack() -> void:
 	# Se a arma atual for o cajado, instanciamos a magia
 	if _current_weapon == Weapon.STAFF:
 		_shoot_magic()
+	elif _current_weapon == Weapon.BOW:
+		_shoot_arrow()
+	elif _current_weapon == Weapon.SWORD:
+		_attack_sword()
+	elif _current_weapon == Weapon.AXE:
+		_attack_axe()
 
 	_sprite.play(ATTACK_ANIMATIONS[_current_weapon])
 	await _sprite.animation_finished
+	
+	if _current_weapon == Weapon.AXE:
+		await get_tree().create_timer(0.6).timeout
+		
 	_is_attacking = false
+	
+func _attack_axe() -> void:
+	if not player_axe_slash:
+		push_error("Cena do machado não associada no PLayer!")
+		return
+		
+	var playeraxe = player_axe_slash.instantiate()
+	add_child(playeraxe)
+	if playeraxe.has_method("swing"):
+		playeraxe.swing(_facing_right)
+	
+	print("PLAYER: AXE")
+
+func _attack_sword() -> void:
+	if not player_sword_slash:
+		push_error("Cena da espada não associada no PLayer!")
+		return
+		
+	var playersword = player_sword_slash.instantiate()
+	add_child(playersword)
+	if playersword.has_method("swing"):
+		playersword.swing(_facing_right)
+	print("PLAYER: SWORD ATTACK")
 
 func _shoot_magic() -> void:
 	if not player_magic_ball:
@@ -176,7 +213,47 @@ func _shoot_magic() -> void:
 	
 	# Passa apenas a direção para a bolinha
 	playerball.fire(direction)
-	print("PLAYERSHOT")
+	print("PLAYER: MAGIC SHOT")
+
+func _shoot_arrow() -> void:
+	if not player_arrow:
+		push_error("Não encontrada cena da flecha associada ao player")
+		return
+		
+	var playerarrow = player_arrow.instantiate()
+	get_tree().current_scene.add_child(playerarrow)
+	
+	var start_pos = global_position
+	playerarrow.global_position = start_pos
+	
+	var mouse_pos = get_global_mouse_position()
+	
+	# Calcula a física do lançamento oblíquo do player até o mouse
+	var calculated_velocity = _calculate_trajectory(start_pos, mouse_pos)
+	
+	if playerarrow.has_method("fire"):
+		playerarrow.fire(calculated_velocity)
+		
+	print("PLAYER: ARROW SHOT")
+
+func _calculate_trajectory(start: Vector2, target: Vector2) -> Vector2:
+	# Puxa a gravidade global do Godot (a mesma que puxa a flecha para baixo)
+	var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+	var displacement = target - start
+	
+	# Tempo de voo baseado na distância X até o mouse
+	var time_of_flight = abs(displacement.x) / ARROW_SPEED_X
+	if time_of_flight <= 0.01:
+		time_of_flight = 0.01
+		
+	# Vetor X (Esquerda/Direita)
+	var velocity_x = ARROW_SPEED_X * sign(displacement.x)
+	
+	# Vetor Y (Força do arco para cima necessária para cair exatamente no mouse)
+	var velocity_y = (displacement.y - 0.5 * gravity * time_of_flight * time_of_flight) / time_of_flight
+	
+	return Vector2(velocity_x, velocity_y)
+
 
 # ==============================================================================
 # FÍSICA E MOVIMENTO
@@ -193,6 +270,11 @@ func _handle_jump() -> void:
 		velocity.y *= 0.5
 
 func _handle_movement() -> void:
+	
+	if _is_attacking and _current_weapon == Weapon.AXE:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		return
+		
 	var direction := Input.get_axis("left", "right")
 
 	if direction == 0:
@@ -200,6 +282,17 @@ func _handle_movement() -> void:
 	else:
 		velocity.x = direction * SPEED
 		_facing_right = direction > 0
+		
+func _handle_dash() -> void:
+	var mouse_pos = get_global_mouse_position()
+	var dash_direction = global_position.direction_to(mouse_pos)
+	
+	if Input.is_action_just_pressed("dash"):
+		if dash_direction == 0:
+			velocity.x = move_toward(velocity.x,0,SPEED*10)
+		else:
+			velocity.x = dash_direction*SPEED*10
+			_facing_right = dash_direction > 0
 
 # ==============================================================================
 # ANIMAÇÕES

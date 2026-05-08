@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bt4dn4hpm4iyc"]
+
+[ext_resource type="Script" uid="uid://ccykm20yghsul" path="res://ent/player/projectiles/Sword_Attack/scrSwordSlash.gd" id="1_heiuy"]
+[ext_resource type="Texture2D" uid="uid://c2rkykriuyh0v" path="res://ass/sprites/Player/attack_melee/AtaqueMele1.png" id="1_nb782"]
+[ext_resource type="Texture2D" uid="uid://dx15r2x5jxd2u" path="res://ass/sprites/Player/attack_melee/AtaqueMele2.png" id="2_heiuy"]
+[ext_resource type="Texture2D" uid="uid://p6h2qfdvq03a" path="res://ass/sprites/Player/attack_melee/AtaqueMele3.png" id="3_fgcq1"]
+[ext_resource type="Texture2D" uid="uid://b3u8joduf0psl" path="res://ass/sprites/Player/attack_melee/AtaqueMele4.png" id="4_1e8uw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s6gon"]
+radius = 32.0
+height = 80.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yuru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nb782")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_heiuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fgcq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1e8uw")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 11.0
+}]
+
+[node name="aSwordSlash" type="Area2D" unique_id=1027983284]
+script = ExtResource("1_heiuy")
+
+[node name="colSwordSlash" type="CollisionShape2D" parent="." unique_id=775368439]
+shape = SubResource("CapsuleShape2D_s6gon")
+
+[node name="ansprSwordSlash" type="AnimatedSprite2D" parent="." unique_id=133479744]
+sprite_frames = SubResource("SpriteFrames_0yuru")
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
