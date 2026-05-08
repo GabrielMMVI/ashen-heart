@@ -61,6 +61,8 @@ func take_damage(amount: int) -> void:
 	_current_health -= amount
 	_current_health = max(0, _current_health)
 	
+	_flash_damage()
+	
 	# Debug no console
 	print("Mago Vermelho recebeu dano! Vida atual: ", _current_health, "/", MAX_HEALTH)
 	
@@ -71,6 +73,11 @@ func _die() -> void:
 	print("Mago Vermelho morreu!")
 	# Remove o nó do inimigo da cena com segurança, liberando a memória
 	queue_free()
+
+func _flash_damage() -> void:
+	var tween := create_tween()
+	tween.tween_property(_sprite, "modulate", Color.RED, 0.1)
+	tween.tween_property(_sprite, "modulate", Color.WHITE, 0.1)
 
 # ==============================================================================
 # FÍSICA E MOVIMENTO (PATRULHA LENTA)
