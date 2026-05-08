@@ -4,7 +4,7 @@ extends Area2D
 # VARIÁVEIS E CONSTANTES
 # ==============================================================================
 var velocity := Vector2.ZERO
-const SPEED := 60.0
+const SPEED := 100
 const DAMAGE := 15
 
 
@@ -14,7 +14,7 @@ const DAMAGE := 15
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	body_entered.connect(_on_body_entered)
-	var timer := get_tree().create_timer(3.0)
+	var timer := get_tree().create_timer(5.0)
 	timer.timeout.connect(queue_free)
 
 # ==============================================================================
