@@ -42,7 +42,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -101,31 +101,42 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30554"]
-size = Vector2(14, 23)
+size = Vector2(14, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e40cg"]
+size = Vector2(9, 21)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1f3qg"]
 radius = 6.0
 height = 29.999992
 
-[node name="chbRed_Soldier" type="CharacterBody2D" unique_id=886209351]
+[node name="chbRed_Soldier" type="CharacterBody2D" unique_id=886209351 groups=["enemy", "enemy_hurtbox"]]
+z_index = 1
 collision_layer = 4
 script = ExtResource("1_1f3qg")
 
 [node name="ansprRed_Soldier" type="AnimatedSprite2D" parent="." unique_id=378034152]
 sprite_frames = SubResource("SpriteFrames_p4x4w")
-animation = &"walk"
+animation = &"attack"
 autoplay = "idle"
-frame = 10
+frame = 4
 frame_progress = 1.0
 
 [node name="colRed_Soldier" type="CollisionShape2D" parent="." unique_id=1702610371]
-position = Vector2(0, 1.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_30554")
 
-[node name="aHitbox" type="Area2D" parent="." unique_id=1851688362]
+[node name="aHitbox" type="Area2D" parent="." unique_id=392757325]
 
-[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1551766766 groups=["damage"]]
+[node name="colHitbox" type="CollisionShape2D" parent="aHitbox" unique_id=1222696603]
+position = Vector2(11.5, 0.5)
+shape = SubResource("RectangleShape2D_e40cg")
+debug_color = Color(0.99694437, 0, 0.22034687, 0.41960785)
+
+[node name="aHurtbox" type="Area2D" parent="." unique_id=1851688362 groups=["enemy", "enemy_hurtbox"]]
+
+[node name="colHurtbox" type="CollisionShape2D" parent="aHurtbox" unique_id=1551766766 groups=["enemy", "enemy_hurtbox"]]
 position = Vector2(0, 1)
 scale = Vector2(1, 0.8000002)
 shape = SubResource("CapsuleShape2D_1f3qg")
-debug_color = Color(0.94855636, 0.008988706, 0.5758382, 0.41960785)
+debug_color = Color(0.6133606, 0.5383171, 0, 0.41960785)

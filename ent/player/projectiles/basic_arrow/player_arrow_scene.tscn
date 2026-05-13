@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cng26dvleipi2"]
+
+[ext_resource type="Script" uid="uid://4lwrpk5i726s" path="res://ent/player/projectiles/basic_arrow/scrPlayer_Arrow.gd" id="1_26ysf"]
+[ext_resource type="Texture2D" uid="uid://bqlnxyru3uavr" path="res://ass/projectiles/basic_Arrow/basic_Arrow.png" id="1_63pov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w04ti"]
+size = Vector2(5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e86x4"]
+atlas = ExtResource("1_63pov")
+region = Rect2(4096, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etfeb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e86x4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="playerArrow_scene" type="Area2D" unique_id=1137888414]
+script = ExtResource("1_26ysf")
+
+[node name="colHitbox" type="CollisionShape2D" parent="." unique_id=1839851529]
+position = Vector2(6.5, -0.5)
+shape = SubResource("RectangleShape2D_w04ti")
+
+[node name="ansprArrow" type="AnimatedSprite2D" parent="." unique_id=1323144880]
+scale = Vector2(0.029, 0.029)
+sprite_frames = SubResource("SpriteFrames_etfeb")
+frame_progress = 0.51311743

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6dlksu4lrxum"]
 
 [ext_resource type="Script" uid="uid://eaqjufq1dkaq" path="res://scn/scripts/scrMainMenu.gd" id="1_snugt"]
-[ext_resource type="Texture2D" uid="uid://icxvjpha882l" path="res://OIG2.jpeg" id="2_srv40"]
+[ext_resource type="Texture2D" uid="uid://icxvjpha882l" path="res://scn/backgroundMainMenu.jpeg" id="2_srv40"]
 
 [node name="MainMenu" type="Control" unique_id=1133715416]
 layout_mode = 3
@@ -17,10 +17,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -604.0
-offset_top = -396.0
-offset_right = 604.0
-offset_bottom = 396.0
+offset_left = 1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_srv40")
