@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://0433426rlpnf"]
+
+[node name="Node2D" type="Node2D" unique_id=2026904536]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1598353909]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1496387584]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=329227553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/Panel" unique_id=417119574]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -23.5
+offset_right = 43.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel/CenterContainer" unique_id=2112208340]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=428999691]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=1361293110]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+text = "Tentar de novo"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=329088251]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+text = "Sair"
