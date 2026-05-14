@@ -2,8 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bv0j1mdb1i73m" path="res://ent/player/player.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dcu2scjhwxacm" path="res://ass/tiles/TilesetFloor(test).png" id="1_xkndl"]
-[ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="1_yx171"]
-[ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="3_u44n3"]
 [ext_resource type="Texture2D" uid="uid://c0xx88op1jpgo" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="4_2vekm"]
 [ext_resource type="TileSet" uid="uid://djc23jp4jxkxg" path="res://scn/new_tile_set.tres" id="5_cnsd7"]
 [ext_resource type="Texture2D" uid="uid://c5ymnpmbruurq" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Water Tiles sheet.png" id="5_joorw"]
@@ -19,11 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://06sbuhlvriw8" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="11_xdcg1"]
 [ext_resource type="Texture2D" uid="uid://bqsj1spoiwkg3" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="12_lvtmh"]
 [ext_resource type="PackedScene" uid="uid://ck7c6be6i8len" path="res://ent/player/player_hud.tscn" id="15_qjyg3"]
-[ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="16_6old6"]
 [ext_resource type="Script" uid="uid://d2m0k0ihgx8b0" path="res://scn/scripts/area_2d.gd" id="20_0881c"]
 [ext_resource type="Texture2D" uid="uid://cqahy471w51dx" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Angel Statue.png" id="20_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://jhupcwyr1mk8" path="res://scn/secret_wall.tscn" id="21_twl0x"]
+[ext_resource type="PackedScene" uid="uid://cp6dggvr4nkse" path="res://ent/spawners/SpawnerSoldado.tscn" id="22_fv8kv"]
 [ext_resource type="Script" uid="uid://upufg0red83a" path="res://scn/scripts/end_zone.gd" id="23_cnsd7"]
+[ext_resource type="PackedScene" uid="uid://btpiju343pan1" path="res://ent/spawners/SpawnerMago.tscn" id="23_x7jvh"]
+[ext_resource type="PackedScene" uid="uid://dpnidssqyajj8" path="res://ent/spawners/SpawnerArqueiro.tscn" id="24_qb48t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb48q"]
 texture = ExtResource("1_xkndl")
@@ -4381,20 +4381,6 @@ size = Vector2(38, 158)
 
 [node name="Game" type="Node2D" unique_id=946468458]
 
-[node name="chbRed_Ranger" parent="." unique_id=765468334 groups=["enemy_hurtbox"] instance=ExtResource("1_yx171")]
-position = Vector2(287, 420)
-
-[node name="chbRed_Mage" parent="." unique_id=1400295250 instance=ExtResource("16_6old6")]
-z_index = 1
-position = Vector2(263, 486)
-
-[node name="chbRed_Mage2" parent="." unique_id=552177403 instance=ExtResource("16_6old6")]
-z_index = 1
-position = Vector2(362, 482)
-
-[node name="chbRed_Soldier" parent="." unique_id=886209351 instance=ExtResource("3_u44n3")]
-position = Vector2(306, 451)
-
 [node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_wbfu4")]
 position = Vector2(26, 238)
 
@@ -4501,3 +4487,12 @@ script = ExtResource("23_cnsd7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndZone" unique_id=1417125519]
 position = Vector2(5393, 463)
 shape = SubResource("RectangleShape2D_0881c")
+
+[node name="SpawnerSoldado" parent="." unique_id=1401232312 instance=ExtResource("22_fv8kv")]
+position = Vector2(2615, 460)
+
+[node name="SpawnerMago" parent="." unique_id=1003163318 instance=ExtResource("23_x7jvh")]
+position = Vector2(1956, 289)
+
+[node name="SpawnerArqueiro" parent="." unique_id=1861470014 instance=ExtResource("24_qb48t")]
+position = Vector2(469, 367)

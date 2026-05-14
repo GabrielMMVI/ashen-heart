@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://btpiju343pan1"]
+
+[ext_resource type="Script" uid="uid://70w8umncah8c" path="res://ent/spawners/scripts/scrSpawnerMago.gd" id="1_qskwl"]
+
+[node name="SpawnerMago" type="Marker2D" unique_id=1003163318]
+script = ExtResource("1_qskwl")
