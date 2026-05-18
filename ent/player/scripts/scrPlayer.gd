@@ -24,7 +24,7 @@ const ATTACK_ANIMATIONS: Dictionary = {
 	Weapon.SWORD: "attack_melee",
 	Weapon.BOW:   "attack_bow",
 	Weapon.STAFF: "attack_magic",
-	Weapon.AXE:   "attack_melee",
+	Weapon.AXE:   "attack_axe",
 }
 
 const WEAPON_NAMES: Dictionary = {
