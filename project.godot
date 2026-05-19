@@ -13,7 +13,12 @@ config_version=5
 config/name="Ashen Heart"
 run/main_scene="uid://b6dlksu4lrxum"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://cojx681o4qi1u"
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalUtils="*uid://cl64pd5ibo7ej"
 
 [display]
 
