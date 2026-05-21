@@ -11,8 +11,9 @@ const MAX_HEALTH := 50
 # ==============================================================================
 # EXPORTS E NÓS REFERENCIADOS
 # ==============================================================================
-@export var magic_ball_scene: PackedScene = preload("res://ent/projectiles/magic_ball/mage_magic_ball.tscn")
+@export var knockback_resistance := 10
 
+@export var magic_ball_scene: PackedScene = preload("res://ent/projectiles/magic_ball/mage_magic_ball.tscn")
 @onready var _sprite: AnimatedSprite2D = $ansprRed_Mage
 @onready var _shoot_point: Marker2D = $mkShoot
 
@@ -23,6 +24,7 @@ var _direction := -1
 var _is_attacking := false
 var _player: Node2D = null
 var _current_health:= MAX_HEALTH
+var _is_knocked_back := false
 
 # ==============================================================================
 # PRONTO
@@ -37,6 +39,11 @@ func _ready() -> void:
 # ==============================================================================
 func _physics_process(delta: float) -> void:
 	_handle_gravity(delta)
+	
+	if _is_knocked_back:
+		move_and_slide()
+		return
+	
 	_find_player()
 	
 	if not _is_attacking:
@@ -54,12 +61,31 @@ func _physics_process(delta: float) -> void:
 # ==============================================================================
 # SISTEMA DE VIDA
 # ==============================================================================
-func take_damage(amount: int) -> void:
+func take_damage(amount: int,  applied_knockback_force: Vector2 = Vector2.ZERO) -> void:
 	if _current_health <= 0:
 		return
 		
 	_current_health -= amount
 	_current_health = max(0, _current_health)
+	
+	# CÁLCULO DO KNOCKBACK COM RESISTÊNCIA
+	if applied_knockback_force != Vector2.ZERO:
+		# Subtrai a resistência da força aplicada (garante que não inverta o lado se a resistência for muito alta)
+		var final_knockback_x = max(0, abs(applied_knockback_force.x) - knockback_resistance)
+		var final_knockback_y = max(0, abs(applied_knockback_force.y) - knockback_resistance)
+		
+		# Mantém a direção original do ataque, mas com a força reduzida
+		velocity.x = final_knockback_x * sign(applied_knockback_force.x)
+		
+		# O eixo Y geralmente é negativo no Godot para ir para cima, então preservamos o sinal original
+		velocity.y = final_knockback_y * sign(applied_knockback_force.y)
+		
+		# Só aplica o estado se a força final for maior que zero (ou seja, se a resistência não anulou o golpe)
+		if final_knockback_x > 0 or final_knockback_y > 0:
+			_is_knocked_back = true
+			var timer = get_tree().create_timer(0.3)
+			timer.timeout.connect(func(): _is_knocked_back = false)
+	
 	
 	_flash_damage()
 	
