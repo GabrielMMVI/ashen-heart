@@ -1,3 +1,4 @@
+
 extends CharacterBody2D
 
 # ==============================================================================
@@ -9,8 +10,8 @@ signal health_changed(current_health: int, max_health: int)
 # ==============================================================================
 # CONSTANTES
 # ==============================================================================
-const SPEED := 100.0
-const JUMP_VELOCITY := -260.0
+const SPEED := 300.0
+const JUMP_VELOCITY := -500.0
 const PLAYER_GRAVITY := 550.0
 const MAX_HEALTH := 100
 const MELEE_DAMAGE := 20
@@ -37,6 +38,8 @@ const WEAPON_NAMES: Dictionary = {
 # ==============================================================================
 # NÓS REFERENCIADOS   
 # ==============================================================================
+@export var knockback_resistance = 20
+
 @onready var _sprite: AnimatedSprite2D = $ansprPlayer
 @export var player_magic_ball: PackedScene = preload("res://ent/player/projectiles/magic_ball/player_magic_ball.tscn")
 @export var player_arrow: PackedScene = preload("res://ent/player/projectiles/basic_arrow/player_arrow_scene.tscn")
@@ -48,6 +51,7 @@ const WEAPON_NAMES: Dictionary = {
 # ==============================================================================
 var _current_weapon: Weapon = Weapon.SWORD
 var _current_health := MAX_HEALTH
+var _is_knocked_back := false
 var _is_attacking := false
 var _is_switching := false
 var _facing_right := true
@@ -68,6 +72,10 @@ func _ready() -> void:
 # LOOP PRINCIPAL
 # ==============================================================================
 func _physics_process(delta: float) -> void:
+	if _is_knocked_back:
+		move_and_slide()
+		return
+		
 	_handle_weapon_switch()
 	_handle_attack()
 	_handle_gravity(delta)
@@ -80,7 +88,7 @@ func _physics_process(delta: float) -> void:
 # ==============================================================================
 # SISTEMA DE VIDA
 # ==============================================================================
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, applied_knockback: Vector2 = Vector2.ZERO) -> void:
 	if _current_health <= 0 or _is_invincible:
 		return
 
@@ -89,6 +97,18 @@ func take_damage(amount: int) -> void:
 
 	print("Dano recebido! Vida atual: ", _current_health, "/", MAX_HEALTH)
 	health_changed.emit(_current_health, MAX_HEALTH)
+	
+	if applied_knockback != Vector2.ZERO:
+		var final_x = max(0, abs(applied_knockback.x) - knockback_resistance)
+		var final_y = max(0, abs(applied_knockback.y) - knockback_resistance)
+		
+		velocity.x = final_x * sign(applied_knockback.x)
+		velocity.y = final_y * sign(applied_knockback.y)
+		
+		if final_x > 0 or final_y > 0:
+			_is_knocked_back = true
+			var timer = get_tree().create_timer(0.3)
+			timer.timeout.connect(func(): _is_knocked_back = false)
 
 	_flash_damage()
 

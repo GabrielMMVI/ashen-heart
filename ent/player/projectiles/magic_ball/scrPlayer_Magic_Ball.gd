@@ -6,6 +6,7 @@ extends Area2D
 var velocity := Vector2.ZERO
 const SPEED := 100
 const DAMAGE := 15
+const KNOCKBACK_FORCE := Vector2(50.0, 10.0)
 
 
 # ==============================================================================
@@ -49,5 +50,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy_hurtbox"):
 		var enemy = area.get_parent()
 		if enemy.has_method("take_damage"):
-			enemy.take_damage(DAMAGE)
+			var dir_x = sign(velocity.x)
+			if dir_x == 0: dir_x = 1 # Prevenção caso caia 100% reta
+			
+			var applied_force = Vector2(KNOCKBACK_FORCE.x * dir_x, KNOCKBACK_FORCE.y)
+			enemy.take_damage(DAMAGE, applied_force)
 		queue_free()

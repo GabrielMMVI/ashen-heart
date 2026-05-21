@@ -3,6 +3,7 @@ extends Area2D
 # CONSTANTES
 # ==============================================================================
 const DAMAGE := 10
+const KNOCKBACK_FORCE := Vector2(150.0, -80.0) 
 # ==============================================================================
 # VARIÁVEIS
 # ==============================================================================
@@ -46,7 +47,11 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hurtbox"):
 		var player = area.get_parent()
 		if player.has_method("take_damage"):
-			player.take_damage(DAMAGE)
+			var dir_x = sign(velocity.x)
+			if dir_x == 0: dir_x = 1 # Prevenção caso caia 100% reta
+			
+			var applied_force = Vector2(KNOCKBACK_FORCE.x * dir_x, KNOCKBACK_FORCE.y)
+			player.take_damage(DAMAGE, applied_force)
 		queue_free()
 # ==============================================================================
 # DETECÇÃO DE COLISÃO COM CHÃO E PAREDES
