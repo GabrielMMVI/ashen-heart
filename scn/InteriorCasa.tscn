@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://co7fq66kd1cd8" path="res://ass/packs/dungeon_sidescroller-Raou/spr_torch.png" id="7_i1tv3"]
 [ext_resource type="Texture2D" uid="uid://c0xx88op1jpgo" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="8_g6aum"]
 [ext_resource type="Script" uid="uid://ngxytsv1ap1" path="res://scn/Saida.gd" id="9_rn4wc"]
+[ext_resource type="Script" uid="uid://cifg67s4qhtdn" path="res://scn/scripts/dialogue_ui.gd" id="10_1ucrf"]
+[ext_resource type="Script" uid="uid://bx5g0fcxfvn5u" path="res://scn/scripts/dialogue_trigger.gd" id="11_m5wof"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icy42"]
 texture = ExtResource("2_1ucrf")
@@ -2810,6 +2812,9 @@ sources/1 = SubResource("TileSetAtlasSource_x11qb")
 radius = 9.0
 height = 52.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blja1"]
+size = Vector2(246, 21.5)
+
 [node name="InteriorCasa" type="Node2D" unique_id=1032814525]
 
 [node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_508xc")]
@@ -2832,3 +2837,41 @@ script = ExtResource("9_rn4wc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1618378199]
 position = Vector2(376, 336)
 shape = SubResource("CapsuleShape2D_tefgr")
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=2080881510]
+script = ExtResource("10_1ucrf")
+
+[node name="DialogueBox" type="Panel" parent="DialogueUI" unique_id=906186720]
+anchors_preset = -1
+anchor_top = 0.887
+anchor_right = 0.712
+anchor_bottom = 1.0
+offset_top = -0.15002441
+offset_right = 0.39996338
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox" unique_id=1198248885]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92200005
+offset_right = -7.0
+offset_bottom = -0.022003174
+
+[node name="SpeakerName" type="Label" parent="DialogueUI/DialogueBox" unique_id=1181944017]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.07
+anchor_bottom = 0.45100003
+offset_right = 0.099998474
+offset_bottom = -0.001001358
+
+[node name="DialogueTrigger" type="Area2D" parent="." unique_id=1604264023]
+collision_layer = 2
+script = ExtResource("11_m5wof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTrigger" unique_id=1479776220]
+light_mask = 2
+position = Vector2(278, 334)
+shape = SubResource("RectangleShape2D_blja1")
