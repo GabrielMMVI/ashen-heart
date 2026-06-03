@@ -10,8 +10,8 @@ signal health_changed(current_health: int, max_health: int)
 # ==============================================================================
 # CONSTANTES
 # ==============================================================================
-const SPEED := 300.0
-const JUMP_VELOCITY := -500.0
+const SPEED := 100.0
+const JUMP_VELOCITY := -250.0
 const PLAYER_GRAVITY := 550.0
 const MAX_HEALTH := 100
 const MELEE_DAMAGE := 20
