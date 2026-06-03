@@ -20,10 +20,10 @@
 [ext_resource type="Script" uid="uid://d2m0k0ihgx8b0" path="res://scn/scripts/area_2d.gd" id="20_0881c"]
 [ext_resource type="Texture2D" uid="uid://cqahy471w51dx" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Angel Statue.png" id="20_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://jhupcwyr1mk8" path="res://scn/secret_wall.tscn" id="21_twl0x"]
-[ext_resource type="PackedScene" uid="uid://cp6dggvr4nkse" path="res://ent/spawners/SpawnerSoldado.tscn" id="22_fv8kv"]
+[ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="22_0881c"]
 [ext_resource type="Script" uid="uid://upufg0red83a" path="res://scn/scripts/end_zone.gd" id="23_cnsd7"]
-[ext_resource type="PackedScene" uid="uid://btpiju343pan1" path="res://ent/spawners/SpawnerMago.tscn" id="23_x7jvh"]
-[ext_resource type="PackedScene" uid="uid://dpnidssqyajj8" path="res://ent/spawners/SpawnerArqueiro.tscn" id="24_qb48t"]
+[ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="23_fv8kv"]
+[ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="24_fv8kv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb48q"]
 texture = ExtResource("1_xkndl")
@@ -4532,11 +4532,11 @@ script = ExtResource("23_cnsd7")
 position = Vector2(5393, 463)
 shape = SubResource("RectangleShape2D_0881c")
 
-[node name="SpawnerSoldado" parent="." unique_id=1401232312 instance=ExtResource("22_fv8kv")]
-position = Vector2(2615, 460)
+[node name="chbRed_Soldier" parent="EndZone" unique_id=886209351 instance=ExtResource("22_0881c")]
+position = Vector2(431, 494)
 
-[node name="SpawnerMago" parent="." unique_id=1003163318 instance=ExtResource("23_x7jvh")]
-position = Vector2(1956, 289)
+[node name="chbRed_Ranger" parent="EndZone" unique_id=765468334 instance=ExtResource("23_fv8kv")]
+position = Vector2(765, 322)
 
-[node name="SpawnerArqueiro" parent="." unique_id=1861470014 instance=ExtResource("24_qb48t")]
-position = Vector2(469, 367)
+[node name="chbRed_Mage" parent="EndZone" unique_id=1400295250 instance=ExtResource("24_fv8kv")]
+position = Vector2(1551, 477)
