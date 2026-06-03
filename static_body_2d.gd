@@ -9,7 +9,7 @@ extends StaticBody2D
 var target_alpha: float = 1.0
 
 func _ready():
-	trigger_area.body_entered.connect(_on_player_entered)
+d	trigger_area.body_entered.connect(_on_player_entered)
 	trigger_area.body_exited.connect(_on_player_exited)
 
 func _process(delta):
