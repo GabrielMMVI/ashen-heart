@@ -21,6 +21,7 @@ const PREFERRED_RANGE   := 150.0   # Distância ideal para lançar magia
 const DISENGAGE_RANGE   := 380.0   # Se o player fugir além disso → IDLE
 
 const ALERT_DURATION    := 0.6     # Pausa ao avistar o player
+const ATTACK_COOLDOWN   := 0.5     # Pausa entre ataques consecutivos
 
 # ==============================================================================
 # ESTADOS DO INIMIGO
@@ -53,7 +54,8 @@ var _player:         Node2D = null
 var _current_health: int   = MAX_HEALTH
 var _state:          State = State.IDLE
 var _alert_timer:    float = 0.0
-var _is_attacking:   bool  = false  # true enquanto a animação de ataque roda
+var _is_attacking:          bool  = false  # true enquanto a animação de ataque roda
+var _attack_cooldown_timer: float = 0.0    # tempo restante antes do próximo ataque
 
 # ==============================================================================
 # PRONTO
@@ -80,7 +82,7 @@ func _tick_state(delta: float) -> void:
 	match _state:
 		State.IDLE:      _process_idle()
 		State.ALERTED:   _process_alerted(delta)
-		State.COMBAT:    _process_combat()
+		State.COMBAT:    _process_combat(delta)
 		State.KNOCKBACK: pass   # Controlado pelo timer de knockback
 
 # ── IDLE ──────────────────────────────────────────────────────────────────────
@@ -110,13 +112,16 @@ func _process_alerted(delta: float) -> void:
 
 # ── COMBAT ────────────────────────────────────────────────────────────────────
 # O mago sempre olha para o player e avalia a distância a cada frame:
-#   • Player dentro da faixa ideal → para e lança magia
-#   • Player além da faixa ideal   → caminha em direção a ele
+#   • Player dentro da faixa ideal → para e lança magia (com cooldown entre ataques)
+#   • Player além da faixa ideal   → cancela ataque e caminha em direção a ele
 #   • Player fugiu longe demais    → desengaja e volta ao IDLE
-func _process_combat() -> void:
+func _process_combat(delta: float) -> void:
 	if not is_instance_valid(_player):
 		_transition_to(State.IDLE)
 		return
+
+	# Tick do cooldown entre ataques
+	_attack_cooldown_timer = max(0.0, _attack_cooldown_timer - delta)
 
 	var dist := global_position.distance_to(_player.global_position)
 
@@ -130,11 +135,12 @@ func _process_combat() -> void:
 	# Sempre olha para o player no estado de combate
 	_direction = sign(_player.global_position.x - global_position.x)
 
-	# Player está além do range ideal → se aproxima caminhando
+	# Player saiu da faixa ideal → cancela ataque imediatamente e se aproxima
 	if dist > PREFERRED_RANGE:
+		_is_attacking = false
 		velocity.x = _direction * SPEED_WALK
 	else:
-		# Faixa ideal: para no lugar e atira
+		# Faixa ideal: para no lugar e atira (respeitando o cooldown)
 		velocity.x = 0
 		_try_start_attack()
 
@@ -206,7 +212,7 @@ func _find_player() -> void:
 # ATAQUE — dispara apenas se a animação anterior terminou
 # ==============================================================================
 func _try_start_attack() -> void:
-	if _is_attacking:
+	if _is_attacking or _attack_cooldown_timer > 0.0:
 		return
 	_is_attacking = true
 	_sprite.play("attack")
@@ -247,8 +253,8 @@ func _on_frame_changed() -> void:
 func _on_animation_finished() -> void:
 	if _sprite.animation == "attack":
 		_is_attacking = false
-		# Não precisa re-disparar aqui: _try_start_attack() é
-		# chamado a cada frame em COMBAT automaticamente.
+		# Inicia o cooldown antes do próximo ataque para uma transição mais natural
+		_attack_cooldown_timer = ATTACK_COOLDOWN
 
 # ==============================================================================
 # PROJÉTIL

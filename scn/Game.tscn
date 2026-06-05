@@ -20,9 +20,7 @@
 [ext_resource type="Script" uid="uid://d2m0k0ihgx8b0" path="res://scn/scripts/area_2d.gd" id="20_0881c"]
 [ext_resource type="Texture2D" uid="uid://cqahy471w51dx" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Angel Statue.png" id="20_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://jhupcwyr1mk8" path="res://scn/secret_wall.tscn" id="21_twl0x"]
-[ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="22_0881c"]
 [ext_resource type="Script" uid="uid://upufg0red83a" path="res://scn/scripts/end_zone.gd" id="23_cnsd7"]
-[ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="23_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="24_fv8kv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb48q"]
@@ -4532,11 +4530,5 @@ script = ExtResource("23_cnsd7")
 position = Vector2(5393, 463)
 shape = SubResource("RectangleShape2D_0881c")
 
-[node name="chbRed_Soldier" parent="EndZone" unique_id=886209351 instance=ExtResource("22_0881c")]
-position = Vector2(431, 494)
-
-[node name="chbRed_Ranger" parent="EndZone" unique_id=765468334 instance=ExtResource("23_fv8kv")]
-position = Vector2(765, 322)
-
 [node name="chbRed_Mage" parent="EndZone" unique_id=1400295250 instance=ExtResource("24_fv8kv")]
-position = Vector2(1551, 477)
+position = Vector2(363, 425)
