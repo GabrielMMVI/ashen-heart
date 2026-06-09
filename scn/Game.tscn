@@ -22,7 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://cqahy471w51dx" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Angel Statue.png" id="20_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://jhupcwyr1mk8" path="res://scn/secret_wall.tscn" id="21_twl0x"]
 [ext_resource type="Script" uid="uid://upufg0red83a" path="res://scn/scripts/end_zone.gd" id="23_cnsd7"]
+[ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="23_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="24_fv8kv"]
+[ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="25_x7jvh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb48q"]
 texture = ExtResource("1_xkndl")
@@ -4543,4 +4545,31 @@ position = Vector2(5393, 463)
 shape = SubResource("RectangleShape2D_0881c")
 
 [node name="chbRed_Mage" parent="EndZone" unique_id=1400295250 instance=ExtResource("24_fv8kv")]
-position = Vector2(363, 425)
+position = Vector2(1051, 431)
+
+[node name="chbRed_Soldier" parent="." unique_id=886209351 instance=ExtResource("23_fv8kv")]
+position = Vector2(451, 495)
+
+[node name="chbRed_Soldier2" parent="." unique_id=1039252925 instance=ExtResource("23_fv8kv")]
+position = Vector2(790, 768)
+
+[node name="chbRed_Ranger" parent="." unique_id=765468334 instance=ExtResource("25_x7jvh")]
+position = Vector2(1882, 686)
+
+[node name="chbRed_Soldier3" parent="." unique_id=986594963 instance=ExtResource("23_fv8kv")]
+position = Vector2(2126, 647)
+
+[node name="chbRed_Soldier4" parent="." unique_id=927649088 instance=ExtResource("23_fv8kv")]
+position = Vector2(2696, 483)
+
+[node name="chbRed_Soldier5" parent="." unique_id=1701909173 instance=ExtResource("23_fv8kv")]
+position = Vector2(2663, 481)
+
+[node name="chbRed_Soldier6" parent="." unique_id=1666719448 instance=ExtResource("23_fv8kv")]
+position = Vector2(2678, 440)
+
+[node name="chbRed_Soldier7" parent="." unique_id=2009885652 instance=ExtResource("23_fv8kv")]
+position = Vector2(4022, 511)
+
+[node name="chbRed_Soldier8" parent="." unique_id=764745371 instance=ExtResource("23_fv8kv")]
+position = Vector2(3931, 506)
