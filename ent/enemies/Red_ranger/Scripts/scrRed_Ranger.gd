@@ -40,7 +40,7 @@ const ALERT_DURATION    := 0.5     # Pausa ao avistar o player (estilo Terraria)
 #   qualquer ──(take_damage com knockback)──► KNOCKBACK
 #   KNOCKBACK ──(timer esgota)──► COMBAT ou IDLE
 # ==============================================================================
-enum State { IDLE, ALERTED, COMBAT, RETREATING, KNOCKBACK }
+enum State { PATROL, IDLE, ALERTED, COMBAT, RETREATING, KNOCKBACK }
 
 # ==============================================================================
 # NÓS REFERENCIADOS & EXPORTS
@@ -86,15 +86,17 @@ func _physics_process(delta: float) -> void:
 func _tick_state(delta: float) -> void:
 	match _state:
 		State.IDLE:       _process_idle()
+		State.PATROL:     _process_patrol()
 		State.ALERTED:    _process_alerted(delta)
 		State.COMBAT:     _process_combat()
 		State.RETREATING: _process_retreating(delta)
 		State.KNOCKBACK:  pass   # Controlado pelo timer de knockback
 
-# ── IDLE ──────────────────────────────────────────────────────────────────────
+
+# Patrol
 # Patrulha vagarosamente. Inverte direção ao bater na parede.
 # Assim que o player entra no range de detecção, entra em alerta.
-func _process_idle() -> void:
+func _process_patrol() -> void:
 	if is_on_wall():
 		_direction *= -1
 	velocity.x = _direction * SPEED_WALK
@@ -107,6 +109,16 @@ func _process_idle() -> void:
 		_direction = sign(_player.global_position.x - global_position.x)
 		_alert_timer = ALERT_DURATION
 		_transition_to(State.ALERTED)
+
+# ── IDLE ──────────────────────────────────────────────────────────────────────
+func _process_idle() -> void:
+	velocity.x = 0
+	if not is_instance_valid(_player):
+		return
+	var dist := global_position.distance_to(_player.global_position)
+	if dist <= DETECTION_RANGE - 50:
+		_transition_to(State.RETREATING)
+	
 
 # ── ALERTED ───────────────────────────────────────────────────────────────────
 # Pausa dramática ao avistar o player antes de entrar em combate.
