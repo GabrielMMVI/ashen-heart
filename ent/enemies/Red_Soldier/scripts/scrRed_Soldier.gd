@@ -26,7 +26,7 @@ const JUMP_COOLDOWN     := 0.75          # Intervalo mínimo entre pulos
 #   qualquer ──(take_damage com knockback)──► KNOCKBACK
 #   KNOCKBACK ──(timer esgota)──► CHASE ou IDLE
 # ==============================================================================
-enum State { IDLE, ALERTED, CHASE, ATTACK, KNOCKBACK }
+enum State {IDLE, PATROL ,ALERTED, CHASE, ATTACK, KNOCKBACK }
 
 # ==============================================================================
 # NÓS REFERENCIADOS
@@ -72,15 +72,28 @@ func _physics_process(delta: float) -> void:
 func _tick_state(delta: float) -> void:
 	match _state:
 		State.IDLE:      _process_idle()
+		State.PATROL:    _process_patrol()
 		State.ALERTED:   _process_alerted(delta)
 		State.CHASE:     _process_chase(delta)
 		State.ATTACK:    pass   # Controlado pelos callbacks de animação
 		State.KNOCKBACK: pass   # Controlado pelo timer de knockback
 
-# ── IDLE ──────────────────────────────────────────────────────────────────────
+
+# IDLE
+func _process_idle() -> void:
+	velocity.x = 0
+	if not is_instance_valid(_player):
+		return
+	var dist := global_position.distance_to(_player.global_position)
+	if dist <= DETECTION_RANGE - 50:
+		_transition_to(State.CHASE)
+	
+	
+
+# ── Patrol ──────────────────────────────────────────────────────────────────────
 # Patrulha vagarosamente. Inverte direção ao bater na parede.
 # Assim que o player entra no range de detecção, entra em alerta.
-func _process_idle() -> void:
+func _process_patrol() -> void:
 	if is_on_wall():
 		_direction *= -1
 	velocity.x = _direction * 50.0   # Velocidade de patrulha (ajuste à vontade)
@@ -110,14 +123,14 @@ func _process_alerted(delta: float) -> void:
 # Inimigo corre em direção ao player, pula obstáculos e decide quando atacar.
 func _process_chase(delta: float) -> void:
 	if not is_instance_valid(_player):
-		_transition_to(State.IDLE)
+		_transition_to(State.PATROL)
 		return
 
 	var dist := global_position.distance_to(_player.global_position)
 
 	# Player saiu do alcance máximo → desiste e volta a ficar parado
 	if dist > DISENGAGE_RANGE:
-		_transition_to(State.IDLE)
+		_transition_to(State.PATROL)
 		return
 
 	# Player está em alcance de ataque → para e ataca
@@ -233,6 +246,9 @@ func _update_animation() -> void:
 
 	match _state:
 		State.IDLE:
+			if _sprite.animation != "idle" or not _sprite.is_playing():
+				_sprite.play("idle")
+		State.PATROL:
 			# Patrulhando: retoma "walk" sempre que não estiver tocando corretamente
 			if _sprite.animation != "walk" or not _sprite.is_playing():
 				_sprite.play("walk")
