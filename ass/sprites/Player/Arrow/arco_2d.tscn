@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cqlrgmq4qmvix"]
+
+[ext_resource type="Texture2D" uid="uid://cbmyss6l36coq" path="res://ass/sprites/Player/Arrow/ArcoAtaque1.png" id="1_o7qp2"]
+[ext_resource type="Texture2D" uid="uid://dnos5dl03td2w" path="res://ass/sprites/Player/Arrow/ArcoAtaque2.png" id="2_2tq3e"]
+[ext_resource type="Texture2D" uid="uid://schwn80qwlt8" path="res://ass/sprites/Player/Arrow/ArcoAtaque3.png" id="3_53n84"]
+[ext_resource type="Texture2D" uid="uid://b2co8l5dfr3a1" path="res://ass/sprites/Player/Arrow/ArcoAtaque4.png" id="4_idxpx"]
+[ext_resource type="Texture2D" uid="uid://doqrm3tseqj7i" path="res://ass/sprites/Player/Arrow/ArcoAtaque5.png" id="5_g7hf4"]
+[ext_resource type="Texture2D" uid="uid://dkmmt4uwk1j0x" path="res://ass/sprites/Player/Arrow/ArcoAtaque6.png" id="6_qln6w"]
+[ext_resource type="Texture2D" uid="uid://dxcwkjkx5g2d1" path="res://ass/sprites/Player/Arrow/ArcoAtaque7.png" id="7_fy6xt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csxo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o7qp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2tq3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_53n84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idxpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g7hf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qln6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fy6xt")
+}],
+"loop": true,
+"name": &"defa",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ektry"]
+
+[node name="Arco2D" type="Area2D" unique_id=1325217097]
+
+[node name="ArcoSprite2D" type="AnimatedSprite2D" parent="." unique_id=259926789]
+sprite_frames = SubResource("SpriteFrames_csxo7")
+animation = &"defa"
+frame_progress = 0.5339569
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=539844245]
+shape = SubResource("CapsuleShape2D_ektry")

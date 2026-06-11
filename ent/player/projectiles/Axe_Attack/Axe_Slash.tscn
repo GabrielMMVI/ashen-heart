@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cbiivifv0j8ea"]
+
+[ext_resource type="Script" uid="uid://b6j8m1xutgny8" path="res://ent/player/projectiles/Axe_Attack/scrAxeSlash.gd" id="1_ohp74"]
+[ext_resource type="Texture2D" uid="uid://djd2gkq70qthe" path="res://ass/sprites/Player/attack_axe/Attack_Axe1.png" id="1_tnsy5"]
+[ext_resource type="Texture2D" uid="uid://b0su1rclu3rfb" path="res://ass/sprites/Player/attack_axe/Attack_Axe2.png" id="2_ohp74"]
+[ext_resource type="Texture2D" uid="uid://bsrbq0s8bwo7g" path="res://ass/sprites/Player/attack_axe/Attack_Axe3.png" id="3_lqbpu"]
+[ext_resource type="Texture2D" uid="uid://ow3l3m8fgqqa" path="res://ass/sprites/Player/attack_axe/Attack_Axe4.png" id="4_vxkjg"]
+[ext_resource type="Texture2D" uid="uid://dry82oqcgnvr1" path="res://ass/sprites/Player/attack_axe/Attack_Axe5.png" id="5_3tpjw"]
+[ext_resource type="Texture2D" uid="uid://ds00btcnl001a" path="res://ass/sprites/Player/attack_axe/Attack_Axe6.png" id="6_e2mbw"]
+[ext_resource type="Texture2D" uid="uid://dcrfihaf1hiji" path="res://ass/sprites/Player/attack_axe/Attack_Axe7.png" id="7_54rjf"]
+[ext_resource type="Texture2D" uid="uid://cxj7fpua28s03" path="res://ass/sprites/Player/attack_axe/Attack_Axe8.png" id="8_e4yvn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_trwoi"]
+radius = 27.0
+height = 70.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0iyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tnsy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ohp74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lqbpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vxkjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3tpjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e2mbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_54rjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e4yvn")
+}],
+"loop": false,
+"name": &"attack_axe",
+"speed": 12.0
+}]
+
+[node name="aAxeSlash" type="Area2D" unique_id=1889486918]
+script = ExtResource("1_ohp74")
+
+[node name="colAxeSlash" type="CollisionShape2D" parent="." unique_id=985344040]
+shape = SubResource("CapsuleShape2D_trwoi")
+
+[node name="ansprAxeSlash" type="AnimatedSprite2D" parent="." unique_id=1343541457]
+position = Vector2(0, -9)
+scale = Vector2(1, 0.78125)
+sprite_frames = SubResource("SpriteFrames_b0iyx")
+animation = &"attack_axe"
+frame = 7
+frame_progress = 1.0

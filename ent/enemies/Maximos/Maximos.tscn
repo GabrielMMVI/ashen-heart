@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://cpkhs8dqmnd8n"]
+
+[ext_resource type="Texture2D" uid="uid://4wnl7j6wn33v" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos1.png" id="1_bxfry"]
+[ext_resource type="Texture2D" uid="uid://e25yfld08g4v" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos2.png" id="2_lk7lp"]
+[ext_resource type="Texture2D" uid="uid://csmg1xauabiy7" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos3.png" id="3_kniyc"]
+[ext_resource type="Texture2D" uid="uid://ba532konthruw" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos4.png" id="4_upnoe"]
+[ext_resource type="Texture2D" uid="uid://cfbel2xtsoqmc" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos5.png" id="5_uod2u"]
+[ext_resource type="Texture2D" uid="uid://bdugrk0ugqrkg" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos6.png" id="6_da8o5"]
+[ext_resource type="Texture2D" uid="uid://cb1rtks8ya6xa" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos7.png" id="7_qkrmp"]
+[ext_resource type="Texture2D" uid="uid://calm73gq7ftxm" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos8.png" id="8_kwadg"]
+[ext_resource type="Texture2D" uid="uid://b7bqy8c4slleu" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto1.png" id="9_42s54"]
+[ext_resource type="Texture2D" uid="uid://60olmuqbmlj2" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto2.png" id="10_nyfkl"]
+[ext_resource type="Texture2D" uid="uid://1v1rv2xsthy7" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto3.png" id="11_gbhoe"]
+[ext_resource type="Texture2D" uid="uid://epj4puxmhtki" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto4.png" id="12_45g04"]
+[ext_resource type="Texture2D" uid="uid://8mr53lyyk3dh" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto5.png" id="13_2vy0x"]
+[ext_resource type="Texture2D" uid="uid://b7rm23830vdn1" path="res://ass/sprites/Enemies/Chefes/Maximos/Magic_Attack/MaximosBolaFogo1.png" id="14_fw04i"]
+[ext_resource type="Texture2D" uid="uid://bw7ynhwf42mkx" path="res://ass/sprites/Enemies/Chefes/Maximos/Magic_Attack/MaximosBolaFogo2.png" id="15_lowsh"]
+[ext_resource type="Texture2D" uid="uid://cavyy200gtle0" path="res://ass/sprites/Enemies/Chefes/Maximos/Magic_Attack/MaximosBolaFogo3.png" id="16_li1y7"]
+[ext_resource type="Texture2D" uid="uid://1j586xcf8kbn" path="res://ass/sprites/Enemies/Chefes/Maximos/Magic_Attack/MaximosBolaFogo4.png" id="17_pro2r"]
+[ext_resource type="Texture2D" uid="uid://xu71wh5s3xbj" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado1.png" id="18_m2aqx"]
+[ext_resource type="Texture2D" uid="uid://b8grqiyr2pl8l" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado2.png" id="19_jnwye"]
+[ext_resource type="Texture2D" uid="uid://si6n4uyifnu" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado3.png" id="20_rnsg7"]
+[ext_resource type="Texture2D" uid="uid://dp0eh5rhntfh8" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado4.png" id="21_n0v4b"]
+[ext_resource type="Texture2D" uid="uid://mls8dmq802e3" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado5.png" id="22_kbe44"]
+[ext_resource type="Texture2D" uid="uid://b65ut443crn5i" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado6.png" id="23_yo7pf"]
+[ext_resource type="Texture2D" uid="uid://dqfjuhnux2gli" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado7.png" id="24_8u3uk"]
+[ext_resource type="Texture2D" uid="uid://bql6jyjfdrnl" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado8.png" id="25_asr1p"]
+[ext_resource type="Texture2D" uid="uid://caggx50le76dh" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado9.png" id="26_3ft54"]
+[ext_resource type="Texture2D" uid="uid://csu3hnro7dqoi" path="res://ass/sprites/Enemies/Chefes/Maximos/Stock_Attack/AtaqueAvançado10.png" id="27_jbpmj"]
+[ext_resource type="Texture2D" uid="uid://ddp3rswdqpxhp" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando1.png" id="28_6asfy"]
+[ext_resource type="Texture2D" uid="uid://xhqwpgfyxct7" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando2.png" id="29_wocm4"]
+[ext_resource type="Texture2D" uid="uid://bty7ku7ocely6" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando3.png" id="30_sc064"]
+[ext_resource type="Texture2D" uid="uid://nmq2bi2776a0" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando4.png" id="31_jbini"]
+[ext_resource type="Texture2D" uid="uid://c7raxhgljywmn" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando5.png" id="32_as245"]
+[ext_resource type="Texture2D" uid="uid://upl83xe1xc16" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando6.png" id="33_nxrpy"]
+[ext_resource type="Texture2D" uid="uid://dsbkqi70ver5b" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando7.png" id="34_pyrk7"]
+[ext_resource type="Texture2D" uid="uid://dgxf2ykvjrgme" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando8.png" id="35_msc4a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lw2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bxfry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lk7lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kniyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_upnoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uod2u")
+}, {
+"duration": 1.3,
+"texture": ExtResource("6_da8o5")
+}, {
+"duration": 1.6,
+"texture": ExtResource("7_qkrmp")
+}, {
+"duration": 1.2,
+"texture": ExtResource("8_kwadg")
+}],
+"loop": false,
+"name": &"Base_Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_42s54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nyfkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gbhoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_45g04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2vy0x")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_fw04i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lowsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_li1y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pro2r")
+}],
+"loop": false,
+"name": &"Magic_Attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_m2aqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jnwye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rnsg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_n0v4b")
+}, {
+"duration": 2.0,
+"texture": ExtResource("22_kbe44")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_yo7pf")
+}, {
+"duration": 2.3,
+"texture": ExtResource("24_8u3uk")
+}, {
+"duration": 2.6,
+"texture": ExtResource("25_asr1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3ft54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jbpmj")
+}],
+"loop": false,
+"name": &"Stock_Attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_6asfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wocm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sc064")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jbini")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_as245")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_nxrpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pyrk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_msc4a")
+}],
+"loop": false,
+"name": &"Walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebcg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukc71"]
+size = Vector2(20, 26)
+
+[node name="chbMaximos" type="CharacterBody2D" unique_id=1700391572]
+
+[node name="ansprMaximos" type="AnimatedSprite2D" parent="." unique_id=1625956474]
+sprite_frames = SubResource("SpriteFrames_4lw2j")
+animation = &"Stock_Attack"
+frame = 9
+frame_progress = 1.0
+
+[node name="aHitBox" type="Area2D" parent="." unique_id=1680868784]
+
+[node name="aHitbox_Stock" type="CollisionShape2D" parent="aHitBox" unique_id=613134891]
+position = Vector2(20, 2)
+shape = SubResource("CircleShape2D_ebcg1")
+
+[node name="colHurtbox" type="CollisionShape2D" parent="." unique_id=1424697601]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ukc71")
