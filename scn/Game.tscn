@@ -20,7 +20,9 @@
 [ext_resource type="Script" uid="uid://ca2jpd7w3m1r8" path="res://scn/area_2d_2.gd" id="19_cnsd7"]
 [ext_resource type="Script" uid="uid://d2m0k0ihgx8b0" path="res://scn/scripts/area_2d.gd" id="20_0881c"]
 [ext_resource type="Texture2D" uid="uid://cqahy471w51dx" path="res://ass/packs/GandalfHardcore FREE Platformer Assets/Angel Statue.png" id="20_fv8kv"]
+[ext_resource type="Texture2D" uid="uid://bcle4toh3ic7a" path="res://ass/sprites/Player/_HealthBar/BigBar_Base2.png" id="21_mlsd0"]
 [ext_resource type="PackedScene" uid="uid://jhupcwyr1mk8" path="res://scn/secret_wall.tscn" id="21_twl0x"]
+[ext_resource type="Texture2D" uid="uid://dwt8wf7sl435i" path="res://ass/sprites/Player/_HealthBar/BigBar_Fill7.png" id="22_mlsd0"]
 [ext_resource type="Script" uid="uid://upufg0red83a" path="res://scn/scripts/end_zone.gd" id="23_cnsd7"]
 [ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="23_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="24_fv8kv"]
@@ -4533,6 +4535,27 @@ shape = SubResource("RectangleShape2D_fv8kv")
 
 [node name="playerHUD" parent="." unique_id=856289792 instance=ExtResource("15_qjyg3")]
 
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="playerHUD" unique_id=740440442]
+custom_minimum_size = Vector2(320, 64)
+offset_left = -20.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 74.0
+value = 100.0
+texture_under = ExtResource("21_mlsd0")
+texture_progress = ExtResource("22_mlsd0")
+texture_progress_offset = Vector2(50, 0)
+
+[node name="MarginContainer" parent="playerHUD" index="1" unique_id=2136241054]
+theme_override_constants/margin_left = 21
+theme_override_constants/margin_top = 80
+
+[node name="VBoxContainer" parent="playerHUD/MarginContainer" index="0" unique_id=1395234694]
+theme_override_constants/separation = 4
+
+[node name="HealthBar" parent="playerHUD/MarginContainer/VBoxContainer" index="0" unique_id=861993238]
+visible = false
+
 [node name="SecretWall" parent="." unique_id=249484401 instance=ExtResource("21_twl0x")]
 position = Vector2(778, 728)
 
@@ -4573,3 +4596,5 @@ position = Vector2(4022, 511)
 
 [node name="chbRed_Soldier8" parent="." unique_id=764745371 instance=ExtResource("23_fv8kv")]
 position = Vector2(3931, 506)
+
+[editable path="playerHUD"]

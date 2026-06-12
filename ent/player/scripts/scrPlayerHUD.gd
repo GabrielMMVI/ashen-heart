@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var weapon_label: Label = $MarginContainer/VBoxContainer/WeaponLabel
 # Adiciona a referência para a barra de vida
-@onready var health_bar: ProgressBar = $MarginContainer/VBoxContainer/HealthBar
+@onready var health_bar: TextureProgressBar = $TextureProgressBar2
 
 func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
