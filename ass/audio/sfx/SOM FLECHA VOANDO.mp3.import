@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vbuxostt10k5"
+path="res://.godot/imported/SOM FLECHA VOANDO.mp3-5a3b62f680c1269b2893c9246c614cbb.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/sfx/SOM FLECHA VOANDO.mp3"
+dest_files=["res://.godot/imported/SOM FLECHA VOANDO.mp3-5a3b62f680c1269b2893c9246c614cbb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

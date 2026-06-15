@@ -4597,4 +4597,9 @@ position = Vector2(4022, 511)
 [node name="chbRed_Soldier8" parent="." unique_id=764745371 instance=ExtResource("23_fv8kv")]
 position = Vector2(3931, 506)
 
+<<<<<<< Updated upstream
 [editable path="playerHUD"]
+=======
+[node name="chbRed_Ranger2" parent="." unique_id=1835878509 instance=ExtResource("25_x7jvh")]
+position = Vector2(612, 448)
+>>>>>>> Stashed changes

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r8w1clldqvn7"
+path="res://.godot/imported/MUSICA EXPLORAÇÃO.mp3-9240579dba94e57becfda0424a4127f4.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/Musics/MUSICA EXPLORAÇÃO.mp3"
+dest_files=["res://.godot/imported/MUSICA EXPLORAÇÃO.mp3-9240579dba94e57becfda0424a4127f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
