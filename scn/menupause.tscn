@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bkjt4hosvg3t"]
 
+[ext_resource type="Script" uid="uid://c2n4rxrwjec6n" path="res://scn/menupause.gd" id="1_bghmc"]
+
 [node name="Node2D" type="Node2D" unique_id=1084529724]
+script = ExtResource("1_bghmc")
 
 [node name="pausemenu" type="CanvasLayer" parent="." unique_id=593838151]
 
@@ -46,12 +49,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Reiniciar"
 
-[node name="Button2" type="Button" parent="pausemenu/Control/Panel/CenterContainer/VBoxContainer" unique_id=614351478]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Opções"
-
 [node name="Button3" type="Button" parent="pausemenu/Control/Panel/CenterContainer/VBoxContainer" unique_id=1462258315]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Sair"
+
+[connection signal="pressed" from="pausemenu/Control/Panel/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="pausemenu/Control/Panel/CenterContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="pausemenu/Control/Panel/CenterContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
