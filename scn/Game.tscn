@@ -4634,28 +4634,28 @@ position = Vector2(3826, 528)
 [node name="Tutorial" type="Node2D" parent="." unique_id=1404834815]
 
 [node name="LabelTrocaArma" type="Label" parent="Tutorial" unique_id=2143835758]
-offset_left = 411.0
-offset_top = 409.0
-offset_right = 517.0
-offset_bottom = 464.0
+offset_left = 368.0
+offset_top = 548.0
+offset_right = 474.0
+offset_bottom = 603.0
 text = "Trocar arma
 Tecla F"
 
 [node name="LabelAtaque" type="Label" parent="Tutorial" unique_id=765835650]
-offset_left = 274.0
-offset_top = 381.0
-offset_right = 375.0
-offset_bottom = 482.0
+offset_left = 223.0
+offset_top = 540.0
+offset_right = 324.0
+offset_bottom = 641.0
 text = "Ataque
 Z e
 Botão direito
 do mouse"
 
 [node name="LabelMovimentão" type="Label" parent="Tutorial" unique_id=1229376094]
-offset_left = 130.0
-offset_top = 381.0
-offset_right = 230.0
-offset_bottom = 482.0
+offset_left = 65.0
+offset_top = 540.0
+offset_right = 165.0
+offset_bottom = 641.0
 text = "Movimento
 Space - Pular
 A - Esquerda
