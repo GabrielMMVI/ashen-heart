@@ -466,17 +466,14 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_76xy7")
+"duration": 1.5,
+"texture": ExtResource("11_6afxj")
 }, {
-"duration": 1.0,
-"texture": ExtResource("8_rgrtx")
+"duration": 0.5,
+"texture": ExtResource("10_tujar")
 }, {
-"duration": 1.0,
-"texture": ExtResource("9_mgaum")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_83xl5")
+"duration": 50000.0,
+"texture": ExtResource("9_vjege")
 }],
 "loop": true,
 "name": &"jump",
@@ -617,10 +614,9 @@ shape = SubResource("CapsuleShape2D_ncg78")
 z_index = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_vkqcd")
-animation = &"attack_axe"
+animation = &"jump"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
+frame_progress = 0.113245316
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719659134]
 zoom = Vector2(1.3, 1.3)
