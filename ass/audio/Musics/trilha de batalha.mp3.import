@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://28ygf5ylnxv4"
-path="res://.godot/imported/trilha de batalha.mp3-5918f07cc8106dbf1afe9af3999e03c7.mp3str"
+path="res://.godot/imported/trilha de batalha.mp3-2c96507482e93be33a957c2db73dfc10.mp3str"
 
 [deps]
 
-source_file="res://ass/audio/trilha de batalha.mp3"
-dest_files=["res://.godot/imported/trilha de batalha.mp3-5918f07cc8106dbf1afe9af3999e03c7.mp3str"]
+source_file="res://ass/audio/Musics/trilha de batalha.mp3"
+dest_files=["res://.godot/imported/trilha de batalha.mp3-2c96507482e93be33a957c2db73dfc10.mp3str"]
 
 [params]
 
