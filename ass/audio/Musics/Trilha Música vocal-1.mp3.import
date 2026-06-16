@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://gqo74xuudjjk"
-path="res://.godot/imported/Trilha Música vocal-1.mp3-13d2950df1057ddc65c15bb8b0222e17.mp3str"
+path="res://.godot/imported/Trilha Música vocal-1.mp3-0a92cbee221a7dac229de378c8836fd4.mp3str"
 
 [deps]
 
-source_file="res://ass/audio/Trilha Música vocal-1.mp3"
-dest_files=["res://.godot/imported/Trilha Música vocal-1.mp3-13d2950df1057ddc65c15bb8b0222e17.mp3str"]
+source_file="res://ass/audio/Musics/Trilha Música vocal-1.mp3"
+dest_files=["res://.godot/imported/Trilha Música vocal-1.mp3-0a92cbee221a7dac229de378c8836fd4.mp3str"]
 
 [params]
 

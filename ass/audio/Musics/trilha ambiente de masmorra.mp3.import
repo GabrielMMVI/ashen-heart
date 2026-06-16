@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://caeatg67cvcly"
-path="res://.godot/imported/trilha ambiente de masmorra.mp3-6397401709edd0cfce4a89662c986e0c.mp3str"
+path="res://.godot/imported/trilha ambiente de masmorra.mp3-3baef8474e47a009b513e7ba4c3478ea.mp3str"
 
 [deps]
 
-source_file="res://ass/audio/trilha ambiente de masmorra.mp3"
-dest_files=["res://.godot/imported/trilha ambiente de masmorra.mp3-6397401709edd0cfce4a89662c986e0c.mp3str"]
+source_file="res://ass/audio/Musics/trilha ambiente de masmorra.mp3"
+dest_files=["res://.godot/imported/trilha ambiente de masmorra.mp3-3baef8474e47a009b513e7ba4c3478ea.mp3str"]
 
 [params]
 
