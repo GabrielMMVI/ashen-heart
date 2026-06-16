@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cj5h0vd40f652"
-path="res://.godot/imported/morte do personagem.mp3-32a97e6553c7c98157d1ed1a10a84552.mp3str"
+path="res://.godot/imported/morte do personagem.mp3-25fef9fb6effe90791211ecb0a7d7ed5.mp3str"
 
 [deps]
 
-source_file="res://ass/audio/morte do personagem.mp3"
-dest_files=["res://.godot/imported/morte do personagem.mp3-32a97e6553c7c98157d1ed1a10a84552.mp3str"]
+source_file="res://ass/audio/sfx/morte do personagem.mp3"
+dest_files=["res://.godot/imported/morte do personagem.mp3-25fef9fb6effe90791211ecb0a7d7ed5.mp3str"]
 
 [params]
 

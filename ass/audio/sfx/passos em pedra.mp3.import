@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://df8b3eqvcyq5n"
-path="res://.godot/imported/passos em pedra.mp3-56f11267610abff839dd07d001bcabda.mp3str"
+path="res://.godot/imported/passos em pedra.mp3-171d721f9e6b5be5d3db707572a43dc2.mp3str"
 
 [deps]
 
-source_file="res://ass/audio/passos em pedra.mp3"
-dest_files=["res://.godot/imported/passos em pedra.mp3-56f11267610abff839dd07d001bcabda.mp3str"]
+source_file="res://ass/audio/sfx/passos em pedra.mp3"
+dest_files=["res://.godot/imported/passos em pedra.mp3-171d721f9e6b5be5d3db707572a43dc2.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://42eaeo45gpm6"
-path="res://.godot/imported/Trilha Música boss-1.mp3-cbdf1d537572e7bd57db708103e67395.mp3str"
+path="res://.godot/imported/Trilha Música boss-1.mp3-adc662615bd3eae0d65d439d4e658de4.mp3str"
 
 [deps]
 
-source_file="res://ass/audio/Trilha Música boss-1.mp3"
-dest_files=["res://.godot/imported/Trilha Música boss-1.mp3-cbdf1d537572e7bd57db708103e67395.mp3str"]
+source_file="res://ass/audio/Musics/Trilha Música boss-1.mp3"
+dest_files=["res://.godot/imported/Trilha Música boss-1.mp3-adc662615bd3eae0d65d439d4e658de4.mp3str"]
 
 [params]
 
