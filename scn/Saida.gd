@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var next_scene: String = "res://scn/fase_dois.tscn"
+@export var next_scene: String = "res://scn/MorteDoPai.tscn"
 
 func _ready():
 	body_entered.connect(_on_body_entered)
