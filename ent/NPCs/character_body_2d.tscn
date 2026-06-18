@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cd3se4ms15spc"]
+
+[ext_resource type="Texture2D" uid="uid://b4w4c44357kus" path="res://ass/sprites/NPCs/MulherMisteriosa1.png" id="1_8h0fp"]
+[ext_resource type="Texture2D" uid="uid://c4mgn57ee5qh5" path="res://ass/sprites/NPCs/MulherMisteriosa2.png" id="2_ylah0"]
+[ext_resource type="Texture2D" uid="uid://cg6dy4yro3iyt" path="res://ass/sprites/NPCs/MulherMisteriosa3.png" id="3_tu07c"]
+[ext_resource type="Texture2D" uid="uid://b4fc51c5qsgp5" path="res://ass/sprites/NPCs/MulherMisteriosa4.png" id="4_t25rd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_debwl"]
+size = Vector2(15, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpj87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8h0fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ylah0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tu07c")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_t25rd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MulherMisteriosa" type="CharacterBody2D" unique_id=1983475877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2007607190]
+position = Vector2(24.5, -1.5)
+shape = SubResource("RectangleShape2D_debwl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=372616242]
+position = Vector2(25, 2)
+scale = Vector2(1, 1.3125)
+sprite_frames = SubResource("SpriteFrames_rpj87")
+autoplay = "default"
+frame_progress = 0.8735508
