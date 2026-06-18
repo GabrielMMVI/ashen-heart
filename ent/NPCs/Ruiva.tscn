@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://6mjl0jyvgbyp"]
+
+[ext_resource type="Texture2D" uid="uid://cbsfwdh4ewtmo" path="res://ass/sprites/NPCs/ChornaRuiva1.png" id="1_6y30l"]
+[ext_resource type="Texture2D" uid="uid://cpfn6iinyqjhi" path="res://ass/sprites/NPCs/ChornaRuiva2.png" id="2_sb1op"]
+[ext_resource type="Texture2D" uid="uid://c4ear1ehl7qbq" path="res://ass/sprites/NPCs/ChornaRuiva3.png" id="3_djo1t"]
+[ext_resource type="Texture2D" uid="uid://hk7bcyyggcq2" path="res://ass/sprites/NPCs/ChornaRuiva4.png" id="4_pgj0f"]
+[ext_resource type="Texture2D" uid="uid://dthxqxsig1j5t" path="res://ass/sprites/NPCs/ChornaRuiva5.png" id="5_8aj83"]
+[ext_resource type="Texture2D" uid="uid://dgq8vgnp70lmy" path="res://ass/sprites/NPCs/ChornaRuiva6.png" id="6_oi53h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4pgc"]
+size = Vector2(17, 28.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glh3g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6y30l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sb1op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_djo1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pgj0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8aj83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oi53h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=406320337]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=491088579]
+position = Vector2(35.5, 41.375)
+shape = SubResource("RectangleShape2D_h4pgc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1792340542]
+position = Vector2(35.999996, 44)
+scale = Vector2(0.9531249, 1.3320311)
+sprite_frames = SubResource("SpriteFrames_glh3g")
+autoplay = "default"
+frame_progress = 0.64705473
