@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqdlyip4sd4hj"
+path="res://.godot/imported/FUGA- PERSEGUIÇÃO.mp3-0d3cc8ff8ea8d5e5e0614cda1aafd476.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/Musics/FUGA- PERSEGUIÇÃO.mp3"
+dest_files=["res://.godot/imported/FUGA- PERSEGUIÇÃO.mp3-0d3cc8ff8ea8d5e5e0614cda1aafd476.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

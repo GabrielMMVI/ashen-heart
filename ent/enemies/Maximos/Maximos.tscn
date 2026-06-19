@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpkhs8dqmnd8n"]
 
 [ext_resource type="Texture2D" uid="uid://4wnl7j6wn33v" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos1.png" id="1_bxfry"]
+[ext_resource type="Script" uid="uid://bhnqq5sjpll22" path="res://ent/enemies/Maximos/Scripts/scrMaximos.gd" id="1_lk7lp"]
 [ext_resource type="Texture2D" uid="uid://e25yfld08g4v" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos2.png" id="2_lk7lp"]
 [ext_resource type="Texture2D" uid="uid://csmg1xauabiy7" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos3.png" id="3_kniyc"]
 [ext_resource type="Texture2D" uid="uid://ba532konthruw" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos4.png" id="4_upnoe"]
@@ -40,35 +41,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bxfry")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_lk7lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_kniyc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_upnoe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_uod2u")
-}, {
-"duration": 1.3,
-"texture": ExtResource("6_da8o5")
-}, {
-"duration": 1.6,
-"texture": ExtResource("7_qkrmp")
-}, {
-"duration": 1.2,
-"texture": ExtResource("8_kwadg")
-}],
-"loop": false,
-"name": &"Base_Attack",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("9_42s54")
 }, {
 "duration": 1.0,
@@ -83,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_2vy0x")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Death",
 "speed": 2.0
 }, {
@@ -100,7 +72,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_pro2r")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Magic_Attack",
 "speed": 8.0
 }, {
@@ -135,9 +107,38 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_jbpmj")
 }],
-"loop": false,
-"name": &"Stock_Attack",
+"loop": 0,
+"name": &"Pierce_Attack",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bxfry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lk7lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kniyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_upnoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uod2u")
+}, {
+"duration": 1.3,
+"texture": ExtResource("6_da8o5")
+}, {
+"duration": 1.6,
+"texture": ExtResource("7_qkrmp")
+}, {
+"duration": 1.2,
+"texture": ExtResource("8_kwadg")
+}],
+"loop": 0,
+"name": &"Slash_Attack",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,29 +165,41 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("35_msc4a")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Walk",
 "speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebcg1"]
+radius = 17.262676
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(32, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukc71"]
 size = Vector2(20, 26)
 
 [node name="chbMaximos" type="CharacterBody2D" unique_id=1700391572]
+scale = Vector2(2.325397, 2.325397)
+script = ExtResource("1_lk7lp")
 
 [node name="ansprMaximos" type="AnimatedSprite2D" parent="." unique_id=1625956474]
 sprite_frames = SubResource("SpriteFrames_4lw2j")
-animation = &"Stock_Attack"
-frame = 9
+animation = &"Magic_Attack"
+frame = 3
 frame_progress = 1.0
 
 [node name="aHitBox" type="Area2D" parent="." unique_id=1680868784]
 
-[node name="aHitbox_Stock" type="CollisionShape2D" parent="aHitBox" unique_id=613134891]
-position = Vector2(20, 2)
+[node name="aHitbox_Slash" type="CollisionShape2D" parent="aHitBox" unique_id=613134891]
+position = Vector2(9, 1)
 shape = SubResource("CircleShape2D_ebcg1")
+debug_color = Color(0.7852096, 0.43357903, 0, 0.41960785)
+
+[node name="aHitbox_Pierce" type="CollisionShape2D" parent="aHitBox" unique_id=1359568797]
+position = Vector2(16, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0.82182765, 0, 0.1950936, 0.41960785)
 
 [node name="colHurtbox" type="CollisionShape2D" parent="." unique_id=1424697601]
 position = Vector2(0, 3)
