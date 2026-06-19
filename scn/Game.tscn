@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="23_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="24_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="25_x7jvh"]
+[ext_resource type="PackedScene" uid="uid://cpkhs8dqmnd8n" path="res://ent/enemies/Maximos/Maximos.tscn" id="28_0fdk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb48q"]
 texture = ExtResource("1_xkndl")
@@ -4669,5 +4670,8 @@ offset_bottom = 787.0
 text = "Você pode encontrar 
 novas armas em 
 passagens secretas "
+
+[node name="chbMaximos" parent="." unique_id=1700391572 instance=ExtResource("28_0fdk0")]
+position = Vector2(371, 474.00003)
 
 [editable path="playerHUD"]
