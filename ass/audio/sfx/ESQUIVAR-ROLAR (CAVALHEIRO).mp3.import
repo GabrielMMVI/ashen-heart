@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0yhu7rsfnhu5"
+path="res://.godot/imported/ESQUIVAR-ROLAR (CAVALHEIRO).mp3-a054e267bcadc2efbd61046c06bc39bb.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/sfx/ESQUIVAR-ROLAR (CAVALHEIRO).mp3"
+dest_files=["res://.godot/imported/ESQUIVAR-ROLAR (CAVALHEIRO).mp3-a054e267bcadc2efbd61046c06bc39bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

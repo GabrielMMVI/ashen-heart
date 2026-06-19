@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0rix66cledo2"
+path="res://.godot/imported/MORRER (CAVALHEIRO).mp3-bcb893484948ef4bbd8e36b10f9cff6b.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/sfx/MORRER (CAVALHEIRO).mp3"
+dest_files=["res://.godot/imported/MORRER (CAVALHEIRO).mp3-bcb893484948ef4bbd8e36b10f9cff6b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

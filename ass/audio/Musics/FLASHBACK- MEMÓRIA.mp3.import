@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgo0vhl7wr41h"
+path="res://.godot/imported/FLASHBACK- MEMÓRIA.mp3-124c48221a8958c67c1e50f78be6340d.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/Musics/FLASHBACK- MEMÓRIA.mp3"
+dest_files=["res://.godot/imported/FLASHBACK- MEMÓRIA.mp3-124c48221a8958c67c1e50f78be6340d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo2q6vwdhlsd1"
+path="res://.godot/imported/ABRIR MENU.mp3-55a1f6a35ee5dab34ba5688386404355.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/sfx/ABRIR MENU.mp3"
+dest_files=["res://.godot/imported/ABRIR MENU.mp3-55a1f6a35ee5dab34ba5688386404355.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

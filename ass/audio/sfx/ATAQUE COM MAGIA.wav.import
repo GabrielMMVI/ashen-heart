@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dh2koauqoyllr"
+path="res://.godot/imported/ATAQUE COM MAGIA.wav-060335ec6112a30b8fd04d4dc37ad04f.sample"
+
+[deps]
+
+source_file="res://ass/audio/sfx/ATAQUE COM MAGIA.wav"
+dest_files=["res://.godot/imported/ATAQUE COM MAGIA.wav-060335ec6112a30b8fd04d4dc37ad04f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwy05cm8t53p6"
+path="res://.godot/imported/CONQUISTA DESBLOQUEADA.mp3-429f21ea5ddaac2a1d9cf7afdf0e7a09.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/sfx/CONQUISTA DESBLOQUEADA.mp3"
+dest_files=["res://.godot/imported/CONQUISTA DESBLOQUEADA.mp3-429f21ea5ddaac2a1d9cf7afdf0e7a09.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
