@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c2kkmjgnknm41"]
+
+[ext_resource type="Texture2D" uid="uid://bdrqtg4dqiqhv" path="res://ass/tiles/Carta.png" id="1_ivw6w"]
+[ext_resource type="Script" uid="uid://ut61pn30lfpy" path="res://scn/carta_intro.gd" id="1_oxu60"]
+
+[node name="CartaIntro" type="Node2D" unique_id=1238238668]
+script = ExtResource("1_oxu60")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=470779395]
+position = Vector2(402.99997, 226.00002)
+scale = Vector2(0.626999, 0.4697266)
+texture = ExtResource("1_ivw6w")
+
+[node name="Label" type="Label" parent="." unique_id=779750876]
+offset_left = 538.0
+offset_top = 411.0
+offset_right = 786.0
+offset_bottom = 434.0
+text = "Pressione ENTER para continuar"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=717602117]
+z_index = -1
+offset_left = -9.0
+offset_top = -7.0
+offset_right = 821.0
+offset_bottom = 468.0
+color = Color(0, 0, 0, 1)

@@ -1,40 +1,54 @@
 [gd_scene format=3 uid="uid://d030dkwxs4rn3"]
 
-[node name="TelaFinal" type="Node2D" unique_id=127782039]
+[ext_resource type="Script" uid="uid://brgux3emvueoa" path="res://scn/tela_final.gd" id="1_sa5hs"]
+[ext_resource type="Texture2D" uid="uid://icxvjpha882l" path="res://scn/backgroundMainMenu.jpeg" id="2_gdswd"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1492515044]
-offset_right = 809.0
-offset_bottom = 460.0
-color = Color(0, 0, 0, 1)
+[node name="TelaFinal" type="Node2D" unique_id=127782039]
+script = ExtResource("1_sa5hs")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=912986758]
+z_index = -1
+offset_right = 803.0
+offset_bottom = 453.0
+texture = ExtResource("2_gdswd")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=1320749051]
-offset_left = 1.0
-offset_top = -6.0
-offset_right = 801.0
-offset_bottom = 446.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = 140.0
+offset_right = 470.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Obrigado por jogar!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1281017058]
-clip_contents = true
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+[node name="Menu" type="Button" parent="." unique_id=1685532926]
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 248.0
-offset_top = 261.0
-offset_right = 361.0
-offset_bottom = 321.0
+anchor_bottom = 1.0
+offset_left = 337.0
+offset_top = 195.0
+offset_right = 438.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu
+"
+
+[node name="FecharJogo" type="Button" parent="." unique_id=1281017058]
+clip_contents = true
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 339.0
+offset_top = 255.0
+offset_right = 437.0
+offset_bottom = 296.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Fechar jogo"
-
-[node name="Button2" type="Button" parent="." unique_id=1685532926]
-offset_left = 445.0
-offset_top = 260.0
-offset_right = 558.0
-offset_bottom = 321.0
-text = "Menu
-"
