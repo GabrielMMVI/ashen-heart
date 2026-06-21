@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="24_fv8kv"]
 [ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="25_x7jvh"]
 [ext_resource type="PackedScene" uid="uid://cpkhs8dqmnd8n" path="res://ent/enemies/Maximos/Maximos.tscn" id="28_0fdk0"]
+[ext_resource type="PackedScene" uid="uid://cqlrgmq4qmvix" path="res://ass/sprites/Player/Arrow/arco_2d.tscn" id="29_wn0sx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sb48q"]
 texture = ExtResource("1_xkndl")
@@ -4559,7 +4560,7 @@ texture_progress_offset = Vector2(50, 0)
 
 [node name="SecretWall" parent="." unique_id=249484401 instance=ExtResource("21_twl0x")]
 z_index = 2
-position = Vector2(778, 728)
+position = Vector2(794, 731)
 
 [node name="EndZone" type="Area2D" parent="." unique_id=1058054327]
 collision_mask = 2
@@ -4674,9 +4675,7 @@ passagens secretas "
 [node name="chbMaximos" parent="." unique_id=1700391572 instance=ExtResource("28_0fdk0")]
 position = Vector2(371, 474.00003)
 
-<<<<<<< Updated upstream
+[node name="Arco2D" parent="." unique_id=1325217097 instance=ExtResource("29_wn0sx")]
+position = Vector2(947, 776)
+
 [editable path="playerHUD"]
-=======
-[node name="chbRed_Ranger2" parent="." unique_id=1835878509 instance=ExtResource("25_x7jvh")]
-position = Vector2(612, 448)
->>>>>>> Stashed changes

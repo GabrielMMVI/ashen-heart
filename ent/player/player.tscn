@@ -275,7 +275,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_w7uma")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_axe",
 "speed": 8.0
 }, {
@@ -301,7 +301,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_f28gf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_bow",
 "speed": 10.0
 }, {
@@ -318,7 +318,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_db7t0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_magic",
 "speed": 10.0
 }, {
@@ -338,7 +338,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_6afxj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_melee",
 "speed": 15.0
 }, {
@@ -346,7 +346,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_vjege")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fall",
 "speed": 0.0
 }, {
@@ -444,7 +444,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w7uma")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hurt",
 "speed": 25.0
 }, {
@@ -461,7 +461,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_83xl5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -475,7 +475,7 @@ animations = [{
 "duration": 50000.0,
 "texture": ExtResource("9_vjege")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -534,7 +534,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_akbyv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"switch_weapon",
 "speed": 30.0
 }, {
@@ -551,7 +551,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_w3pjm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sword_slash",
 "speed": 12.0
 }, {
@@ -592,7 +592,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_db7t0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"walk",
 "speed": 20.0
 }]
@@ -602,7 +602,7 @@ size = Vector2(20, 15.882351)
 
 [node name="chbPlayer" type="CharacterBody2D" unique_id=261209851 groups=["player", "player_hurtbox"]]
 z_index = 3
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_gfv6k")
 
 [node name="colPlayer" type="CollisionShape2D" parent="." unique_id=279131227]
