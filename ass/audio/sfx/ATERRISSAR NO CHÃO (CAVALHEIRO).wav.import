@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qhuowwbkg826"
+path="res://.godot/imported/ATERRISSAR NO CHÃO (CAVALHEIRO).wav-f98b0ac472e2545f4b2602eca82f4711.sample"
+
+[deps]
+
+source_file="res://ass/audio/sfx/ATERRISSAR NO CHÃO (CAVALHEIRO).wav"
+dest_files=["res://.godot/imported/ATERRISSAR NO CHÃO (CAVALHEIRO).wav-f98b0ac472e2545f4b2602eca82f4711.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

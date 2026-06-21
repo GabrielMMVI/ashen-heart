@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ucnypwchjha0"
+path="res://.godot/imported/ITEM NOVO EQUIPADO.mp3-e3af8c53e0dc9421d63c603eba076938.mp3str"
+
+[deps]
+
+source_file="res://ass/audio/sfx/ITEM NOVO EQUIPADO.mp3"
+dest_files=["res://.godot/imported/ITEM NOVO EQUIPADO.mp3-e3af8c53e0dc9421d63c603eba076938.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

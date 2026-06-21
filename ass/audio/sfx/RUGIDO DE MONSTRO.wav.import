@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dk2htorhxyiwn"
+path="res://.godot/imported/RUGIDO DE MONSTRO.wav-eb2f231e91043c645cd624c7e1a58454.sample"
+
+[deps]
+
+source_file="res://ass/audio/sfx/RUGIDO DE MONSTRO.wav"
+dest_files=["res://.godot/imported/RUGIDO DE MONSTRO.wav-eb2f231e91043c645cd624c7e1a58454.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
