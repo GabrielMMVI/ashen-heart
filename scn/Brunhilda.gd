@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal dialogue_finished
+
 @onready var dialogue_box = $DialogueBox
 @onready var dialogue_text = $DialogueBox/DialogueText
 @onready var speaker_name = $DialogueBox/SpeakerName
@@ -41,3 +43,4 @@ func _process(_delta):
 				show_line(current_index)
 			else:
 				dialogue_box.visible = false
+				dialogue_finished.emit()
