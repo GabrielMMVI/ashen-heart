@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://0433426rlpnf"]
 
+[ext_resource type="Script" uid="uid://dotogdnogq8r2" path="res://scn/teladegameover.gd" id="1_0fngh"]
+
 [node name="Node2D" type="Node2D" unique_id=2026904536]
+script = ExtResource("1_0fngh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1598353909]
 
@@ -43,12 +46,15 @@ theme_override_font_sizes/font_size = 60
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=1361293110]
+[node name="ButtonTentar" type="Button" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=1361293110]
 custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
 text = "Tentar de novo"
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=329088251]
+[node name="ButtonSairOver" type="Button" parent="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer" unique_id=329088251]
 custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
 text = "Sair"
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer/ButtonTentar" to="." method="_on_button_tentar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/CenterContainer/VBoxContainer/ButtonSairOver" to="." method="_on_button_sair_over_pressed"]

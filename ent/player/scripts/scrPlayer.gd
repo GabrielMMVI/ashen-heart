@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var game_over_scene = preload("res://scn/teladegameover.tscn")
+
 # ==============================================================================
 # SINAIS
 # ==============================================================================
@@ -120,17 +122,11 @@ func take_damage(amount: int, applied_knockback: Vector2 = Vector2.ZERO) -> void
 
 func _die() -> void:
 	print("Player Morreu!")
-	set_physics_process(false)
 
-	await get_tree().create_timer(1.0).timeout
+	var game_over = game_over_scene.instantiate()
+	get_tree().current_scene.add_child(game_over)
 
-	_current_health = MAX_HEALTH
-	health_changed.emit(_current_health, MAX_HEALTH)
-	global_position = _start_position
-	velocity        = Vector2.ZERO
-	_is_invincible  = false
-
-	set_physics_process(true)
+	get_tree().paused = true
 
 func _flash_damage() -> void:
 	var tween := create_tween()
