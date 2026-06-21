@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cqlrgmq4qmvix"]
 
+[ext_resource type="Script" uid="uid://dp5v2lwqwlay0" path="res://ass/sprites/Player/Arrow/arco_2d.gd" id="1_2tq3e"]
 [ext_resource type="Texture2D" uid="uid://cbmyss6l36coq" path="res://ass/sprites/Player/Arrow/ArcoAtaque1.png" id="1_o7qp2"]
 [ext_resource type="Texture2D" uid="uid://dnos5dl03td2w" path="res://ass/sprites/Player/Arrow/ArcoAtaque2.png" id="2_2tq3e"]
 [ext_resource type="Texture2D" uid="uid://schwn80qwlt8" path="res://ass/sprites/Player/Arrow/ArcoAtaque3.png" id="3_53n84"]
@@ -32,7 +33,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_fy6xt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"defa",
 "speed": 5.0
 }]
@@ -40,6 +41,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ektry"]
 
 [node name="Arco2D" type="Area2D" unique_id=1325217097]
+script = ExtResource("1_2tq3e")
 
 [node name="ArcoSprite2D" type="AnimatedSprite2D" parent="." unique_id=259926789]
 sprite_frames = SubResource("SpriteFrames_csxo7")

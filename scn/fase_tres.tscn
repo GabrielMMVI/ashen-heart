@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bcle4toh3ic7a" path="res://ass/sprites/Player/_HealthBar/BigBar_Base2.png" id="21_kssji"]
 [ext_resource type="Texture2D" uid="uid://dwt8wf7sl435i" path="res://ass/sprites/Player/_HealthBar/BigBar_Fill7.png" id="22_kqdvx"]
 [ext_resource type="Script" uid="uid://b4l5vclx76nn3" path="res://scn/sala_final.gd" id="24_kqdvx"]
+[ext_resource type="PackedScene" uid="uid://cqlrgmq4qmvix" path="res://ass/sprites/Player/Arrow/arco_2d.tscn" id="25_sgho5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mu37b"]
 texture = ExtResource("5_mu37b")
@@ -6710,7 +6711,7 @@ position = Vector2(3711, 479)
 
 [node name="StaticBody2D" parent="." unique_id=1003204276 instance=ExtResource("19_fhycd")]
 z_index = 7
-position = Vector2(4105, 21)
+position = Vector2(4098, 49)
 
 [node name="chbRed_Soldier" parent="." unique_id=886209351 instance=ExtResource("20_td6fn")]
 position = Vector2(4586, 221)
@@ -6796,5 +6797,8 @@ script = ExtResource("24_kqdvx")
 light_mask = 2
 position = Vector2(5978, 208)
 shape = SubResource("RectangleShape2D_kssji")
+
+[node name="Arco2D" parent="." unique_id=1325217097 instance=ExtResource("25_sgho5")]
+position = Vector2(4087, 9)
 
 [editable path="playerHUD"]

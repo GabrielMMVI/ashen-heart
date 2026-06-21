@@ -155,6 +155,22 @@ func _switch_weapon(direction: int) -> void:
 
 	_is_switching = false
 
+# FUNÇÃO ADICIONADA PARA COLETAR ARMAS DO CHÃO
+func pickup_weapon(new_weapon: int) -> void:
+	if _is_attacking:
+		await get_tree().create_timer(0.2).timeout
+		
+	_is_switching = true
+	_current_weapon = new_weapon
+	
+	weapon_changed.emit(WEAPON_NAMES[_current_weapon])
+	print("Arma coletada e equipada: ", WEAPON_NAMES[_current_weapon])
+	
+	_sprite.play("switch_weapon")
+	await _sprite.animation_finished
+	
+	_is_switching = false
+
 # ==============================================================================
 # SISTEMA DE ATAQUE
 # ==============================================================================
