@@ -55,6 +55,7 @@ const WEAPON_NAMES: Dictionary = {
 # ESTADO INTERNO
 # ==============================================================================
 var _current_weapon:  Weapon = Weapon.SWORD
+var _unlocked_weapons: Array[Weapon] = [Weapon.SWORD] # INVENTÁRIO (Começa só com a espada)
 var _current_health:  int    = MAX_HEALTH
 var _facing_right:    bool   = true
 var _is_attacking:    bool   = false
@@ -141,13 +142,18 @@ func _handle_weapon_switch() -> void:
 		_switch_weapon(1)
 
 func _switch_weapon(direction: int) -> void:
-	if _is_attacking or _is_switching:
+	# Agora não troca de arma se ele tiver apenas 1 (ex: só a espada no começo)
+	if _is_attacking or _is_switching or _unlocked_weapons.size() <= 1:
 		return
 
 	_is_switching = true
 
-	var total: int = Weapon.size()
-	_current_weapon = (_current_weapon + direction + total) % total
+	# Procura a arma atual na lista de armas desbloqueadas e muda para a próxima
+	var current_index: int = _unlocked_weapons.find(_current_weapon)
+	var total: int = _unlocked_weapons.size()
+	
+	var next_index: int = (current_index + direction + total) % total
+	_current_weapon = _unlocked_weapons[next_index]
 
 	weapon_changed.emit(WEAPON_NAMES[_current_weapon])
 	_sprite.play("switch_weapon")
@@ -157,14 +163,22 @@ func _switch_weapon(direction: int) -> void:
 
 # FUNÇÃO ADICIONADA PARA COLETAR ARMAS DO CHÃO
 func pickup_weapon(new_weapon: int) -> void:
+	# Converte o ID para o tipo de arma
+	var weapon_enum: Weapon = new_weapon as Weapon
+	
+	# Se a arma for nova, adiciona ao inventário
+	if not weapon_enum in _unlocked_weapons:
+		_unlocked_weapons.append(weapon_enum)
+		print("Nova arma desbloqueada: ", WEAPON_NAMES[weapon_enum])
+
 	if _is_attacking:
 		await get_tree().create_timer(0.2).timeout
 		
 	_is_switching = true
-	_current_weapon = new_weapon
+	_current_weapon = weapon_enum
 	
 	weapon_changed.emit(WEAPON_NAMES[_current_weapon])
-	print("Arma coletada e equipada: ", WEAPON_NAMES[_current_weapon])
+	print("Arma equipada: ", WEAPON_NAMES[_current_weapon])
 	
 	_sprite.play("switch_weapon")
 	await _sprite.animation_finished
