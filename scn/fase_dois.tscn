@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="28_fvayb"]
 [ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="29_7hs05"]
 [ext_resource type="PackedScene" uid="uid://dta1diol77mkk" path="res://scn/Machado2D.tscn" id="30_fvayb"]
+[ext_resource type="PackedScene" uid="uid://btadcjx7mkyff" path="res://ent/enemies/Barbar_king/Barbar_King.tscn" id="31_7hs05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkyrj"]
 texture = ExtResource("2_0pxnl")

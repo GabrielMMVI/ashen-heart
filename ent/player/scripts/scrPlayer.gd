@@ -16,7 +16,7 @@ const ACCELERATION   := 800.0    # px/s² — rampa de subida até a velocidade 
 const FRICTION       := 600.0    # px/s² — rampa de frenagem até parar
 const JUMP_VELOCITY  := -250.0
 const PLAYER_GRAVITY := 550.0
-const MAX_HEALTH     := 100
+const MAX_HEALTH     := 200
 const MELEE_DAMAGE   := 20
 const ARROW_SPEED_X  := 450.0
 

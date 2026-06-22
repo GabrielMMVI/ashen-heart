@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://btadcjx7mkyff"]
+
+[ext_resource type="Script" uid="uid://dtyysgg5a8vrv" path="res://ent/enemies/Barbar_king/Scripts/scrBarbar_King.gd" id="1_oio40"]
+[ext_resource type="Texture2D" uid="uid://dkc5aw0rptfjv" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario1.png" id="2_rq7tc"]
+[ext_resource type="Texture2D" uid="uid://o6md2ocddx8b" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario2.png" id="3_whuq7"]
+[ext_resource type="Texture2D" uid="uid://0yfs1fqxh1ka" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario3.png" id="4_yg771"]
+[ext_resource type="Texture2D" uid="uid://bu8o1635nwnvu" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario4.png" id="5_so2j8"]
+[ext_resource type="Texture2D" uid="uid://bdo1t00hwltmf" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario5.png" id="6_ju73x"]
+[ext_resource type="Texture2D" uid="uid://dt7mxpnippas0" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario6.png" id="7_edc8l"]
+[ext_resource type="Texture2D" uid="uid://dvisydbv34d3s" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/AtaqueSecundario7.png" id="8_anhxl"]
+[ext_resource type="Texture2D" uid="uid://c6e5cjm25b2yw" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc1.png" id="9_k6v61"]
+[ext_resource type="Texture2D" uid="uid://1ds6588p8jug" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc2.png" id="10_kfrvl"]
+[ext_resource type="Texture2D" uid="uid://cdfljutlpffm2" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc3.png" id="11_esasp"]
+[ext_resource type="Texture2D" uid="uid://dfjv4qnvb04va" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc4.png" id="12_mr7nu"]
+[ext_resource type="Texture2D" uid="uid://bgduf6kjiigm7" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc5.png" id="13_3leex"]
+[ext_resource type="Texture2D" uid="uid://5xnyhroxx5i4" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc6.png" id="14_y5vkw"]
+[ext_resource type="Texture2D" uid="uid://bt232urx2c27i" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc7.png" id="15_h01pw"]
+[ext_resource type="Texture2D" uid="uid://ba0f380cjnr8i" path="res://ass/sprites/Enemies/Chefes/2_Boss/Attacks/2BossAtaqueBasc8.png" id="16_6vvsx"]
+[ext_resource type="Texture2D" uid="uid://y8sw7p8iod1j" path="res://ass/sprites/Enemies/Chefes/2_Boss/Idle/Parado1.png" id="17_ad02l"]
+[ext_resource type="Texture2D" uid="uid://c7mj5mxpn7dq3" path="res://ass/sprites/Enemies/Chefes/2_Boss/Morto/2BossMorto1.png" id="17_y5vkw"]
+[ext_resource type="Texture2D" uid="uid://d1pae2swjexye" path="res://ass/sprites/Enemies/Chefes/2_Boss/Idle/Parado2.png" id="18_ea5fl"]
+[ext_resource type="Texture2D" uid="uid://bfnkvkdryt07e" path="res://ass/sprites/Enemies/Chefes/2_Boss/Morto/2BossMorto2.png" id="18_h01pw"]
+[ext_resource type="Texture2D" uid="uid://4hp1nii8tnif" path="res://ass/sprites/Enemies/Chefes/2_Boss/Idle/Parado3.png" id="19_00vhe"]
+[ext_resource type="Texture2D" uid="uid://gokpsjftqx52" path="res://ass/sprites/Enemies/Chefes/2_Boss/Morto/2BossMorto3.png" id="19_6vvsx"]
+[ext_resource type="Texture2D" uid="uid://g7smchiy1tv7" path="res://ass/sprites/Enemies/Chefes/2_Boss/Morto/2BossMorto4.png" id="20_ad02l"]
+[ext_resource type="Texture2D" uid="uid://dehmgjrpa5d5r" path="res://ass/sprites/Enemies/Chefes/2_Boss/Idle/Parado4.png" id="20_gb3mv"]
+[ext_resource type="Texture2D" uid="uid://bjne7w12a4x3q" path="res://ass/sprites/Enemies/Chefes/2_Boss/Morto/2BossMorto5.png" id="21_ea5fl"]
+[ext_resource type="Texture2D" uid="uid://du5d0qfrwg5wa" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando1.png" id="26_00vhe"]
+[ext_resource type="Texture2D" uid="uid://c0pfot847cbgl" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando2.png" id="27_gb3mv"]
+[ext_resource type="Texture2D" uid="uid://cu4lku7oemao" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando3.png" id="28_la7i1"]
+[ext_resource type="Texture2D" uid="uid://bshhcagu7lac3" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando4.png" id="29_gre2o"]
+[ext_resource type="Texture2D" uid="uid://dg7o0a2n5o41d" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando5.png" id="30_6biof"]
+[ext_resource type="Texture2D" uid="uid://c8jacnilwsoqe" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando6.png" id="31_1fjqx"]
+[ext_resource type="Texture2D" uid="uid://d0llqncrjl84w" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando7.png" id="32_cvvmy"]
+[ext_resource type="Texture2D" uid="uid://be3ho0gjly0ki" path="res://ass/sprites/Enemies/Chefes/2_Boss/Walk/BossAndando8.png" id="33_qr1ta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 21)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v87sl"]
+radius = 5.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rq7tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_whuq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yg771")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_so2j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ju73x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_edc8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_anhxl")
+}],
+"loop": 0,
+"name": &"2nd_attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_k6v61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kfrvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_esasp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mr7nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3leex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y5vkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h01pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6vvsx")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_y5vkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_h01pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6vvsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ad02l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ea5fl")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ad02l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ea5fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_00vhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gb3mv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_00vhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gb3mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_la7i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_gre2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6biof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1fjqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cvvmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qr1ta")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(29, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 5.0
+
+[node name="2Boss" type="CharacterBody2D" unique_id=1940046524 groups=["enemy", "enemy_hurtbox"]]
+scale = Vector2(2, 2)
+collision_layer = 4
+script = ExtResource("1_oio40")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=465890761 groups=["enemy", "enemy_hurtbox"]]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="aHurtbox" type="Area2D" parent="." unique_id=321912467 groups=["enemy", "enemy_hurtbox"]]
+
+[node name="aHurtbox" type="CollisionShape2D" parent="aHurtbox" unique_id=1795467018 groups=["enemy", "enemy_hurtbox"]]
+shape = SubResource("CapsuleShape2D_v87sl")
+debug_color = Color(0.8090332, 0.41343877, 0.0026373726, 0.41960785)
+
+[node name="ansprBoss2" type="AnimatedSprite2D" parent="." unique_id=765537036]
+sprite_frames = SubResource("SpriteFrames_57qmd")
+animation = &"death"
+
+[node name="aHitbox" type="Area2D" parent="." unique_id=1129224519]
+
+[node name="aHitboxMachado" type="CollisionShape2D" parent="aHitbox" unique_id=961544356]
+position = Vector2(19.5, 0)
+shape = SubResource("RectangleShape2D_yf5fn")
+debug_color = Color(0.9356671, 0.25519416, 0, 0.41960785)
+
+[node name="aHitboxCoronhada" type="CollisionShape2D" parent="aHitbox" unique_id=1898483015]
+position = Vector2(13, 1)
+shape = SubResource("CircleShape2D_g4v7s")
+debug_color = Color(1.2032688e-06, 0.6259039, 0.51891285, 0.41960785)
