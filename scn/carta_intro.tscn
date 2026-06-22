@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdrqtg4dqiqhv" path="res://ass/tiles/Carta.png" id="1_ivw6w"]
 [ext_resource type="Script" uid="uid://ut61pn30lfpy" path="res://scn/carta_intro.gd" id="1_oxu60"]
+[ext_resource type="AudioStream" uid="uid://cq0hvashn5td5" path="res://ass/audio/Musics/MUSICA TUTORIAL DO JOGO.mp3" id="3_uhoi8"]
 
 [node name="CartaIntro" type="Node2D" unique_id=1238238668]
 script = ExtResource("1_oxu60")
@@ -25,3 +26,7 @@ offset_top = -7.0
 offset_right = 821.0
 offset_bottom = 468.0
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=927415600]
+stream = ExtResource("3_uhoi8")
+autoplay = true
