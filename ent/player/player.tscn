@@ -605,7 +605,7 @@ z_index = 3
 collision_layer = 2
 script = ExtResource("1_gfv6k")
 
-[node name="colPlayer" type="CollisionShape2D" parent="." unique_id=279131227]
+[node name="colPlayer" type="CollisionShape2D" parent="." unique_id=279131227 groups=["player", "player_hurtbox"]]
 z_index = 1
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ncg78")
@@ -625,7 +625,7 @@ limit_bottom = 800
 
 [node name="aHurtbox" type="Area2D" parent="." unique_id=1877180658 groups=["player", "player_hurtbox"]]
 
-[node name="colHurtbox" type="CollisionShape2D" parent="aHurtbox" unique_id=1137092379]
+[node name="colHurtbox" type="CollisionShape2D" parent="aHurtbox" unique_id=1137092379 groups=["player", "player_hurtbox"]]
 z_index = 1
 position = Vector2(0, 2.8000019)
 scale = Vector2(0.5430311, 1.3600004)

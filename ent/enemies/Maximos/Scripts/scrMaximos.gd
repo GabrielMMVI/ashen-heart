@@ -10,9 +10,9 @@ const JUMP_VELOCITY      := -500.0
 const KNOCKBACK_FORCE    := Vector2(400.0, -50.0)
 
 # ── Danos ────────────────────────────────────────────────────────────────────
-const PIERCE_DAMAGE := 80
-const SLASH_DAMAGE  := 60
-const MAGIC_DAMAGE   := 100
+const PIERCE_DAMAGE := 60
+const SLASH_DAMAGE  := 45
+const MAGIC_DAMAGE   := 30
 
 # ── Ranges ───────────────────────────────────────────────────────────────────
 const SLASH_RANGE       := 40.0
@@ -255,17 +255,12 @@ func take_damage(amount: int, _applied_knockback_force: Vector2 = Vector2.ZERO) 
 	# mantido apenas para compatibilidade de assinatura com os outros inimigos.
 	if _current_health <= 0:
 		return
-
 	_current_health = max(0, _current_health - amount)
-
 	_flash_damage()
 	print("Boss recebeu dano! Vida: ", _current_health, "/", MAX_HEALTH)
-
 	_check_phase_transition()
-
 	if _current_health == 0:
 		_start_death()
-
 # Verifica se a vida caiu para metade ou menos e ativa a fase 2 (uma única vez)
 func _check_phase_transition() -> void:
 	if not _is_phase2 and _current_health <= MAX_HEALTH / 2:
