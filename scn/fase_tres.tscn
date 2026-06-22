@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://b4l5vclx76nn3" path="res://scn/sala_final.gd" id="24_kqdvx"]
 [ext_resource type="PackedScene" uid="uid://gqrrjrcdpic1" path="res://scn/Cajado2D.tscn" id="26_exfte"]
 [ext_resource type="Script" uid="uid://bj2gs8ikckyju" path="res://scn/scripts/agua_barrco.gd" id="26_wn7hu"]
+[ext_resource type="AudioStream" uid="uid://bo22e808y0nhm" path="res://ass/audio/Musics/CASTELO.mp3" id="27_wn7hu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mu37b"]
 texture = ExtResource("5_mu37b")
@@ -6822,5 +6823,9 @@ script = ExtResource("26_wn7hu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AguaBarrco" unique_id=443689323]
 position = Vector2(162, 396)
 shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1945281276]
+stream = ExtResource("27_wn7hu")
+autoplay = true
 
 [editable path="playerHUD"]
