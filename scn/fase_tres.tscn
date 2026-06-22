@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://gqrrjrcdpic1" path="res://scn/Cajado2D.tscn" id="26_exfte"]
 [ext_resource type="Script" uid="uid://bj2gs8ikckyju" path="res://scn/scripts/agua_barrco.gd" id="26_wn7hu"]
 [ext_resource type="AudioStream" uid="uid://bo22e808y0nhm" path="res://ass/audio/Musics/CASTELO.mp3" id="27_wn7hu"]
+[ext_resource type="PackedScene" uid="uid://btadcjx7mkyff" path="res://ent/enemies/Barbar_king/Barbar_King.tscn" id="28_k0w1j"]
+[ext_resource type="PackedScene" uid="uid://cpkhs8dqmnd8n" path="res://ent/enemies/Maximos/Maximos.tscn" id="29_8vw25"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mu37b"]
 texture = ExtResource("5_mu37b")
@@ -6827,5 +6829,14 @@ shape = SubResource("RectangleShape2D_57qmd")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1945281276]
 stream = ExtResource("27_wn7hu")
 autoplay = true
+
+[node name="2Boss" parent="." unique_id=1940046524 instance=ExtResource("28_k0w1j")]
+position = Vector2(3730, 455)
+
+[node name="2Boss2" parent="." unique_id=520866001 instance=ExtResource("28_k0w1j")]
+position = Vector2(4930, 442)
+
+[node name="chbMaximos" parent="." unique_id=1700391572 instance=ExtResource("29_8vw25")]
+position = Vector2(3741, 35)
 
 [editable path="playerHUD"]
