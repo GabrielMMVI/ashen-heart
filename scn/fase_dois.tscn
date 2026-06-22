@@ -5503,6 +5503,7 @@ position = Vector2(2502, 14)
 position = Vector2(793, 253)
 
 [node name="Arco2D" parent="." unique_id=1325217097 instance=ExtResource("30_fvayb")]
+z_index = -1
 position = Vector2(1391, 192)
 
 [editable path="playerHUD"]
