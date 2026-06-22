@@ -5506,10 +5506,4 @@ position = Vector2(793, 253)
 [node name="Area2D2" parent="." unique_id=950774706 instance=ExtResource("30_fvayb")]
 position = Vector2(1391, 172)
 
-[node name="2Boss" parent="." unique_id=1940046524 instance=ExtResource("31_7hs05")]
-position = Vector2(2443, -9)
-
-[node name="2Boss2" parent="." unique_id=1146376658 instance=ExtResource("31_7hs05")]
-position = Vector2(5383, 422)
-
 [editable path="playerHUD"]
