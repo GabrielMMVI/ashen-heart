@@ -4434,7 +4434,7 @@ size = Vector2(38, 158)
 [node name="Game" type="Node2D" unique_id=946468458]
 
 [node name="chbPlayer" parent="." unique_id=261209851 instance=ExtResource("1_wbfu4")]
-position = Vector2(31, 489)
+position = Vector2(24, 490)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=489731479]
 
@@ -4560,7 +4560,7 @@ texture_progress_offset = Vector2(50, 0)
 
 [node name="SecretWall" parent="." unique_id=249484401 instance=ExtResource("21_twl0x")]
 z_index = 2
-position = Vector2(794, 731)
+position = Vector2(777, 731)
 
 [node name="EndZone" type="Area2D" parent="." unique_id=1058054327]
 collision_mask = 2
@@ -4676,6 +4676,6 @@ passagens secretas "
 position = Vector2(5015, 492)
 
 [node name="Arco2D" parent="." unique_id=1325217097 instance=ExtResource("29_wn0sx")]
-position = Vector2(947, 776)
+position = Vector2(977, 770)
 
 [editable path="playerHUD"]

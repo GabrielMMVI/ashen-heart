@@ -13,7 +13,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx171"]
 texture = ExtResource("1_ermbr")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.3547688, -8, 8, -8, 8, 8, -6.180666, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0

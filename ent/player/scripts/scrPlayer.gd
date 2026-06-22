@@ -55,7 +55,7 @@ const WEAPON_NAMES: Dictionary = {
 # ESTADO INTERNO
 # ==============================================================================
 var _current_weapon:  Weapon = Weapon.SWORD
-var _unlocked_weapons: Array[Weapon] = [Weapon.SWORD] # INVENTÁRIO (Começa só com a espada)
+var _unlocked_weapons: Array = [Weapon.SWORD] # INVENTÁRIO (Começa só com a espada)
 var _current_health:  int    = MAX_HEALTH
 var _facing_right:    bool   = true
 var _is_attacking:    bool   = false
@@ -71,6 +71,7 @@ func _ready() -> void:
 	add_to_group("player")
 	_start_position = global_position
 	_current_health = MAX_HEALTH
+	_unlocked_weapons = GameManager.saved_unlocked_weapons.duplicate()
 	call_deferred("emit_signal", "weapon_changed", WEAPON_NAMES[_current_weapon])
 	call_deferred("emit_signal", "health_changed", _current_health, MAX_HEALTH)
 
@@ -169,6 +170,7 @@ func pickup_weapon(new_weapon: int) -> void:
 	# Se a arma for nova, adiciona ao inventário
 	if not weapon_enum in _unlocked_weapons:
 		_unlocked_weapons.append(weapon_enum)
+		GameManager.saved_unlocked_weapons = _unlocked_weapons.duplicate()
 		print("Nova arma desbloqueada: ", WEAPON_NAMES[weapon_enum])
 
 	if _is_attacking:

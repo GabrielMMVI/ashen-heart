@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dta1diol77mkk"]
+
+[ext_resource type="Texture2D" uid="uid://c66gldrjnm0ra" path="res://ass/sprites/Armas/Machado/Machado1.png" id="1_1iwk6"]
+[ext_resource type="Script" uid="uid://d0jyteble7six" path="res://scn/scripts/machado_2d.gd" id="1_8opon"]
+[ext_resource type="Texture2D" uid="uid://vl1k52nfytoq" path="res://ass/sprites/Armas/Machado/Machado2.png" id="2_8opon"]
+[ext_resource type="Texture2D" uid="uid://bu72x2n1or025" path="res://ass/sprites/Armas/Machado/Machado3.png" id="3_sjsmg"]
+[ext_resource type="Texture2D" uid="uid://btyy3w86f4yca" path="res://ass/sprites/Armas/Machado/Machado4.png" id="4_5euot"]
+[ext_resource type="Texture2D" uid="uid://yf3ta0arkqd3" path="res://ass/sprites/Armas/Machado/Machado5.png" id="5_453jl"]
+[ext_resource type="Texture2D" uid="uid://b3ahvnm0x5mxp" path="res://ass/sprites/Armas/Machado/Machado6.png" id="6_4q4fs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1iwk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8opon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sjsmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5euot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_453jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4q4fs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=950774706]
+collision_mask = 2
+script = ExtResource("1_8opon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=296678715]
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1245925335]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+autoplay = "default"
+frame_progress = 0.8299751
