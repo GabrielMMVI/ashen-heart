@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjxfwoc5vco4" path="res://ent/enemies/Red_Soldier/Red_Soldier.tscn" id="27_nlptr"]
 [ext_resource type="PackedScene" uid="uid://1ohpgwfear2w" path="res://ent/enemies/Red_Mage/Red_Mage.tscn" id="28_fvayb"]
 [ext_resource type="PackedScene" uid="uid://cw177j5rtf675" path="res://ent/enemies/Red_ranger/Red_Ranger.tscn" id="29_7hs05"]
-[ext_resource type="PackedScene" uid="uid://cqlrgmq4qmvix" path="res://ass/sprites/Player/Arrow/arco_2d.tscn" id="30_fvayb"]
+[ext_resource type="PackedScene" uid="uid://dta1diol77mkk" path="res://scn/Machado2D.tscn" id="30_fvayb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkyrj"]
 texture = ExtResource("2_0pxnl")
@@ -5384,7 +5384,8 @@ position = Vector2(2075.75, 414)
 shape = SubResource("RectangleShape2D_n45vh")
 
 [node name="SecretWall" parent="." unique_id=249484401 instance=ExtResource("23_8a4sn")]
-position = Vector2(1359, 147)
+z_index = 1
+position = Vector2(1358, 148)
 scale = Vector2(0.22, 0.8)
 
 [node name="SaidaParaTres" type="Area2D" parent="." unique_id=1867205906]
@@ -5502,8 +5503,7 @@ position = Vector2(2502, 14)
 [node name="chbRed_Ranger6" parent="." unique_id=943384855 instance=ExtResource("29_7hs05")]
 position = Vector2(793, 253)
 
-[node name="Arco2D" parent="." unique_id=1325217097 instance=ExtResource("30_fvayb")]
-z_index = -1
-position = Vector2(1391, 192)
+[node name="Area2D2" parent="." unique_id=950774706 instance=ExtResource("30_fvayb")]
+position = Vector2(1391, 172)
 
 [editable path="playerHUD"]

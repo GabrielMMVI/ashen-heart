@@ -5,7 +5,7 @@ func _ready():
 
 func _on_button_tentar_pressed():
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scn/Game.tscn")
 
 func _on_button_sair_over_pressed():
 	get_tree().paused = false

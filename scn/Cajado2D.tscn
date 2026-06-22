@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://gqrrjrcdpic1"]
+
+[ext_resource type="Texture2D" uid="uid://bypgl8ypx7uti" path="res://ass/sprites/Armas/Cajado/Cajado1.png" id="1_5k8s1"]
+[ext_resource type="Script" uid="uid://dq7ls221hvgob" path="res://scn/cajado_2d.gd" id="1_sb06o"]
+[ext_resource type="Texture2D" uid="uid://cblox5ygb2d7b" path="res://ass/sprites/Armas/Cajado/Cajado2.png" id="2_sb06o"]
+[ext_resource type="Texture2D" uid="uid://6ajk1f7tt1ls" path="res://ass/sprites/Armas/Cajado/Cajado3.png" id="3_ocivp"]
+[ext_resource type="Texture2D" uid="uid://ccsvb8to1u4lg" path="res://ass/sprites/Armas/Cajado/Cajado4.png" id="4_ur7yq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5k8s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sb06o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ocivp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ur7yq")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=355544787]
+collision_mask = 2
+script = ExtResource("1_sb06o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388824677]
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1570776582]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.9068937
