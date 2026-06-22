@@ -7,9 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://ba532konthruw" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos4.png" id="4_upnoe"]
 [ext_resource type="Texture2D" uid="uid://cfbel2xtsoqmc" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos5.png" id="5_uod2u"]
 [ext_resource type="Texture2D" uid="uid://bdugrk0ugqrkg" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos6.png" id="6_da8o5"]
+[ext_resource type="Texture2D" uid="uid://dloxc7ibmfp11" path="res://ass/sprites/Enemies/Chefes/Maximos/Idle/MaximosParado1.png" id="7_da8o5"]
 [ext_resource type="Texture2D" uid="uid://cb1rtks8ya6xa" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos7.png" id="7_qkrmp"]
 [ext_resource type="Texture2D" uid="uid://calm73gq7ftxm" path="res://ass/sprites/Enemies/Chefes/Maximos/Base _Attack/Maximos8.png" id="8_kwadg"]
+[ext_resource type="Texture2D" uid="uid://cayiuw6tnlwg0" path="res://ass/sprites/Enemies/Chefes/Maximos/Idle/MaximosParado2.png" id="8_qkrmp"]
 [ext_resource type="Texture2D" uid="uid://b7bqy8c4slleu" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto1.png" id="9_42s54"]
+[ext_resource type="Texture2D" uid="uid://ct6o4qvoyr6y2" path="res://ass/sprites/Enemies/Chefes/Maximos/Idle/MaximosParado3.png" id="9_kwadg"]
+[ext_resource type="Texture2D" uid="uid://cu30gp0ecd7kj" path="res://ass/sprites/Enemies/Chefes/Maximos/Idle/MaximosParado4.png" id="10_42s54"]
 [ext_resource type="Texture2D" uid="uid://60olmuqbmlj2" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto2.png" id="10_nyfkl"]
 [ext_resource type="Texture2D" uid="uid://1v1rv2xsthy7" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto3.png" id="11_gbhoe"]
 [ext_resource type="Texture2D" uid="uid://epj4puxmhtki" path="res://ass/sprites/Enemies/Chefes/Maximos/Death/MaximosMorto4.png" id="12_45g04"]
@@ -37,6 +41,9 @@
 [ext_resource type="Texture2D" uid="uid://dsbkqi70ver5b" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando7.png" id="34_pyrk7"]
 [ext_resource type="Texture2D" uid="uid://dgxf2ykvjrgme" path="res://ass/sprites/Enemies/Chefes/Maximos/Walk/MaximosAndando8.png" id="35_msc4a"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da8o5"]
+size = Vector2(12.040955, 22.856653)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4lw2j"]
 animations = [{
 "frames": [{
@@ -61,6 +68,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_da8o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qkrmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kwadg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_42s54")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_fw04i")
 }, {
 "duration": 1.0,
@@ -77,28 +101,28 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("18_m2aqx")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("19_jnwye")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("20_rnsg7")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("21_n0v4b")
 }, {
-"duration": 2.0,
+"duration": 0.4,
 "texture": ExtResource("22_kbe44")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("23_yo7pf")
 }, {
-"duration": 2.3,
+"duration": 1.0,
 "texture": ExtResource("24_8u3uk")
 }, {
-"duration": 2.6,
+"duration": 1.0,
 "texture": ExtResource("25_asr1p")
 }, {
 "duration": 1.0,
@@ -176,31 +200,36 @@ radius = 17.262676
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(32, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukc71"]
-size = Vector2(20, 26)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 6.0204773
+height = 21.501705
 
-[node name="chbMaximos" type="CharacterBody2D" unique_id=1700391572]
+[node name="chbMaximos" type="CharacterBody2D" unique_id=1700391572 groups=["enemy", "enemy_hurtbox"]]
 scale = Vector2(2.325397, 2.325397)
+collision_layer = 4
 script = ExtResource("1_lk7lp")
 
-[node name="ansprMaximos" type="AnimatedSprite2D" parent="." unique_id=1625956474]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1424697601 groups=["enemy", "enemy_hurtbox"]]
+position = Vector2(-0.8600686, 4.4829345)
+shape = SubResource("RectangleShape2D_da8o5")
+
+[node name="ansprMaximos" type="AnimatedSprite2D" parent="." unique_id=1625956474 groups=["enemy", "enemy_hurtbox"]]
 sprite_frames = SubResource("SpriteFrames_4lw2j")
-animation = &"Magic_Attack"
-frame = 3
-frame_progress = 1.0
+animation = &"Pierce_Attack"
 
-[node name="aHitBox" type="Area2D" parent="." unique_id=1680868784]
+[node name="aHitBox" type="Area2D" parent="." unique_id=1680868784 groups=["enemy", "enemy_hurtbox"]]
 
-[node name="aHitbox_Slash" type="CollisionShape2D" parent="aHitBox" unique_id=613134891]
+[node name="aHitbox_Slash" type="CollisionShape2D" parent="aHitBox" unique_id=613134891 groups=["enemy"]]
 position = Vector2(9, 1)
 shape = SubResource("CircleShape2D_ebcg1")
 debug_color = Color(0.7852096, 0.43357903, 0, 0.41960785)
 
-[node name="aHitbox_Pierce" type="CollisionShape2D" parent="aHitBox" unique_id=1359568797]
+[node name="aHitbox_Pierce" type="CollisionShape2D" parent="aHitBox" unique_id=1359568797 groups=["enemy"]]
 position = Vector2(16, 3.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 debug_color = Color(0.82182765, 0, 0.1950936, 0.41960785)
 
-[node name="colHurtbox" type="CollisionShape2D" parent="." unique_id=1424697601]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_ukc71")
+[node name="aHurtbox" type="CollisionShape2D" parent="aHitBox" unique_id=2039016946 groups=["enemy", "enemy_hurtbox"]]
+position = Vector2(-0.8600682, 4.7303753)
+shape = SubResource("CapsuleShape2D_yf5fn")
+debug_color = Color(0.18315297, 0.64295214, 1.92523e-07, 0.41960785)

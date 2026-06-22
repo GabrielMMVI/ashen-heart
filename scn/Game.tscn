@@ -4673,7 +4673,7 @@ novas armas em
 passagens secretas "
 
 [node name="chbMaximos" parent="." unique_id=1700391572 instance=ExtResource("28_0fdk0")]
-position = Vector2(371, 474.00003)
+position = Vector2(5015, 492)
 
 [node name="Arco2D" parent="." unique_id=1325217097 instance=ExtResource("29_wn0sx")]
 position = Vector2(947, 776)

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://b0hpp6egr7cn"]
+
+[ext_resource type="Texture2D" uid="uid://bp3e5vb6cjf31" path="res://ass/projectiles/boss_projectiles/alert/frame0000.png" id="1_am2t2"]
+[ext_resource type="Script" uid="uid://cg2ybw0jd6loj" path="res://ent/enemies/Maximos/Maximos_Magic_Ball/scrMagic_Alert.gd" id="1_qjqh8"]
+[ext_resource type="Texture2D" uid="uid://dr0rlqwbrxqlr" path="res://ass/projectiles/boss_projectiles/alert/frame0001.png" id="2_qjqh8"]
+[ext_resource type="Texture2D" uid="uid://y4cr74t4lguh" path="res://ass/projectiles/boss_projectiles/alert/frame0002.png" id="3_3iyw2"]
+[ext_resource type="Texture2D" uid="uid://5pyta0sywyym" path="res://ass/projectiles/boss_projectiles/alert/frame0003.png" id="4_mfqxw"]
+[ext_resource type="Texture2D" uid="uid://c416hi0oj4tp0" path="res://ass/projectiles/boss_projectiles/alert/frame0004.png" id="5_ky0an"]
+[ext_resource type="Texture2D" uid="uid://dlynxw30jn42s" path="res://ass/projectiles/boss_projectiles/alert/frame0005.png" id="6_5jwvw"]
+[ext_resource type="Texture2D" uid="uid://c3rhyywprljck" path="res://ass/projectiles/boss_projectiles/alert/frame0006.png" id="7_4j7xg"]
+[ext_resource type="Texture2D" uid="uid://g6e4wvg6qo15" path="res://ass/projectiles/boss_projectiles/alert/frame0007.png" id="8_vfvam"]
+[ext_resource type="Texture2D" uid="uid://b6pn3ycbymuiu" path="res://ass/projectiles/boss_projectiles/alert/frame0008.png" id="9_n140e"]
+[ext_resource type="Texture2D" uid="uid://xif3bxohlmrn" path="res://ass/projectiles/boss_projectiles/alert/frame0009.png" id="10_1483u"]
+[ext_resource type="Texture2D" uid="uid://bt2wo3mrtpfut" path="res://ass/projectiles/boss_projectiles/alert/frame0010.png" id="11_nwpoj"]
+[ext_resource type="Texture2D" uid="uid://c4r1typa4un5s" path="res://ass/projectiles/boss_projectiles/alert/frame0011.png" id="12_eqiwl"]
+[ext_resource type="Texture2D" uid="uid://dbewqm2gysyvp" path="res://ass/projectiles/boss_projectiles/alert/frame0012.png" id="13_dyxr5"]
+[ext_resource type="Texture2D" uid="uid://3bk8d4pbtkn6" path="res://ass/projectiles/boss_projectiles/alert/frame0013.png" id="14_scl2t"]
+[ext_resource type="Texture2D" uid="uid://byxfyeabfqjm7" path="res://ass/projectiles/boss_projectiles/alert/frame0014.png" id="15_dr5b1"]
+[ext_resource type="Texture2D" uid="uid://cm2e0ufsattep" path="res://ass/projectiles/boss_projectiles/alert/frame0015.png" id="16_1teif"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 1.4142135
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_am2t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qjqh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3iyw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mfqxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ky0an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5jwvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4j7xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vfvam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n140e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1483u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nwpoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eqiwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dyxr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_scl2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dr5b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1teif")
+}],
+"loop": 0,
+"name": &"alert",
+"speed": 30.0
+}]
+
+[node name="aAlert" type="Area2D" unique_id=388288115]
+script = ExtResource("1_qjqh8")
+
+[node name="colAlert" type="CollisionShape2D" parent="." unique_id=1247061367]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="ansprAlert" type="AnimatedSprite2D" parent="." unique_id=1769644687]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"alert"
+autoplay = "alert"
+frame = 15
+frame_progress = 1.0

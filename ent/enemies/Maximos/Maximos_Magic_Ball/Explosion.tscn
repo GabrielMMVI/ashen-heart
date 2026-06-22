@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bav6sexg1nr8y"]
+
+[ext_resource type="Script" uid="uid://e1ltqid6ssly" path="res://ent/enemies/Maximos/Scripts/scrExplosion.gd" id="1_husmx"]
+[ext_resource type="Texture2D" uid="uid://cjeholdtrbnhr" path="res://ass/projectiles/boss_projectiles/explosion/frame0000.png" id="1_onker"]
+[ext_resource type="Texture2D" uid="uid://cv6rwg41s3xcp" path="res://ass/projectiles/boss_projectiles/explosion/frame0001.png" id="2_husmx"]
+[ext_resource type="Texture2D" uid="uid://bvdf5e1l02wf2" path="res://ass/projectiles/boss_projectiles/explosion/frame0002.png" id="3_fr2j5"]
+[ext_resource type="Texture2D" uid="uid://diavkxib7pb6u" path="res://ass/projectiles/boss_projectiles/explosion/frame0003.png" id="4_gyuvi"]
+[ext_resource type="Texture2D" uid="uid://c1fun5sbdjbqv" path="res://ass/projectiles/boss_projectiles/explosion/frame0004.png" id="5_g74wl"]
+[ext_resource type="Texture2D" uid="uid://b87p6dnforvt7" path="res://ass/projectiles/boss_projectiles/explosion/frame0005.png" id="6_cqg2a"]
+[ext_resource type="Texture2D" uid="uid://dr18kxkdcvjso" path="res://ass/projectiles/boss_projectiles/explosion/frame0006.png" id="7_f41jq"]
+[ext_resource type="Texture2D" uid="uid://dseb2thhtm1tb" path="res://ass/projectiles/boss_projectiles/explosion/frame0007.png" id="8_7i0um"]
+[ext_resource type="Texture2D" uid="uid://dte85tfqq22ww" path="res://ass/projectiles/boss_projectiles/explosion/frame0008.png" id="9_dxip1"]
+[ext_resource type="Texture2D" uid="uid://clyl563cf76dd" path="res://ass/projectiles/boss_projectiles/explosion/frame0009.png" id="10_3jmup"]
+[ext_resource type="Texture2D" uid="uid://c42u6ep7fj7j4" path="res://ass/projectiles/boss_projectiles/explosion/frame0010.png" id="11_qcxbc"]
+[ext_resource type="Texture2D" uid="uid://d2h41xbrvyh2p" path="res://ass/projectiles/boss_projectiles/explosion/frame0011.png" id="12_xoe68"]
+[ext_resource type="Texture2D" uid="uid://jsmkqo0pk0qp" path="res://ass/projectiles/boss_projectiles/explosion/frame0012.png" id="13_f4lsk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 19.026299
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_onker")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_husmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fr2j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gyuvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g74wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cqg2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f41jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7i0um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dxip1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3jmup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xoe68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f4lsk")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="aExplsion" type="Area2D" unique_id=970439441]
+collision_layer = 4
+script = ExtResource("1_husmx")
+
+[node name="colExplosion" type="CollisionShape2D" parent="." unique_id=1157350189 groups=["enemy", "enemy_hurtbox"]]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="ansprExplosion" type="AnimatedSprite2D" parent="." unique_id=1774802355]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+autoplay = "default"
+frame = 12
+frame_progress = 1.0
